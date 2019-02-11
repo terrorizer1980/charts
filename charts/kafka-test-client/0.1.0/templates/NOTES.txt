@@ -27,7 +27,9 @@
 
 {{- else if contains "ClusterIP" .Values.service.type }}
 
-1. "Tail" a Kafka topic.  Variables:
+1. "Tail" a Kafka topic.
+
+    Variables:
 
     ```console
     export KAFKA_BOOTSTRAP_SERVER=my-kafka-kafka:9092
