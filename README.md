@@ -1,17 +1,51 @@
 # rancher-catalog
 
-Charts for use with Rancher and Kubernetes.
+[Catalog and charts](https://rancher.com/docs/rancher/v2.x/en/catalog/) for use with
+[Rancher](https://rancher.com/) and
+[Kubernetes](https://kubernetes.io/).
 
-### Create catalogs
+## Using Catalog
 
-1. Create Senzing catalog.  Example:
+### Add catalog
+
+1. Using Rancher Web interface.
+   Reference: [Adding custom catalogs](https://rancher.com/docs/rancher/v2.x/en/catalog/#adding-custom-catalogs).
+   Example:
+
+    1. Choose Rancher > Top, Left-most dropdown box > Global
+    1. Choose Rancher > Catalogs tab
+    1. Click "Add Catalog" button.
+    1. In "Add Catalog" dialog box:
+        1. **Name:** senzing
+        1. **Catalog URL:** [https://github.com/senzing/rancher-catalog](https://github.com/senzing/rancher-catalog)
+        1. **Branch:** master
+        1. **Kind:** Helm
+    1. Click "Create" button
+
+1. Using Rancher command line interface (CLI).  Example:
 
     ```console
     rancher catalog add \
       senzing \
       https://github.com/senzing/rancher-catalog
     ```
-    
+
+### Delete catalog
+
+1. Using Rancher Web interface. Example:
+
+    1. Choose Rancher > Global tab
+    1. Choose Rancher > Catalogs tab
+    1. In "Custom" section, select "senzing" catalog.
+    1. Click "Delete" button.
+
+1. Using Rancher command line interface (CLI). Example:
+
+    ```console
+    rancher catalog delete \
+      senzing
+    ```
+
 ## Development
 
 ### Set environment variables for repository
@@ -40,4 +74,4 @@ Charts for use with Rancher and Kubernetes.
     mkdir --parents ${GIT_ACCOUNT_DIR}
     cd  ${GIT_ACCOUNT_DIR}
     git clone ${GIT_REPOSITORY_URL}
-    ```    
+    ```

@@ -7,6 +7,4 @@ keywords:
  - senzing
  - kafka
 name: kafka-test-client
-sources:
- - https://github.com/Senzing/mock-data-generator
 version: 0.1.0
