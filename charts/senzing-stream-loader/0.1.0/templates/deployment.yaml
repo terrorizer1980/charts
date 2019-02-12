@@ -22,10 +22,9 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: data    
       volumes:
-        - name: opt-senzing-2
-          hostPath:
-            path: /opt/senzing
-            type: DirectoryOrCreate
+        - name: opt-senzing
+          persistentVolumeClaim:
+            claimName: opt-senzing-claim
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -35,7 +34,7 @@ spec:
               mountPath: /opt/senzing
           command:
             - /app/docker-entrypoint.sh
-            - /app/stream-loader.py          
+            - /app/stream-loader.py
           env:
             - name: SENZING_KAFKA_BOOTSTRAP_SERVER
               value: "{{ .Values.senzing.kafkaBootstrapServerHost }}:{{ .Values.senzing.kafkaBootstrapServerPort }}"
