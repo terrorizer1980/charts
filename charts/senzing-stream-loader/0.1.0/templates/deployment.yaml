@@ -22,7 +22,7 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: data    
       volumes:
-        - name: opt-senzing
+        - name: opt-senzing-2
           hostPath:
             path: /opt/senzing
             type: DirectoryOrCreate
