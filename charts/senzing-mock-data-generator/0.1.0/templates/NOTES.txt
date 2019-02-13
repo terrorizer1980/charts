@@ -13,18 +13,15 @@ python mock-data-generator.py {{ .Values.senzing.subcommand }}
   --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
   {{- end }}
 
-  {{- if .Values.senzing.recordMax -}}
-  \
+  {{- if .Values.senzing.recordMax }} \
   --input-url "{{ .Values.senzing.inputUrl }}"
   {{- end }}
 
-  {{- if .Values.senzing.recordMax -}}
-  \
+  {{- if .Values.senzing.recordMax }} \
   --record-max {{ .Values.senzing.recordMax }}
   {{- end }}
 
-  {{- if .Values.senzing.recordMonitor -}}
-  \
+  {{- if .Values.senzing.recordMonitor }} \
   --record-monitor {{ .Values.senzing.recordMonitor }}
   {{- end }}
 ```
