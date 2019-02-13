@@ -20,18 +20,26 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       nodeSelector:
-        kubernetes.io/hostname: data    
+        kubernetes.io/hostname: data
+
+      {{- if .Values.senzing.optSenzingClaim -}}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: opt-senzing-claim
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end -}}
+
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          {{- if .Values.senzing.optSenzingClaim -}}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
+          {{- end -}}
+
           command:
             - /app/docker-entrypoint.sh
             - /app/stream-loader.py

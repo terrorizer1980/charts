@@ -31,3 +31,4 @@ affinity: {}
 
 senzing:
   subcommand: "kafka"
+  optSenzingClaim: "opt-senzing-claim"
