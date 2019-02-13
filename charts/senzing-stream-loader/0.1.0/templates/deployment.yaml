@@ -22,23 +22,23 @@ spec:
       nodeSelector:
         kubernetes.io/hostname: data
 
-      {{- if .Values.senzing.optSenzingClaim -}}
+      {{ if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{- end -}}
+      {{ end }}
 
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
 
-          {{- if .Values.senzing.optSenzingClaim -}}
+          {{ if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
-          {{- end -}}
+          {{ end }}
 
           command:
             - /app/docker-entrypoint.sh
