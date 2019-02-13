@@ -1,4 +1,6 @@
-Running the following command:
+## Command
+
+The command being run:
 
 ```console
 python stream-loader.py {{ .Values.senzing.subcommand }} \
