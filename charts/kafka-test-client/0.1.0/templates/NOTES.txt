@@ -29,7 +29,7 @@
 
 1. "Tail" a Kafka topic.
 
-    Variables:
+    Example variables:
 
     ```console
     export KAFKA_BOOTSTRAP_SERVER=my-kafka-kafka:9092
