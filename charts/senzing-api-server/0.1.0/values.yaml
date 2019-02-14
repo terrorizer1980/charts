@@ -3,7 +3,7 @@
 replicaCount: 1
 
 image:
-  repository: data.dockter.com:5000/senzing/mock-data-generator
+  repository: data.dockter.com:5000/senzing/senzing-api-server
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -12,7 +12,7 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8080
 
 ingress:
   enabled: false

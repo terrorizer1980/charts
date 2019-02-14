@@ -16,6 +16,11 @@
   echo http://$SERVICE_IP:{{ .Values.service.port }}
 {{- else if contains "ClusterIP" .Values.service.type }}
   
+```console
+export POD_NAME=$(rancher kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-api-server.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+echo "Visit http://127.0.0.1:8080 to use your application"
+kubectl port-forward $POD_NAME 8080:8080
+```
 ## Command
 
 The command being run:  
@@ -29,14 +34,6 @@ java -jar senzing-api-server.jar \
   {{- if .Values.senzing.concurrency }} \
   -concurrency {{ .Values.senzing.concurrency }}
   {{- end }}
-```
-
-## Access
-
-```console
-export POD_NAME=$(rancher kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-api-server.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
-echo "Visit http://127.0.0.1:8080 to use your application"
-kubectl port-forward $POD_NAME 8080:8080
 ```
   
 {{- end }}
