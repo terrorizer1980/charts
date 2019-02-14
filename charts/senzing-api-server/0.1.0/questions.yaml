@@ -1,0 +1,15 @@
+categories:
+  - Senzing
+questions:
+
+  - variable: image.repository
+    label: Docker image
+    description: "Example: senzing/senzing-api-server"
+    type: string
+    default: "senzing/senzing-api-server"
+
+  - variable: image.tag
+    label: Docker image tag
+    description: "Example: latest"
+    type: string
+    default: "latest"

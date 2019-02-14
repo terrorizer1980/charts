@@ -1,0 +1,28 @@
+# Default values for senzing-api-server.
+
+replicaCount: 1
+
+image:
+  repository: data.dockter.com:5000/senzing/mock-data-generator
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+  paths: []
+  hosts:
+    - chart-example.local
+  tls: []
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
