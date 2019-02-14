@@ -22,7 +22,7 @@ spec:
 
       {{ if .Values.senzing.optSenzingClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: opt-senzing-storage-senzing-api-server
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{ end }}
@@ -34,7 +34,7 @@ spec:
 
           {{ if .Values.senzing.optSenzingClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: opt-senzing-storage-senzing-api-server
               mountPath: /opt/senzing
           {{ end }}
 

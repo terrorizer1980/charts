@@ -19,9 +19,9 @@ questions:
     description: "Example: 10"
     type: int
     default: 10
-    
+
   - variable: senzing.optSenzingClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.
-    description: "Example: opt-senzing-claim-2"
+    description: "Example: opt-senzing-claim"
     type: string
-    default: "opt-senzing-claim-2"    
+    default: "opt-senzing-claim"    
