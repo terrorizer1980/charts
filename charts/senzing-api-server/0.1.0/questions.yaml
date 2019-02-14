@@ -15,7 +15,13 @@ questions:
     default: "latest"
 
   - variable: senzing.concurrency
-    label: Number of threads responding to HTTP requests
+    label: "Concurrency: number of threads responding to HTTP requests"
     description: "Example: 10"
     type: int
     default: 10
+    
+  - variable: senzing.optSenzingClaim
+    label: If defined, Persistent Volume Claim for /opt/senzing.
+    description: "Example: opt-senzing-claim"
+    type: string
+    default: "opt-senzing-claim"    
