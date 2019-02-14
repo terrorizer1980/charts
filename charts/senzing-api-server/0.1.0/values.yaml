@@ -26,3 +26,7 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+
+senzing:
+  concurrency: 10
+  optSenzingClaim: "opt-senzing-claim"

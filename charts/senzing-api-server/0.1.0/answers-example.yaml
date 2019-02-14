@@ -1,2 +1,3 @@
 'image.repository': "data.dockter.com:5000/senzing/senzing-api-server"
 'image.tag': "latest"
+'senzing.concurrency': 10

@@ -13,3 +13,9 @@ questions:
     description: "Example: latest"
     type: string
     default: "latest"
+
+  - variable: senzing.concurrency
+    label: Number of threads responding to HTTP requests
+    description: "Example: 10"
+    type: int
+    default: 10
