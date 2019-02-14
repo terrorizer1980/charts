@@ -22,6 +22,6 @@ questions:
     
   - variable: senzing.optSenzingClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.
-    description: "Example: opt-senzing-claim"
+    description: "Example: opt-senzing-claim-2"
     type: string
-    default: "opt-senzing-claim"    
+    default: "opt-senzing-claim-2"    
