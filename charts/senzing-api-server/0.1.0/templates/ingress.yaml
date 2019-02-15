@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "senzing-stream-loader.fullname" . -}}
+{{- $fullName := include "senzing-api-server.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
-    helm.sh/chart: {{ include "senzing-stream-loader.chart" . }}
+    app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
+    helm.sh/chart: {{ include "senzing-api-server.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
