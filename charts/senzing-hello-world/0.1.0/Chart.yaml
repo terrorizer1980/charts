@@ -5,7 +5,7 @@ home: http://senzing.com
 icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
 keywords:
  - senzing
-name: senzing-hello-world-on-hub-docker-com
+name: senzing-hello-world
 sources:
  - https://github.com/Senzing/docker-hello-world
 version: 0.1.0
