@@ -19,25 +19,17 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-
-      {{ if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: opt-senzing-storage-senzing-api-server
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{ end }}
-
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-          {{ if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage-senzing-api-server
               mountPath: /opt/senzing
-          {{ end }}
-
           env:
             - name: SENZING_CONCURRENCY
               value: "{{ .Values.senzing.concurrency }}"
