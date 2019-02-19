@@ -27,9 +27,9 @@ The command being run:
 
 ```console
 java -jar senzing-api-server.jar \
-  - httpPort 8080 \
-  - bindAddr all \
-  - iniFile /opt/senzing/g2/python/G2Module.ini
+  -httpPort 8080 \
+  -bindAddr all \
+  -iniFile /opt/senzing/g2/python/G2Module.ini
 
   {{- if .Values.senzing.concurrency }} \
   -concurrency {{ .Values.senzing.concurrency }}
