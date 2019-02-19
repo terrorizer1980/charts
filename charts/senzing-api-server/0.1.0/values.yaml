@@ -29,4 +29,4 @@ affinity: {}
 
 senzing:
   concurrency: 10
-  optSenzingClaim: "opt-senzing-claim-senzing-api-server"
+  optSenzingClaim: "opt-senzing-claim"

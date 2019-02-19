@@ -1,6 +1,5 @@
 categories:
-  - mySql
-
+  - Senzing
 questions:
 
   - variable: image.repository
