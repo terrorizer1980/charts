@@ -1,0 +1,20 @@
+1. "Tail" a Kafka topic.
+
+    Example variables:
+
+    ```console
+    export KAFKA_BOOTSTRAP_SERVER=my-kafka-kafka:9092
+    export KAFKA_TOPIC=senzing-kafka-topic
+    ```
+
+    Command:
+
+    ```console
+    rancher kubectl exec \
+      -it \
+      -n {{ .Release.Namespace }} \
+      {{ .Release.Name }} -- /usr/bin/kafka-console-consumer \
+        --bootstrap-server ${KAFKA_BOOTSTRAP_SERVER} \
+        --topic ${KAFKA_TOPIC} \
+        --from-beginning
+    ```

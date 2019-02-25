@@ -1,0 +1,120 @@
+apiVersion: v1
+entries:
+  kafka-test-client:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.665265522-05:00
+    description: A test client for Kafka
+    digest: a61c85502ef34abd0f4aa93ea8c344bd04b9f9631be4a6b18f4c862562a8cd30
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    - kafka
+    name: kafka-test-client
+    urls:
+    - kafka-test-client-0.2.0.tgz
+    version: 0.2.0
+  phpmyadmin:
+  - appVersion: 4.8.5
+    created: 2019-02-25T13:21:57.6665394-05:00
+    description: phpMyAdmin is an mysql administration frontend
+    digest: d214c0ad9025b5ac31dec876f1e6bf9819239ff61e53a3ada89feef2d0f284e8
+    engine: gotpl
+    home: https://www.phpmyadmin.net/
+    icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-2.0.334.png
+    keywords:
+    - mysql
+    - phpmyadmin
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: phpmyadmin
+    sources:
+    - https://github.com/bitnami/bitnami-docker-phpmyadmin
+    urls:
+    - phpmyadmin-2.0.4.tgz
+    version: 2.0.4
+  senzing-api-server:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.66698718-05:00
+    description: Senzing API server
+    digest: 85ff7d1c567e530f58043ed68e1432aba259ebe1af233e9f2f6e16bc3f03e809
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    name: senzing-api-server
+    sources:
+    - https://github.com/Senzing/senzing-api-server
+    urls:
+    - senzing-api-server-0.2.0.tgz
+    version: 0.2.0
+  senzing-hello-world:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.667264968-05:00
+    description: Prints timestamped hello-world messages
+    digest: 8cf001a885e657fe081cff577488342755da6270aecf2f23f09b956a0a549c20
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    name: senzing-hello-world
+    sources:
+    - https://github.com/Senzing/docker-hello-world
+    urls:
+    - senzing-hello-world-0.2.0.tgz
+    version: 0.2.0
+  senzing-hello-world-on-hub-docker-com:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.667543983-05:00
+    description: Prints timestamped hello-world messages
+    digest: a61410fa6cf1a36d3fab49a5adf905121eeaf1a1ca71c0ed57c22e27af2c4f4f
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    name: senzing-hello-world-on-hub-docker-com
+    sources:
+    - https://github.com/Senzing/docker-hello-world
+    urls:
+    - senzing-hello-world-on-hub-docker-com-0.2.0.tgz
+    version: 0.2.0
+  senzing-mock-data-generator:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.667870775-05:00
+    description: A generator of Senzing data to feed Kafka
+    digest: 23965ecc75646524e211968767c015a110851a189412f13272b527dfb52c895e
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    - kafka
+    name: senzing-mock-data-generator
+    sources:
+    - https://github.com/Senzing/mock-data-generator
+    urls:
+    - senzing-mock-data-generator-0.2.0.tgz
+    version: 0.2.0
+  senzing-stream-loader:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-02-25T13:21:57.668210781-05:00
+    description: A stream-based loader for Senzing
+    digest: 47a85a9ba810a0df7e4a5c3f43b1643b381a2cb70e0a5e593fa5be9d6bd61b46
+    home: http://senzing.com
+    icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+    keywords:
+    - senzing
+    - kafka
+    name: senzing-stream-loader
+    sources:
+    - https://github.com/Senzing/stream-loader
+    urls:
+    - senzing-stream-loader-0.2.0.tgz
+    version: 0.2.0
+generated: 2019-02-25T13:21:57.66439764-05:00
