@@ -86,30 +86,38 @@ Used by:
 
 ## Development
 
-### Set environment variables for repository
+### Clone repository
 
-1. These variables may be modified, but do not need to be modified.
-   The variables are used throughout the installation procedure.
+1. Using these environment variable values:
 
     ```console
     export GIT_ACCOUNT=senzing
     export GIT_REPOSITORY=charts
     ```
 
-1. Synthesize environment variables.
+   Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md).
+
+### Package Helm chart
+
+1. Identify directory.  Example:
 
     ```console
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
-    export GIT_REPOSITORY_URL="git@github.com:${GIT_ACCOUNT}/${GIT_REPOSITORY}.git"
     ```
 
-### Clone repository
-
-1. Get repository.
+1. Package helm chart. Example:
 
     ```console
-    mkdir --parents ${GIT_ACCOUNT_DIR}
-    cd  ${GIT_ACCOUNT_DIR}
-    git clone ${GIT_REPOSITORY_URL}
+    export CHART_NAME=senzing-hello-world
+
+    cd ${GIT_REPOSITORY_DIR}/docs
+    helm package ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}
+    ```
+
+1. Update `index.yaml`. Example:
+
+    ```console
+    cd ${GIT_REPOSITORY_DIR}/docs
+    helm repo index .
     ```
