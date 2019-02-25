@@ -1,0 +1,11 @@
+apiVersion: v1
+appVersion: "1.0"
+description: Senzing API server
+home: http://senzing.com
+icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
+keywords:
+ - senzing
+name: senzing-api-server
+sources:
+ - https://github.com/Senzing/senzing-api-server
+version: 0.2.0
