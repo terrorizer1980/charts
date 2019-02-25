@@ -1,5 +1,7 @@
 # Charts
 
+## Overview
+
 Charts used with [Kubernetes](https://kubernetes.io/).
 
 Used by:
@@ -7,6 +9,20 @@ Used by:
 - [Helm](https://helm.sh/)
 - [Rancher](https://rancher.com/)
   - [Catalog](https://rancher.com/docs/rancher/v2.x/en/catalog/)
+
+### Contents
+
+1. [Using Helm](#using-helm)
+    1. [Add helm repository](#add-helm-repository)
+    1. [List helm repositories](#list-helm-repositories)
+    1. [View charts in Senzing Helm repository](#view-charts-in-senzing-helm-repository)
+    1. [Remove helm repository](#remove-helm-repository)
+1. [Using Rancher Catalog](#using-rancher-catalog)
+    1. [Add catalog](#add-catalog)
+    1. [Delete catalog](#delete-catalog)
+1. [Development](#development)
+    1. [Clone repository](#clone-repository)
+    1. [Package Helm chart](#package-helm-chart)
 
 ## Using Helm
 
@@ -18,7 +34,7 @@ Used by:
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
-### List repositories
+### List helm repositories
 
 1. Example:
 
