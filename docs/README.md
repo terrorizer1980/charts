@@ -11,7 +11,7 @@ The repository of Senzing Helm Charts is located at
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
-## List repositories
+## List helm repositories
 
 1. Example:
 
@@ -32,5 +32,5 @@ The repository of Senzing Helm Charts is located at
 1. Example:
 
     ```console
-    helm repo add senzing 'https://senzing.github.io/charts/'
+    helm repo remove senzing
     ```
