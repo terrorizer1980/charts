@@ -1,10 +1,48 @@
-# rancher-catalog
+# Charts
 
-[Catalog and charts](https://rancher.com/docs/rancher/v2.x/en/catalog/) for use with
-[Rancher](https://rancher.com/) and
-[Kubernetes](https://kubernetes.io/).
+Charts used with [Kubernetes](https://kubernetes.io/).
 
-## Using Catalog
+Used by:
+
+- [Helm](https://helm.sh/)
+- [Rancher](https://rancher.com/)
+  - [Catalog](https://rancher.com/docs/rancher/v2.x/en/catalog/)
+
+## Using Helm
+
+### Add helm repository
+
+1. Example:
+
+    ```console
+    helm repo add senzing 'https://senzing.github.io/charts/'
+    ```
+
+### List repositories
+
+1. Example:
+
+    ```console
+    helm repo list
+    ```
+
+### View charts in Senzing Helm repository
+
+1. Example:
+
+    ```console
+    helm search senzing
+    ```
+
+### Remove helm repository
+
+1. Example:
+
+    ```console
+    helm repo remove senzing
+    ```
+
+## Using Rancher Catalog
 
 ### Add catalog
 
@@ -17,7 +55,7 @@
     1. Click "Add Catalog" button.
     1. In "Add Catalog" dialog box:
         1. **Name:** senzing
-        1. **Catalog URL:** [https://github.com/senzing/rancher-catalog](https://github.com/senzing/rancher-catalog)
+        1. **Catalog URL:** [https://github.com/senzing/charts](https://github.com/senzing/charts)
         1. **Branch:** master
         1. **Kind:** Helm
     1. Click "Create" button
@@ -27,7 +65,7 @@
     ```console
     rancher catalog add \
       senzing \
-      https://github.com/senzing/rancher-catalog
+      https://github.com/senzing/charts
     ```
 
 ### Delete catalog
@@ -55,7 +93,7 @@
 
     ```console
     export GIT_ACCOUNT=senzing
-    export GIT_REPOSITORY=rancher-catalog
+    export GIT_REPOSITORY=charts
     ```
 
 1. Synthesize environment variables.
