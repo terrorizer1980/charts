@@ -23,10 +23,8 @@ spec:
         - name: {{ .Chart.Name }}-core
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command:
-            - /app/entrypoint.sh
-          args:
-            - db2start
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
           env:
             - name: LICENSE
               value: "accept"
