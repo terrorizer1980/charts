@@ -24,7 +24,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
-            - db2start
+            - /app/entrypoint.sh db2start
           env:
             - name: LICENSE
               value: "accept"
