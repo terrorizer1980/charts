@@ -1,0 +1,23 @@
+categories:
+  - db2
+questions:
+  - variable: db2inst.instname
+    label: Database username
+    description: "Example: db2inst1"
+    type: string
+    default: "db2inst1"
+  - variable: db2inst.password
+    label: Database password
+    description: "Example: passw0rd"
+    type: string
+    default: "passw0rd"
+  - variable: options.databaseName
+    label: Database name
+    description: "Example: G2"
+    type: string
+    default: "G2"
+  - variable: dataVolume.existingClaimName
+    label: Persistent storage claim
+    description: "Example: data-stor-claim"
+    type: string
+    default: "data-stor-claim"
