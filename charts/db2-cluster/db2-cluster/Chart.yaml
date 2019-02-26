@@ -5,6 +5,6 @@ home: http://senzing.com
 icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
 keywords:
  - senzing
- - kafka
+ - db2
 name: senzing-db2-cluster
 version: 0.1.0
