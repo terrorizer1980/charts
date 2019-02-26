@@ -11,8 +11,18 @@ nameOverride: ""
 fullnameOverride: ""
 
 service:
-  type: ClusterIP
-  port: 80
+  name: db2-svc
+  type: NodePort
+  port: 50000
+  tsport: 55000
+
+db2inst:
+  instname: "db2inst1"
+  password: "db2inst1"
+  
+options:
+  databaseName: "G2"
+  oracleCompatibility: false  
 
 ingress:
   enabled: false
@@ -22,7 +32,14 @@ ingress:
     - chart-example.local
   tls: []
 
-resources: {}
+resources:
+  requests:
+    memory: 2Gi
+    cpu: 2000m
+  limits:
+    memory: 16Gi
+    cpu: 4000m
+
 nodeSelector: {}
 tolerations: []
 affinity: {}
