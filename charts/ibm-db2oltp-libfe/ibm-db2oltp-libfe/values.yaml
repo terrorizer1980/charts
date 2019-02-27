@@ -20,7 +20,7 @@ image:
   tag: 11.1.4.4
   pullPolicy: IfNotPresent 
 service:
-  name: ibm-db2oltp-res
+  name: ibm-db2oltp-libfe
   type: NodePort
   port: 50000
   tsport: 55000

@@ -1,0 +1,57 @@
+categories:
+  - db2
+questions:
+
+  - variable: dataVolume.existingClaimName
+    label: Persistent storage claim
+    description: "Example: data-stor-claim"
+    type: string
+    default: "data-stor-claim"
+
+  - variable: db2inst.instname
+    label: Database username
+    description: "Example: db2inst1"
+    type: string
+    default: "db2inst1"
+
+  - variable: db2inst.password
+    label: Database password
+    description: "Example: passw0rd"
+    type: string
+    default: "passw0rd"
+
+  - variable: options.databaseName
+    label: Database name
+    description: "Example: G2"
+    type: string
+    default: "G2"
+
+  - variable: persistence.enabled
+    label: Persistant storage enabled
+    description: "Example: false"
+    type: boolean
+    default: "false"
+
+  - variable: persistence.useDynamicProvisioning
+    label: Use dynamic provisioning
+    description: "Example: false"
+    type: boolean
+    default: "false"
+
+  - variable: service.name
+    label: Database service name
+    description: "Example: ibm-db2oltp-core"
+    type: string
+    default: "ibm-db2oltp-core"
+
+  - variable: service.port
+    label: Database service port
+    description: "Example: 50000"
+    type: int
+    default: 50000
+
+  - variable: service.tsport
+    label: Database text search port
+    description: "Example: 55000"
+    type: int
+    default: 55000
