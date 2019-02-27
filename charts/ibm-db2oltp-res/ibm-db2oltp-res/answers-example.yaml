@@ -4,6 +4,6 @@ options.databaseName: "G2"
 dataVolume.existingClaimName: "db2-data-stor-claim"
 persistence.enabled: "false"
 persistence.useDynamicProvisioning: "false"
-service.name: "ibm-db2oltp-dev"
+service.name: "ibm-db2oltp-ref"
 service.port: 50000
 service.tsport: 55000
