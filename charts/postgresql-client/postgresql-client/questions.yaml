@@ -7,7 +7,7 @@ questions:
     label: Docker image
     description: "Example: senzing/mock-data-generator"
     type: string
-    default: "senzing/mock-data-generator"
+    default: "jbergknoff/postgresql-client"
 
   - variable: image.tag
     label: Docker image tag
