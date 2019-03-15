@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image:
+  repository: jbergknoff/postgresql-client
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+postgresql:
+  username: "postgres"
+  password: "postgres"
+  host:     ""
+  command: ""
+
+senzing:
+  optSenzingClaim: "opt-senzing-claim"

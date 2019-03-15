@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "postgresql-client.fullname" . }}
+spec:
+  template:
+    spec:
+      
+      {{ if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{ end }}
+          
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          
+          {{ if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{ end }}
+
+          env:
+            - name: "PGPASSWORD"
+              value: "{{ .Values.postgresql.password }}"
+
+          command: ["-U", "{{ .Values.postgresql.username }}", "-h", "{{ .Values.postgresql.host }}", "{{ .Values.postgresql.command }}"]
+
