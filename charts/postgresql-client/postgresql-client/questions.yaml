@@ -3,18 +3,6 @@ categories:
   - PostgreSQL
 questions:
 
-  - variable: image.repository
-    label: Docker image
-    description: "Example: jbergknoff/postgresql-client"
-    type: string
-    default: "jbergknoff/postgresql-client"
-
-  - variable: image.tag
-    label: Docker image tag
-    description: "Example: latest"
-    type: string
-    default: "latest"
-
   - variable: postgresql.username
     label: postgresql username
     description: "Example: postgres"
