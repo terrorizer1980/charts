@@ -1,0 +1,34 @@
+categories:
+  - Senzing
+  - PostgreSQL
+questions:
+
+  - variable: image.repository
+    label: Docker image
+    description: "Example: senzing/mock-data-generator"
+    type: string
+    default: "senzing/mock-data-generator"
+
+  - variable: image.tag
+    label: Docker image tag
+    description: "Example: latest"
+    type: string
+    default: "latest"
+
+  - variable: postgresql.username
+    label: postgresql username
+    description: "Example: postgres"
+    type: string
+    default: "postgres"
+
+  - variable: postgresql.password
+    label: postgresql password
+    description: "Example: postgres"
+    type: string
+    default: "postgres"
+
+  - variable: postgresql.host
+    label: postgresql host
+    description: "Example: my-postgresql-postgresal"
+    type: string
+    default: ""

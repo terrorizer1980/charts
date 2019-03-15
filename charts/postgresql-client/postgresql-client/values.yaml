@@ -11,8 +11,8 @@ fullnameOverride: ""
 postgresql:
   username: "postgres"
   password: "postgres"
-  host:     ""
-  command: ""
+  host: ""
+  command: "G2 < /opt/senzing/g2/data/g2core-schema-postgresql-create.sql"
 
 senzing:
   optSenzingClaim: "opt-senzing-claim"
