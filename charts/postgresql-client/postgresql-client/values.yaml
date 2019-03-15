@@ -12,7 +12,6 @@ postgresql:
   username: "postgres"
   password: "postgres"
   host: ""
-  command: "G2 < /opt/senzing/g2/data/g2core-schema-postgresql-create.sql"
-
-senzing:
-  optSenzingClaim: "opt-senzing-claim"
+  database: "G2"
+  file: "g2/data/g2core-schema-postgresql-create.sql"
+  storageClaim: "opt-senzing-claim"

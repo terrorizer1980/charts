@@ -6,11 +6,11 @@ spec:
   template:
     spec:
       
-      {{ if .Values.senzing.optSenzingClaim }}
+      {{ if .Values.postgresql.storageClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: postgresql-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
+            claimName: {{ .Values.postgresql.storageClaim }}
       {{ end }}
           
       restartPolicy: Never
@@ -19,15 +19,23 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           
-          {{ if .Values.senzing.optSenzingClaim }}
+          {{ if .Values.postgresql.storageClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing
+            - name: postgresql-storage
+              mountPath: /data
           {{ end }}
 
           env:
             - name: "PGPASSWORD"
               value: "{{ .Values.postgresql.password }}"
 
-          command: ["-U", "{{ .Values.postgresql.username }}", "-h", "{{ .Values.postgresql.host }}", "{{ .Values.postgresql.command }}"]
-
+          command: ["psql"]
+          args:
+            - "-U"
+            - "{{ .Values.postgresql.password }}"
+            - "-h"
+            - "{{ .Values.postgresql.host }}"
+            - "-d"
+            - "{{ .Values.postgresql.database }}"
+            - "-f"
+            - "/data/{{ .Values.postgresql.file }}"

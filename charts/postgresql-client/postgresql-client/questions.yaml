@@ -5,7 +5,7 @@ questions:
 
   - variable: image.repository
     label: Docker image
-    description: "Example: senzing/mock-data-generator"
+    description: "Example: jbergknoff/postgresql-client"
     type: string
     default: "jbergknoff/postgresql-client"
 
@@ -32,3 +32,21 @@ questions:
     description: "Example: my-postgresql-postgresal"
     type: string
     default: ""
+
+  - variable: postgresql.database
+    label: postgresql database
+    description: "Example: G2"
+    type: string
+    default: "G2"
+
+  - variable: postgresql.storageClaim
+    label: postgresql storage claim for input file
+    description: "Example: opt-senzing-claim"
+    type: string
+    default: "opt-senzing-claim"  
+
+  - variable: postgresql.file
+    label: postgresql file relative to Persistent Volume Claim
+    description: "Example: g2/data/g2core-schema-postgresql-create.sql"
+    type: string
+    default: "g2/data/g2core-schema-postgresql-create.sql"
