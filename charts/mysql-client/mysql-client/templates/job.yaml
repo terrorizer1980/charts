@@ -32,8 +32,7 @@ spec:
           command: ["/app/docker-entrypoint.sh"]
           args:
             - "--user={{ .Values.mysql.username }}"
-            - "--password ={{ .Values.mysql.password }}"
+            - "--password={{ .Values.mysql.password }}"
             - "--host={{ .Values.mysql.host }}"
             - "--database={{ .Values.mysql.database }}"
-            - "--execute"
-            - "source /data/{{ .Values.mysql.file }}"
+            - '--execute="source /data/{{ .Values.mysql.file }}'
