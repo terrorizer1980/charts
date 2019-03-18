@@ -5,20 +5,20 @@ metadata:
 spec:
   template:
     spec:
-      
+
       {{ if .Values.postgresql.storageClaim }}
       volumes:
         - name: postgresql-storage
           persistentVolumeClaim:
             claimName: {{ .Values.postgresql.storageClaim }}
       {{ end }}
-          
+
       restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          
+
           {{ if .Values.postgresql.storageClaim }}
           volumeMounts:
             - name: postgresql-storage

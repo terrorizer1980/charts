@@ -17,7 +17,7 @@ questions:
 
   - variable: postgresql.host
     label: postgresql host
-    description: "Example: my-postgresql-postgresal"
+    description: "Example: my-postgresql-postgresql"
     type: string
     default: ""
 
@@ -31,7 +31,7 @@ questions:
     label: postgresql storage claim for input file
     description: "Example: opt-senzing-claim"
     type: string
-    default: "opt-senzing-claim"  
+    default: "opt-senzing-claim"
 
   - variable: postgresql.file
     label: postgresql file relative to Persistent Volume Claim
