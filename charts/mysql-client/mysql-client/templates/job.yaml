@@ -35,4 +35,5 @@ spec:
             - "--password ={{ .Values.mysql.password }}"
             - "--host={{ .Values.mysql.host }}"
             - "--database={{ .Values.mysql.database }}"
-            - "--execute source /data/{{ .Values.mysql.file }}"
+            - "--execute"
+            - "source /data/{{ .Values.mysql.file }}"
