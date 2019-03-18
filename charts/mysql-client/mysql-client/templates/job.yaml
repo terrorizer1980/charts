@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "mysql-client.fullname" . }}
+spec:
+  template:
+    spec:
+
+      {{ if .Values.mysql.storageClaim }}
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.mysql.storageClaim }}
+      {{ end }}
+
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          {{ if .Values.mysql.storageClaim }}
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /data
+          {{ end }}
+
+          env:
+            - name: "SENZING_SENTINEL_FILE"
+              value: "/data/mysql-init.sentinel"
+
+          command: ["/app/docker-entrypoint.sh"]
+          args:
+            - "--user={{ .Values.mysql.username }}"
+            - "--password={{ .Values.mysql.password }}"
+            - "--host={{ .Values.mysql.host }}"
+            - "--database={{ .Values.mysql.database }}"
+            - '--execute="source /data/{{ .Values.mysql.file }}"'
