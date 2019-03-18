@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "postgresql-client.fullname" . }}
+spec:
+  template:
+    spec:
+      
+      {{ if .Values.postgresql.storageClaim }}
+      volumes:
+        - name: postgresql-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.postgresql.storageClaim }}
+      {{ end }}
+          
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          
+          {{ if .Values.postgresql.storageClaim }}
+          volumeMounts:
+            - name: postgresql-storage
+              mountPath: /data
+          {{ end }}
+
+          env:
+            - name: "PGPASSWORD"
+              value: "{{ .Values.postgresql.password }}"
+
+          command: ["psql"]
+          args:
+            - "-U"
+            - "{{ .Values.postgresql.password }}"
+            - "-h"
+            - "{{ .Values.postgresql.host }}"
+            - "-d"
+            - "{{ .Values.postgresql.database }}"
+            - "-f"
+            - "/data/{{ .Values.postgresql.file }}"

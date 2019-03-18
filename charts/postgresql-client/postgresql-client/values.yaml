@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: jbergknoff/postgresql-client
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+postgresql:
+  username: "postgres"
+  password: "postgres"
+  host: ""
+  database: "G2"
+  file: "g2/data/g2core-schema-postgresql-create.sql"
+  storageClaim: "opt-senzing-claim"
