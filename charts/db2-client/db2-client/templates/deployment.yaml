@@ -23,4 +23,11 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          
+          env:
+            - name: "DB2INST1_PASSWORD"
+              value: "{{ .Values.db2.password }}"
+            - name: "LICENSE"
+              value: "accept"
+                        
           command: ["/bin/bash"]

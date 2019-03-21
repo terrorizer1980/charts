@@ -24,3 +24,6 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+
+db2:
+  password: db2inst1
