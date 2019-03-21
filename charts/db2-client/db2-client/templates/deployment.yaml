@@ -6,7 +6,6 @@ metadata:
     app.kubernetes.io/name: {{ include "db2-client.name" . }}
     helm.sh/chart: {{ include "db2-client.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -19,15 +18,29 @@ spec:
         app.kubernetes.io/name: {{ include "db2-client.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+
+      {{ if .Values.db2.storageClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.db2.storageClaim }}
+      {{ end }}
+
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          
+
+          {{ if .Values.db2.storageClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{ end }}
+
           env:
             - name: "DB2INST1_PASSWORD"
               value: "{{ .Values.db2.password }}"
             - name: "LICENSE"
               value: "accept"
-                        
-          command: ["sleep", "1d"]
+
+          command: ["sleep", "infinity"]
