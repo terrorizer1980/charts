@@ -19,11 +19,11 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
 
-      {{ if .Values.db2.storageClaim }}
+      {{ if .Values.db2.optSenzingStorageClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.db2.storageClaim }}
+            claimName: {{ .Values.db2.optSenzingStorageClaim }}
       {{ end }}
 
       containers:
@@ -31,7 +31,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
 
-          {{ if .Values.db2.storageClaim }}
+          {{ if .Values.db2.optSenzingStorageClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
