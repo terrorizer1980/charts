@@ -30,4 +30,4 @@ spec:
             - name: "LICENSE"
               value: "accept"
                         
-          command: ["/bin/bash", "sleep 1d"]
+          command: ["/bin/bash", "sleep", "1d"]
