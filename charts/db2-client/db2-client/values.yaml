@@ -10,5 +10,4 @@ fullnameOverride: ""
 
 db2:
   password: "db2inst1"
-  host: ""
   optSenzingStorageClaim: "opt-senzing-claim"

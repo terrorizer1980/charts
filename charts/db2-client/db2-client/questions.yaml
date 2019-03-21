@@ -1,0 +1,16 @@
+categories:
+  - Senzing
+  - DB2
+questions:
+
+  - variable: db2.password
+    label: db2 password
+    description: "Example: db2inst1"
+    type: string
+    default: "db2inst1"
+
+  - variable: db2.optSenzingStorageClaim
+    label: db2 storage claim for input file
+    description: "Example: opt-senzing-claim"
+    type: string
+    default: "opt-senzing-claim"
