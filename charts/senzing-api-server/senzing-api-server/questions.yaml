@@ -27,6 +27,12 @@ questions:
     type: int
     default: 8
 
+  - variable: senzing.databaseUrl
+    label: "URL to the relational database service Template: protocol://username:password@host:port/database"
+    description: "Example: postgresql://postgres:postgres@my-postgresql-postgresql:5432/G2"
+    type: string
+    default: "mysql://g2:g2@my-mysql-mysql:3306/G2"
+
   - variable: senzing.iniFile
     label: "The path to the Senzing INI file to with which to initialize"
     description: "Example: /opt/senzing/g2/python/G2Module.ini"

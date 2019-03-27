@@ -28,7 +28,16 @@ spec:
       {{ end }}
 
       containers:
-        - name: {{ .Chart.Name }}        
+        - name: {{ .Chart.Name }}
+          env:
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+
+            {{ if .Values.senzing.debug }}
+            - name: SENZING_DEBUG
+              value: "{{ .Values.senzing.debug }}"
+            {{ end }}
+
           command:
             - /app/docker-entrypoint.sh
             - java -jar /app/senzing-api-server.jar    
@@ -62,6 +71,7 @@ spec:
             {{ if .Values.senzing.verbose }}
             - "-verbose
             {{ end }}
+
 
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
