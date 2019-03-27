@@ -12,7 +12,7 @@ fullnameOverride: ""
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: false
@@ -28,5 +28,6 @@ tolerations: []
 affinity: {}
 
 senzing:
-  concurrency: 10
+  bindAddr: all
+  iniFile: "/opt/senzing/g2/python/G2Module.ini"
   optSenzingClaim: "opt-senzing-claim"

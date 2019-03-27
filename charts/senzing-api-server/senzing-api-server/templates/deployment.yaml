@@ -29,8 +29,59 @@ spec:
 
       containers:
         - name: {{ .Chart.Name }}
+          env:
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+
+            {{ if .Values.senzing.debug }}
+            - name: SENZING_DEBUG
+              value: "{{ .Values.senzing.debug }}"
+            {{ end }}
+
+          command:
+            - /app/docker-entrypoint.sh
+            - java -jar /app/senzing-api-server.jar    
+          args:
+            - "-httpPort 80"
+
+            {{ if .Values.senzing.allowedOrigins }}
+            - "-allowedOrigins {{ .Values.senzing.allowedOrigins }}"
+            {{ end }}
+
+            {{ if .Values.senzing.bindAddr }}
+            - "-bindAddr {{ .Values.senzing.bindAddr }}"
+            {{ end }}
+
+            {{ if .Values.senzing.concurrency }}
+            - "-concurrency {{ .Values.senzing.concurrency }}"
+            {{ end }}
+
+            {{ if .Values.senzing.iniFile }}
+            - "-iniFile {{ .Values.senzing.iniFile }}"
+            {{ end }}
+
+            {{ if .Values.senzing.moduleName }}
+            - "-moduleName {{ .Values.senzing.moduleName }}"
+            {{ end }}
+
+            {{ if .Values.senzing.monitorFile }}
+            - "-monitorFile {{ .Values.senzing.monitorFile }}"
+            {{ end }}
+
+            {{ if .Values.senzing.verbose }}
+            - "-verbose
+            {{ end }}
+
+
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
 
           {{ if .Values.senzing.optSenzingClaim }}
           volumeMounts:
@@ -38,24 +89,19 @@ spec:
               mountPath: /opt/senzing
           {{ end }}
 
-          env:
-            - name: SENZING_CONCURRENCY
-              value: "{{ .Values.senzing.concurrency }}"
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
+          workingDir: /app
+
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with .Values.affinity }}
+
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
+      {{- end }}
+
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- end }}

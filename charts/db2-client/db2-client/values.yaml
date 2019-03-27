@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: ibmcom/db2express-c
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+db2:
+  password: "db2inst1"
+  optSenzingStorageClaim: "opt-senzing-claim"

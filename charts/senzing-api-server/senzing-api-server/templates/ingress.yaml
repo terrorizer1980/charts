@@ -1,5 +1,6 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "senzing-api-server.fullname" . -}}
+{{- $servicePort := .Values.service.port -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
