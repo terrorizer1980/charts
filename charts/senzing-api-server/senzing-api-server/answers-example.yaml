@@ -1,4 +1,6 @@
-'image.repository': "data.dockter.com:5000/senzing/senzing-api-server"
-'image.tag': "latest"
-'senzing.concurrency': 10
-'senzing.optSenzingClaim': "opt-senzing-claim"
+image.repository: "data.dockter.com:5000/senzing/senzing-api-server"
+image.tag: "latest"
+senzing.bindAddr: "all"
+senzing.concurrency: 8
+senzing.iniFile: "/opt/senzing/g2/python/G2Module.ini"
+senzing.optSenzingClaim: "opt-senzing-claim"

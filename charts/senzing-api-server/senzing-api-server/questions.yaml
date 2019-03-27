@@ -1,5 +1,6 @@
 categories:
   - Senzing
+  - API
 questions:
 
   - variable: image.repository
@@ -14,11 +15,23 @@ questions:
     type: string
     default: "latest"
 
+  - variable: senzing.bindAddr
+    label: "Sets the port for HTTP bind address communication"
+    description: "Examples: loopback, all, IP address (10.1.1.10)"
+    type: string
+    default: "all"
+
   - variable: senzing.concurrency
-    label: "Concurrency: number of threads responding to HTTP requests"
-    description: "Example: 10"
+    label: "Number of threads responding to HTTP requests"
+    description: "Example: 8"
     type: int
-    default: 10
+    default: 8
+
+  - variable: senzing.iniFile
+    label: "The path to the Senzing INI file to with which to initialize"
+    description: "Example: /opt/senzing/g2/python/G2Module.ini"
+    type: string
+    default: "/opt/senzing/g2/python/G2Module.ini"
 
   - variable: senzing.optSenzingClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.
