@@ -28,7 +28,10 @@ spec:
       {{ end }}
 
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ .Chart.Name }}        
+          command:
+            - /app/docker-entrypoint.sh
+            - java -jar /app/senzing-api-server.jar    
           args:
             - "-httpPort 80"
 
@@ -75,6 +78,8 @@ spec:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
           {{ end }}
+
+          workingDir: /app
 
       {{- with .Values.nodeSelector }}
       nodeSelector:
