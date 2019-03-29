@@ -44,3 +44,9 @@ spec:
               value: "accept"
 
           command: ["sleep", "infinity"]
+
+{{- if .Values.global.image.secretName }}
+      imagePullSecrets:
+          - name: {{ .Values.global.image.secretName }}
+{{- end }}          
+          

@@ -1,0 +1,13 @@
+
+
+    ```console
+    export K8S_PREFIX=my
+    export K8S_NAMESPACE_NAME=${K8S_PREFIX}-namespace
+
+    kubectl exec \
+      --interactive \
+      --tty \
+      --namespace {{ .Release.Namespace }} \
+      --tty \
+      {{ template "phpmyadmin.fullname" . }} -- /bin/bash
+    ```

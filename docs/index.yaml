@@ -3,9 +3,9 @@ entries:
   db2-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.855388132-04:00
+    created: 2019-03-28T21:55:34.955763191-04:00
     description: Supports for DB2 command line interface (CLI)
-    digest: 081ee108d5aa5171882fee0310f640c9b3dc47867692d8ca6f44d94be8f476b7
+    digest: 0d9b1710ea3c53c6ffbfc54333b81e7a3026d33a2cbc50fc2cb4f94b72e864a4
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -17,9 +17,9 @@ entries:
   kafka-test-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.855740901-04:00
+    created: 2019-03-28T21:55:34.956230044-04:00
     description: A test client for Kafka
-    digest: aea8c389bb55dc9846f186e60d02bf5ec184353918be01618055708002110253
+    digest: 993196159e12be04c7216e063219583911418f02dafd82ae4581893c50a94633
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -32,9 +32,9 @@ entries:
   mysql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.856040354-04:00
+    created: 2019-03-28T21:55:34.956634069-04:00
     description: A Helm chart for Kubernetes
-    digest: d7f852e18426ae6d0a83c3e161a53987cca324a02691d12d6fb6edd6e65a7706
+    digest: 24e7f6b01101b412f62571b5c0feb46cf9ff0259ebf87cee794f7d455d23f430
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -45,9 +45,9 @@ entries:
     version: 0.1.0
   phpmyadmin:
   - appVersion: 4.8.5
-    created: 2019-03-28T18:08:19.856676713-04:00
+    created: 2019-03-28T21:55:34.957412298-04:00
     description: phpMyAdmin is an mysql administration frontend
-    digest: d214c0ad9025b5ac31dec876f1e6bf9819239ff61e53a3ada89feef2d0f284e8
+    digest: ea6c571f7a1be14f8b940f0244124e58031286355249e8a3cbda90e6cd3e4f57
     engine: gotpl
     home: https://www.phpmyadmin.net/
     icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-2.0.334.png
@@ -66,9 +66,9 @@ entries:
   postgresql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.85700836-04:00
+    created: 2019-03-28T21:55:34.957818446-04:00
     description: A Helm chart for Kubernetes
-    digest: 5d1f9c4a0f3620ccb72f412a2dd6cb629ecebb959b58cc5e3f8efed448f5846f
+    digest: 5cc552a7aa9fc54bf82a8eadc7fc7832c074a10f699d836cace9da73d0b0e20d
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -80,9 +80,9 @@ entries:
   senzing-api-server:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.857392563-04:00
+    created: 2019-03-28T21:55:34.958393549-04:00
     description: Senzing API server
-    digest: 85ff7d1c567e530f58043ed68e1432aba259ebe1af233e9f2f6e16bc3f03e809
+    digest: 4e837fec8fae23c6577ae53a15dce3885fd7430f08b7f21d7a3e91651a82f89f
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -96,9 +96,9 @@ entries:
   senzing-hello-world:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.857707056-04:00
+    created: 2019-03-28T21:55:34.958872404-04:00
     description: Prints timestamped hello-world messages
-    digest: 8cf001a885e657fe081cff577488342755da6270aecf2f23f09b956a0a549c20
+    digest: ff2ada94a141679fab651c6a451ab203fe1132b84906b2c9fe9c1f2a8a2b20d0
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -112,9 +112,9 @@ entries:
   senzing-hello-world-on-hub-docker-com:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.858022172-04:00
+    created: 2019-03-28T21:55:34.959289312-04:00
     description: Prints timestamped hello-world messages
-    digest: a61410fa6cf1a36d3fab49a5adf905121eeaf1a1ca71c0ed57c22e27af2c4f4f
+    digest: 2826ba27b1d2869f249690127e1834dbd02de0318a7ebf7146d08377c9bced81
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -128,9 +128,9 @@ entries:
   senzing-mock-data-generator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.858356812-04:00
+    created: 2019-03-28T21:55:34.959743106-04:00
     description: A generator of Senzing data to feed Kafka
-    digest: 23965ecc75646524e211968767c015a110851a189412f13272b527dfb52c895e
+    digest: f81460e3dd28202b3ffd0c9b5eb79c584f6c07f18a99c82f31dc7514cf5988f8
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -145,9 +145,9 @@ entries:
   senzing-stream-loader:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-03-28T18:08:19.858725952-04:00
+    created: 2019-03-28T21:55:34.960218592-04:00
     description: A stream-based loader for Senzing
-    digest: 47a85a9ba810a0df7e4a5c3f43b1643b381a2cb70e0a5e593fa5be9d6bd61b46
+    digest: 9cd8d38582c2207fdd4a5597fef9bad4f454413c85806c6039246be7f04a0949
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -159,4 +159,4 @@ entries:
     urls:
     - senzing-stream-loader-0.2.0.tgz
     version: 0.2.0
-generated: 2019-03-28T18:08:19.854796248-04:00
+generated: 2019-03-28T21:55:34.955111825-04:00
