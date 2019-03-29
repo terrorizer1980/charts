@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "kafka-test-client.fullname" . -}}
+{{- $fullName := include "db2-client.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "kafka-test-client.name" . }}
-    helm.sh/chart: {{ include "kafka-test-client.chart" . }}
+    app.kubernetes.io/name: {{ include "db2-client.name" . }}
+    helm.sh/chart: {{ include "db2-client.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}
