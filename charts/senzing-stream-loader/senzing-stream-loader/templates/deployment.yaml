@@ -19,8 +19,6 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      nodeSelector:
-        kubernetes.io/hostname: data
 
       {{ if .Values.senzing.optSenzingClaim }}
       volumes:
@@ -80,4 +78,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-
