@@ -2,12 +2,12 @@
 
 ## Overview
 
-Charts used with [Kubernetes](https://kubernetes.io/).
+Charts used with [Kubernetes](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/kubernetes.md).
 
 Used by:
 
-- [Helm](https://helm.sh/)
-- [Rancher](https://rancher.com/)
+- [Helm](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/helm.md)
+- [Rancher](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/rancher.md)
   - [Catalog](https://rancher.com/docs/rancher/v2.x/en/catalog/)
 
 ### Contents
@@ -22,6 +22,8 @@ Used by:
     1. [Delete catalog](#delete-catalog)
 1. [Development](#development)
     1. [Clone repository](#clone-repository)
+    1. [Identify public charts](#identify-public-charts)
+    1. [Helm lint](#helm-lint)
     1. [Package Helm chart](#package-helm-chart)
 
 ## Using Helm
@@ -79,9 +81,7 @@ Used by:
 1. Using Rancher command line interface (CLI).  Example:
 
     ```console
-    rancher catalog add \
-      senzing \
-      https://github.com/senzing/charts
+    rancher catalog add senzing https://github.com/senzing/charts
     ```
 
 ### Delete catalog
@@ -96,8 +96,7 @@ Used by:
 1. Using Rancher command line interface (CLI). Example:
 
     ```console
-    rancher catalog delete \
-      senzing
+    rancher catalog delete senzing
     ```
 
 ## Development
@@ -111,29 +110,79 @@ Used by:
     export GIT_REPOSITORY=charts
     ```
 
-   Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md).
+   Then follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md).
 
-### Package Helm chart
-
-1. Identify directory.  Example:
+1. After the repository has been cloned, be sure the following are set:
 
     ```console
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
     ```
 
-1. Package helm chart. Example:
+### Identify public charts
+
+1. Example:
+
+    ```console
+    export CHART_NAMES=( \
+      "db2-client" \
+      "helm-create-example" \
+      "kafka-test-client" \
+      "mysql-client" \
+      "phpmyadmin" \
+      "phppgadmin" \
+      "postgresql-client" \
+      "senzing-api-server" \
+      "senzing-hello-world" \
+      "senzing-hello-world-on-hub-docker-com" \
+      "senzing-mock-data-generator" \
+      "senzing-stream-loader" \
+    )
+    ```
+
+### Helm lint
+
+1. Single chart.  Example:
+
+    ```console
+    export CHART_NAME=senzing-hello-world
+
+    cd ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}
+    helm lint
+    ```
+
+1. Public charts. Example:
+
+    ```console
+    for CHART_NAME in ${CHART_NAMES[@]}; \
+    do \
+      cd ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}; \
+      pwd; \
+      helm lint; \
+    done
+    ```
+
+### Package Helm chart
+
+1. Single chart. Example:
 
     ```console
     export CHART_NAME=senzing-hello-world
 
     cd ${GIT_REPOSITORY_DIR}/docs
     helm package ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}
+    helm repo index .
     ```
 
-1. Update `index.yaml`. Example:
+1. Public charts. Example:
 
     ```console
     cd ${GIT_REPOSITORY_DIR}/docs
+
+    for CHART_NAME in ${CHART_NAMES[@]}; \
+    do \
+      helm package ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}; \
+    done
+
     helm repo index .
     ```

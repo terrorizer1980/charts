@@ -1,13 +1,24 @@
-replicaCount: 1
+db2:
+  password: "db2inst1"
+  optSenzingStorageClaim: "opt-senzing-claim"
+
+fullnameOverride: ""
+
+global:
+  image:
+    secretName: ""
 
 image:
   repository: ibmcom/db2express-c
   tag: latest
   pullPolicy: IfNotPresent
 
-nameOverride: ""
-fullnameOverride: ""
+ingress:
+  enabled: false
 
-db2:
-  password: "db2inst1"
-  optSenzingStorageClaim: "opt-senzing-claim"
+nameOverride: ""
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 80
