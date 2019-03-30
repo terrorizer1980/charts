@@ -3,7 +3,7 @@
 fullnameOverride: ""
 
 image:
-  repository: data.dockter.com:5000/senzing/mock-data-generator
+  repository: senzing/mock-data-generator
   tag: latest
   pullPolicy: IfNotPresent
 

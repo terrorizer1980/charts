@@ -1,9 +1,7 @@
-# Default values for senzing-stream-loader.
-
 replicaCount: 1
 
 image:
-  repository: data.dockter.com:5000/senzing/stream-loader
+  repository: senzing/stream-loader
   tag: latest
   pullPolicy: IfNotPresent
 

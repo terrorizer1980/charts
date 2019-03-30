@@ -3,7 +3,7 @@
 replicaCount: 1
 
 image:
-  repository: data.dockter.com:5000/senzing/senzing-api-server
+  repository: senzing/senzing-api-server
   tag: latest
   pullPolicy: IfNotPresent
 
