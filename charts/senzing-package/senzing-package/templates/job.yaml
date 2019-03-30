@@ -25,7 +25,7 @@ spec:
           {{ end }}          
 
           env:
-            {{ if .Values.senzing.debug }} \
+            {{ if .Values.senzing.debug }}
             - name: "SENZING_DEBUG"
               value: "{{ .Values.senzing.debug }}"
             {{ end }}
