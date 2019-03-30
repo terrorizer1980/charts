@@ -86,7 +86,7 @@ spec:
             - name: SENZING_THREADS_PER_PROCESS
               value: "{{ .Values.senzing.threadsPerProcess }}"
             {{ end }}
-            {{ if .Values.senzing.subcommand }} \
+            {{ if .Values.senzing.subcommand }}
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
             {{ end }}
