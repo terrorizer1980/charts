@@ -1,6 +1,6 @@
 # Default values for senzing-mock-data-generator.
 
-replicaCount: 1
+fullnameOverride: ""
 
 image:
   repository: data.dockter.com:5000/senzing/mock-data-generator
@@ -8,8 +8,8 @@ image:
   pullPolicy: IfNotPresent
 
 nameOverride: ""
-fullnameOverride: ""
 
+replicaCount: 1
 senzing:
   subcommand: "url-to-kafka"
   kafkaBootstrapServerHost: "my-kafka-kafka"
