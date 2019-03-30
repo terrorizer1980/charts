@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "senzing-package.fullname" . }}
+spec:
+  template:
+    spec:
+      {{ if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{ end }}
+    
+      restartPolicy: Never
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          
+          {{ if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{ end }}          
+
+          env:
+            {{ if .Values.senzing.debug }} \
+            - name: "SENZING_DEBUG"
+              value: "{{ .Values.senzing.debug }}"
+            {{ end }}
+            {{ if .Values.senzing.subcommand }}
+            - name: "SENZING_SUBCOMMAND"
+              value: "{{ .Values.senzing.subcommand }}"
+            {{ end }}
