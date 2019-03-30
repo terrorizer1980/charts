@@ -136,6 +136,7 @@ Used by:
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
       "senzing-mock-data-generator" \
+      "senzing-package" \
       "senzing-stream-loader" \
     )
     ```

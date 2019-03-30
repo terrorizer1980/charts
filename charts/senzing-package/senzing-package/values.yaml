@@ -1,0 +1,8 @@
+image:
+  repository: data.dockter.com:5000/senzing/senzing-package
+  tag: latest
+  pullPolicy: IfNotPresent
+
+senzing:
+  subcommand: "install"
+  optSenzingClaim: "opt-senzing-claim"
