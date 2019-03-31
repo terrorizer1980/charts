@@ -33,7 +33,9 @@ spec:
 #          command:
 #            - db2start
           command:
-            -  sleep infinity
+            -  sleep
+          args:
+            - infinity
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
