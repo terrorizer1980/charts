@@ -30,8 +30,8 @@ spec:
             - name: LICENSE
               value: "{{ .Values.db2.license }}"
             {{- end }}
-          command:
-            - db2start
+#          command:
+#            - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
