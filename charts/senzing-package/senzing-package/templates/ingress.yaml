@@ -1,13 +1,13 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "helm-create-example.fullname" . -}}
+{{- $fullName := include "senzing-package.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "helm-create-example.name" . }}
-    helm.sh/chart: {{ include "helm-create-example.chart" . }}
+    app.kubernetes.io/name: {{ include "senzing-package.name" . }}
+    helm.sh/chart: {{ include "senzing-package.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}

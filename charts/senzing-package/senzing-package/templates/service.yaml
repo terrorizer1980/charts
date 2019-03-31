@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm-create-example.fullname" . }}
+  name: {{ include "senzing-package.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "helm-create-example.name" . }}
-    helm.sh/chart: {{ include "helm-create-example.chart" . }}
+    app.kubernetes.io/name: {{ include "senzing-package.name" . }}
+    helm.sh/chart: {{ include "senzing-package.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "helm-create-example.name" . }}
+    app.kubernetes.io/name: {{ include "senzing-package.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
