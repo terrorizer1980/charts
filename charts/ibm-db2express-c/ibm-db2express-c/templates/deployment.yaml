@@ -39,9 +39,9 @@ spec:
           command:
             - su
           args:
-            - -
+            - "-"
             - db2inst1
-            - -c
+            - "-c"
             - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
