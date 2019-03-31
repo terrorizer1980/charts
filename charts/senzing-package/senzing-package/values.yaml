@@ -14,3 +14,7 @@ ingress:
 senzing:
   subcommand: "install"
   optSenzingClaim: "opt-senzing-claim"
+
+service:
+  type: ClusterIP
+  port: 80
