@@ -1,3 +1,16 @@
+## Use
+
+1. Port forward:
+
+    ```console
+    export MY_PORT=8081
+
+    kubectl port-forward \
+      --address 0.0.0.0 \
+      --namespace {{ .Release.Namespace }} \
+      svc/${DEMO_PREFIX}-phppgadmin-phppgadmin ${MY_PORT}:8080
+    ```
+
 ## Application URL
 
 1. Get the application URL by running these commands:
