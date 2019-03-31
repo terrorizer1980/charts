@@ -5,22 +5,10 @@ metadata:
 spec:
   template:
     spec:
-      {{- if .Values.senzing.optSenzingClaim }}
-      volumes:
-        - name: opt-senzing-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{- end }}
-      restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          {{- if .Values.senzing.optSenzingClaim }}
-          volumeMounts:
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing
-          {{- end }}          
           env:
             {{- if .Values.senzing.debug }}
             - name: "SENZING_DEBUG"
@@ -30,3 +18,15 @@ spec:
             - name: "SENZING_SUBCOMMAND"
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{- end }}
+      restartPolicy: Never
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end }}

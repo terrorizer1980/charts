@@ -1,21 +1,35 @@
-# Default values for senzing-mock-data-generator.
-
+affinity: {}
 fullnameOverride: ""
 
 image:
+  pullPolicy: IfNotPresent
   repository: senzing/mock-data-generator
   tag: latest
-  pullPolicy: IfNotPresent
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - chart-example.local
+  paths: []
+  tls: []
 
 nameOverride: ""
-
+nodeSelector: {}
 replicaCount: 1
+resources: {}
+
 senzing:
-  subcommand: "url-to-kafka"
+  inputUrl: "https://s3.amazonaws.com/public-read-access/TestDataSets/loadtest-dataset-1M.json"
   kafkaBootstrapServerHost: "my-kafka-kafka"
   kafkaBootstrapServerPort: "9092"
   kafkaTopic: "senzing-kafka-topic"
-  inputUrl: "https://s3.amazonaws.com/public-read-access/TestDataSets/loadtest-dataset-1M.json"
   recordMax: "10000"
   recordMonitor: "1000"
-  
+  subcommand: "url-to-kafka"
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []

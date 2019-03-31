@@ -1,11 +1,10 @@
 affinity: {}
+fullnameOverride: ""
 
 image:
   pullPolicy: IfNotPresent
   repository: senzing/senzing-package
   tag: latest
-
-fullnameOverride: ""
 
 ingress:
   annotations: {}
