@@ -5,19 +5,19 @@ The command being run:
 ```console
 python senzing-package.py {{ .Values.senzing.subcommand }}
 
-  {{- if .Values.senzing.debug }} \
+  {{- if .Values.senzing.debug }}
   --debug "{{ .Values.senzing.debug }}"
   {{- end }}
 
-  {{- if .Values.senzing.senzingDir }} \
+  {{- if .Values.senzing.senzingDir }}
   --senzing-dir {{ .Values.senzing.senzingDir }}
   {{- end }}
 
-  {{- if .Values.senzing.senzingPackage }} \
+  {{- if .Values.senzing.senzingPackage }}
   --senzing-package {{ .Values.senzing.senzingPackage }}
   {{- end }}
 
-  {{- if .Values.senzing.sleepTime }} \
+  {{- if .Values.senzing.sleepTime }}
   --sleep-time {{ .Values.senzing.sleepTime }}
   {{- end }}
 ```

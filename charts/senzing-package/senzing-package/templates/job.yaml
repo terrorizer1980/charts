@@ -4,13 +4,13 @@ metadata:
   name: {{ include "senzing-package.fullname" . }}
 spec:
   template:
-    spec: \
-      {{ if .Values.senzing.optSenzingClaim }}
+    spec:
+      {{- if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{ end }}
+      {{- end }}
     
       restartPolicy: Never
       containers:
@@ -18,18 +18,18 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           
-          {{ if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
-          {{ end }}          
+          {{- end }}          
 
           env:
-            {{ if .Values.senzing.debug }}
+            {{- if .Values.senzing.debug }}
             - name: "SENZING_DEBUG"
               value: "{{ .Values.senzing.debug }}"
-            {{ end }}
-            {{ if .Values.senzing.subcommand }}
+            {{- end }}
+            {{- if .Values.senzing.subcommand }}
             - name: "SENZING_SUBCOMMAND"
               value: "{{ .Values.senzing.subcommand }}"
-            {{ end }}
+            {{- end }}
