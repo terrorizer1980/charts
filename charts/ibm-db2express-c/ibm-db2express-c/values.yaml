@@ -1,4 +1,9 @@
 affinity: {}
+
+db2:
+  license: ""
+  databasePassword: db2inst1
+
 fullnameOverride: ""
 
 ingress:

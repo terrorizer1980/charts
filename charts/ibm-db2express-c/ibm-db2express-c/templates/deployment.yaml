@@ -21,6 +21,17 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
+          env:
+            {{- if .Values.db2.databasePassword }}
+            - name: DB2INST1_PASSWORD
+              value: "{{ .Values.db2.databasePassword }}"
+            {{- end }}
+            {{- if .Values.db2.license }}
+            - name: LICENSE
+              value: "{{ .Values.db2.license }}"
+            {{- end }}
+          command:
+            - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
