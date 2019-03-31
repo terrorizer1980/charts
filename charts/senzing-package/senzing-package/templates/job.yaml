@@ -4,7 +4,7 @@ metadata:
   name: {{ include "senzing-package.fullname" . }}
 spec:
   template:
-    spec:
+    spec: \
       {{ if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: opt-senzing-storage
