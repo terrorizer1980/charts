@@ -3,29 +3,79 @@
 The command being run:
 
 ```console
-python stream-loader.py {{ .Values.senzing.subcommand }}
-
-  {{- if .Values.senzing.kafkaBootstrapServerHost }} \
-  --kafka-bootstrap-server "{{ .Values.senzing.kafkaBootstrapServerHost }}:{{ .Values.senzing.kafkaBootstrapServerPort }}"
-  {{- end }}
-
-  {{- if .Values.senzing.kafkaTopic }} \
-  --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
-  {{- end }}
-
+python stream-loader.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.dataSource }} \
   --data-source "{{ .Values.senzing.dataSource }}"
   {{- end }}
-
+  {{- if .Values.senzing.debug }} \
+  --debug "{{ .Values.senzing.debug }}"
+  {{- end }}
   {{- if .Values.senzing.entityType }} \
   --entity-type "{{ .Values.senzing.entityType }}"
   {{- end }}
-
+  {{- if .Values.senzing.inputUrl }} \
+  --input-url "{{ .Values.senzing.inputUrl }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaBootstrapServerHost }} \
+  --kafka-bootstrap-server "{{ .Values.senzing.kafkaBootstrapServerHost }}:{{ .Values.senzing.kafkaBootstrapServerPort }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaGroup }} \
+  --kafka-group "{{ .Values.senzing.kafkaGroup }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaTopic }} \
+  --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
+  {{- end }}
   {{- if .Values.senzing.monitoringPeriod }} \
   --monitoring-period {{ .Values.senzing.monitoringPeriod }}
   {{- end }}
-
+  {{- if .Values.senzing.processes }} \
+  --processes {{ .Values.senzing.processes }}
+  {{- end }}
+  {{- if .Values.senzing.senzingDir }} \
+  --senzing-dir {{ .Values.senzing.senzingDir }}
+  {{- end }}
+  {{- if .Values.senzing.sleepTime }} \
+  --sleep-time {{ .Values.senzing.sleepTime }}
+  {{- end }}
   {{- if .Values.senzing.threadsPerProcess }} \
   --threads-per-process {{ .Values.senzing.threadsPerProcess }}
   {{- end }}
 ```
+
+For more information, visit https://github.com/Senzing/senzing-stream-loader
+
+## Application URL
+
+1. Get the application URL by running these commands:
+{{- if .Values.ingress.enabled }}
+{{- range $host := .Values.ingress.hosts }}
+  {{- range $.Values.ingress.paths }}
+  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ $host }}{{ . }}
+  {{- end }}
+{{- end }}
+{{- else if contains "NodePort" .Values.service.type }}
+
+  ```console
+  export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "senzing-stream-loader.fullname" . }})
+  export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+  ```
+
+{{- else if contains "LoadBalancer" .Values.service.type }}
+     NOTE: It may take a few minutes for the LoadBalancer IP to be available.
+           You can watch the status of by running 'kubectl get svc -w {{ include "senzing-stream-loader.fullname" . }}'
+
+  ```console
+  export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "senzing-stream-loader.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  echo http://$SERVICE_IP:{{ .Values.service.port }}
+  ```
+
+{{- else if contains "ClusterIP" .Values.service.type }}
+
+  ```console
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-stream-loader.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:80
+  ```
+
+{{- end }}

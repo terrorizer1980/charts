@@ -19,58 +19,47 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-
-      {{ if .Values.senzing.optSenzingClaim }}
-      volumes:
-        - name: opt-senzing-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{ end }}
-
       containers:
         - name: {{ .Chart.Name }}
           env:
-            {{ if .Values.senzing.databaseUrl }}
+            {{- if .Values.senzing.databaseUrl }}
             - name: SENZING_DATABASE_URL
               value: "{{ .Values.senzing.databaseUrl }}"
-            {{ end }}
-            {{ if .Values.senzing.debug }}
+            {{- end }}
+            {{- if .Values.senzing.debug }}
             - name: SENZING_DEBUG
               value: "{{ .Values.senzing.debug }}"
-            {{ end }}
-            {{ if .Values.senzing.entrypointSleep }}
+            {{- end }}
+            {{- if .Values.senzing.entrypointSleep }}
             - name: SENZING_ENTRYPOINT_SLEEP
               value: "{{ .Values.senzing.entrypointSleep }}"
-            {{ end }}
-
+            {{- end }}
           command:
             - /app/docker-entrypoint.sh
             - java -jar /app/senzing-api-server.jar
           args:
             - "-httpPort 80"
-
-            {{ if .Values.senzing.allowedOrigins }}
+            {{- if .Values.senzing.allowedOrigins }}
             - "-allowedOrigins {{ .Values.senzing.allowedOrigins }}"
-            {{ end }}
-            {{ if .Values.senzing.bindAddr }}
+            {{- end }}
+            {{- if .Values.senzing.bindAddr }}
             - "-bindAddr {{ .Values.senzing.bindAddr }}"
-            {{ end }}
-            {{ if .Values.senzing.concurrency }}
+            {{- end }}
+            {{- if .Values.senzing.concurrency }}
             - "-concurrency {{ .Values.senzing.concurrency }}"
-            {{ end }}
-            {{ if .Values.senzing.iniFile }}
+            {{- end }}
+            {{- if .Values.senzing.iniFile }}
             - "-iniFile {{ .Values.senzing.iniFile }}"
-            {{ end }}
-            {{ if .Values.senzing.moduleName }}
+            {{- end }}
+            {{- if .Values.senzing.moduleName }}
             - "-moduleName {{ .Values.senzing.moduleName }}"
-            {{ end }}
-            {{ if .Values.senzing.monitorFile }}
+            {{- end }}
+            {{- if .Values.senzing.monitorFile }}
             - "-monitorFile {{ .Values.senzing.monitorFile }}"
-            {{ end }}
-            {{ if .Values.senzing.verbose }}
+            {{- end }}
+            {{- if .Values.senzing.verbose }}
             - "-verbose
-            {{ end }}
-
+            {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -79,24 +68,27 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-
-          {{ if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
-          {{ end }}
-
+          {{- end }}
           workingDir: /app
-
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with .Values.affinity }}
+      {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
+      {{- end }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- end }}

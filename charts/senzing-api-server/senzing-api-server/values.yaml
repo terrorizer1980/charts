@@ -1,33 +1,31 @@
-# Default values for senzing-api-server.
-
-replicaCount: 1
-
-image:
-  repository: senzing/senzing-api-server
-  tag: latest
-  pullPolicy: IfNotPresent
-
-nameOverride: ""
+affinity: {}
 fullnameOverride: ""
 
-service:
-  type: ClusterIP
-  port: 80
+image:
+  pullPolicy: IfNotPresent
+  repository: senzing/senzing-api-server
+  tag: latest
 
 ingress:
-  enabled: false
   annotations: {}
-  paths: []
+  enabled: false
   hosts:
     - chart-example.local
+  paths: []
   tls: []
 
-resources: {}
+nameOverride: ""
 nodeSelector: {}
-tolerations: []
-affinity: {}
+replicaCount: 1
+resources: {}
 
 senzing:
   bindAddr: all
   iniFile: "/opt/senzing/g2/python/G2Module.ini"
   optSenzingClaim: "opt-senzing-claim"
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
