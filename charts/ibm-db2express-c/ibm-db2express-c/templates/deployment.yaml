@@ -32,16 +32,16 @@ spec:
             {{- end }}
 #          command:
 #            - db2start
-#          command:
-#            -  sleep
-#          args:
-#            - infinity
           command:
-            - su
+            -  sleep
           args:
-            - "-"
-            - db2inst1
-            - "-c"
+            - infinity
+#          command:
+#            - su
+#          args:
+#            - "-"
+#            - db2inst1
+#            - "-c"
             - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
