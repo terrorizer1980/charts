@@ -1,20 +1,31 @@
+affinity: {}
+
 image:
+  pullPolicy: IfNotPresent
   repository: senzing/senzing-package
   tag: latest
-  pullPolicy: IfNotPresent
+
+fullnameOverride: ""
 
 ingress:
-  enabled: false
   annotations: {}
-  paths: []
+  enabled: false
   hosts:
     - chart-example.local
+  paths: []
   tls: []
 
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
 senzing:
-  subcommand: "install"
   optSenzingClaim: "opt-senzing-claim"
+  subcommand: "install"
 
 service:
-  type: ClusterIP
   port: 80
+  type: ClusterIP
+
+tolerations: []
