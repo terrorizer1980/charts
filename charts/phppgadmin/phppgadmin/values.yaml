@@ -24,8 +24,8 @@ phppgadmin:
   serverHost: 
   serverPgDumpAllPath: /usr/bin/pg_dumpall
   serverPgDumpPath: /usr/bin/pg_dump
-  serverSslMode: allow
   serverPort: 5432
+  serverSslMode: allow
   showAdvanced: false
   showComments: true
   showOids: false
