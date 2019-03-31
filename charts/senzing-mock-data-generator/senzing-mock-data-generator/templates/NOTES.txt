@@ -4,7 +4,6 @@ The command being run:
 
 ```console
 python mock-data-generator.py {{ .Values.senzing.subcommand }}
-
   {{- if .Values.senzing.dataSource }} \
   --data-source "{{ .Values.senzing.dataSource }}"
   {{- end }}
