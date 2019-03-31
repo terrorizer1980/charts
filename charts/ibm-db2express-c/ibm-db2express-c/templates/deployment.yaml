@@ -30,19 +30,10 @@ spec:
             - name: LICENSE
               value: "{{ .Values.db2.license }}"
             {{- end }}
-#          command:
-#            - db2start
           command:
             - sleep
           args:
             - infinity
-#          command:
-#            - su
-#          args:
-#            - "-"
-#            - db2inst1
-#            - "-c"
-#            - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
@@ -52,8 +43,6 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.optSenzingClaim }}
-#          securityContext:
-#            runAsUser: 1000          
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
