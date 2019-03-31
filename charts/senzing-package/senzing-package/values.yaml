@@ -3,6 +3,14 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
 
+ingress:
+  enabled: false
+  annotations: {}
+  paths: []
+  hosts:
+    - chart-example.local
+  tls: []
+
 senzing:
   subcommand: "install"
   optSenzingClaim: "opt-senzing-claim"
