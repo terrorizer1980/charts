@@ -11,19 +11,16 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
-    
       restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing
           {{- end }}          
-
           env:
             {{- if .Values.senzing.debug }}
             - name: "SENZING_DEBUG"
