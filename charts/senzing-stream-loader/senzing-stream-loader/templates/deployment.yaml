@@ -19,25 +19,10 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-
-      {{ if .Values.senzing.optSenzingClaim }}
-      volumes:
-        - name: opt-senzing-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{ end }}
-
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-          {{ if .Values.senzing.optSenzingClaim }}
-          volumeMounts:
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing
-          {{ end }}
-
           command:
             - /app/docker-entrypoint.sh
             - /app/stream-loader.py
@@ -97,10 +82,22 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{ if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{ end }}            
+            
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+    {{ if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+    {{ end }}      
     {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
