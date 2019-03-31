@@ -3,16 +3,16 @@
 The command being run:
 
 ```console
-python mock-data-generator.py {{- .Values.senzing.subcommand }}
+python mock-data-generator.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.dataSource }} \
   --data-source "{{ .Values.senzing.dataSource }}"
   {{- end }}
-  {{ if .Values.senzing.debug }} \
+  {{- if .Values.senzing.debug }} \
   --debug "{{ .Values.senzing.debug }}"
-  {{ end }}
-  {{ if .Values.senzing.entityType }} \
+  {{- end }}
+  {{- if .Values.senzing.entityType }} \
   --entity-type "{{ .Values.senzing.entityType }}"
-  {{ end }}
+  {{- end }}
   {{- if .Values.senzing.inputUrl }} \
   --input-url "{{ .Values.senzing.inputUrl }}"
   {{- end }}
