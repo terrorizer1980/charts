@@ -1,0 +1,29 @@
+affinity: {}
+fullnameOverride: ""
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - chart-example.local
+  paths: []
+  tls: []
+
+image:
+  pullPolicy: IfNotPresent
+  repository: ibmcom/db2express-c
+  tag: latest
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  optSenzingClaim: "opt-senzing-claim"
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
