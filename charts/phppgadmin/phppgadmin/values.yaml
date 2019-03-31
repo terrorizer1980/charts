@@ -1,48 +1,43 @@
-replicaCount: 1
 image:
+  pullPolicy: IfNotPresent
   repository: dockage/phppgadmin
   tag: latest
-  pullPolicy: IfNotPresent
-service:
-  name: phppgadmin
-  type: LoadBalancer
-  externalPort: 8080
-  internalPort: 80
-phppgadmin:
-  serverHost: 
-  serverPort: 5432
-  serverDesc: PostgreSQL
-  serverSslMode: allow
-  serverDefaultDb: template1
-  serverPgDumpPath: /usr/bin/pg_dump
-  serverPgDumpAllPath: /usr/bin/pg_dumpall
-  defaultLang: auto
-  autoComplete: default on
-  extraLoginSecurity: false
-  ownedOnly: false
-  showComments: true
-  showAdvanced: false
-  showSystem: false
-  minPasswordLength: 1
-  leftWidth: 200
-  theme: default
-  showOids: false
-  maxRows: 30
-  maxChars: 50
-  userXhtlmStrict: false
-  helpBase: http://www.postgresql.org/docs/%s/interactive/
-  ajaxRefresh: 3
+
 ingress:
-    enabled: false
-    # Used to create Ingress record (should used with ServiceType: ClusterIP).
-    # hostname: phppgadmin.local
-    annotations:
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-    tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: phppgadmin.local-tls
-    #   hosts:
-    #     - phppgadmin.local
+  annotations:
+  enabled: false
+  tls:
+
+phppgadmin:
+  ajaxRefresh: 3
+  autoComplete: default on
+  defaultLang: auto
+  extraLoginSecurity: false
+  helpBase: http://www.postgresql.org/docs/%s/interactive/
+  leftWidth: 200
+  maxChars: 50
+  maxRows: 30
+  minPasswordLength: 1
+  ownedOnly: false
+  serverDefaultDb: template1
+  serverDesc: PostgreSQL
+  serverHost: 
+  serverPgDumpAllPath: /usr/bin/pg_dumpall
+  serverPgDumpPath: /usr/bin/pg_dump
+  serverSslMode: allow
+  serverPort: 5432
+  showAdvanced: false
+  showComments: true
+  showOids: false
+  showSystem: false
+  theme: default
+  userXhtlmStrict: false
+
+replicaCount: 1
 resources: {}
 
+service:
+  externalPort: 8080
+  internalPort: 80
+  name: phppgadmin
+  type: LoadBalancer
