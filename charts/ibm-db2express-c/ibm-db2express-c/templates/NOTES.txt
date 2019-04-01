@@ -1,6 +1,6 @@
 ## Overview
 
-For development purposes, install a copy of IBM DB2 Express-C database.
+For development purposes, run IBM DB2 Express-C database.
 
 More information:
  - https://hub.docker.com/r/ibmcom/db2express-c
