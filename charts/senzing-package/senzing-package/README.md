@@ -1,6 +1,8 @@
 # senzing-package
 
-A job to install 
+## Overview
+
+A job to install
 [Senzing_API.tgz](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/senzing-api-tgz.md)
 package onto `/opt/senzing`.
 Normally, `/opt/senzing` is a Persistent Volume.
@@ -22,5 +24,5 @@ Normally, `/opt/senzing` is a Persistent Volume.
 
 ## References
 
-1. [GitHub](https://github.com/Senzing/senzing-package)
 1. DockerHub
+1. [GitHub](https://github.com/Senzing/senzing-package)
