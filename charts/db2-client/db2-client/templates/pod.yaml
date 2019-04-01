@@ -18,35 +18,41 @@ spec:
         app.kubernetes.io/name: {{ include "db2-client.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-
-      {{ if .Values.db2.optSenzingStorageClaim }}
-      volumes:
-        - name: opt-senzing-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.db2.optSenzingStorageClaim }}
-      {{ end }}
-
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-          {{ if .Values.db2.optSenzingStorageClaim }}
-          volumeMounts:
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing
-          {{ end }}
-
           env:
             - name: "DB2INST1_PASSWORD"
               value: "{{ .Values.db2.password }}"
             - name: "LICENSE"
               value: "accept"
-
           command: ["sleep", "infinity"]
-
-{{- if .Values.global.image.secretName }}
+          {{- if .Values.db2.optSenzingStorageClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{- end }}
+      {{- if .Values.global.image.secretName }}
       imagePullSecrets:
           - name: {{ .Values.global.image.secretName }}
-{{- end }}          
-          
+      {{- end }}
+      {{- if .Values.db2.optSenzingStorageClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.db2.optSenzingStorageClaim }}
+      {{- end }}      
+# --- Standard suffix ---      
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}     
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

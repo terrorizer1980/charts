@@ -5,30 +5,14 @@ metadata:
 spec:
   template:
     spec:
-
-      {{ if .Values.postgresql.storageClaim }}
-      volumes:
-        - name: postgresql-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.postgresql.storageClaim }}
-      {{ end }}
-
       restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-          {{ if .Values.postgresql.storageClaim }}
-          volumeMounts:
-            - name: postgresql-storage
-              mountPath: /data
-          {{ end }}
-
           env:
             - name: "PGPASSWORD"
               value: "{{ .Values.postgresql.password }}"
-
           command: ["psql"]
           args:
             - "-U"
@@ -39,3 +23,28 @@ spec:
             - "{{ .Values.postgresql.database }}"
             - "-f"
             - "/data/{{ .Values.postgresql.file }}"
+          {{- if .Values.postgresql.storageClaim }}
+          volumeMounts:
+            - name: postgresql-storage
+              mountPath: /data
+          {{- end }}
+      {{- if .Values.postgresql.storageClaim }}
+      volumes:
+        - name: postgresql-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.postgresql.storageClaim }}
+      {{- end }}
+# --- Standard suffix ---      
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}     
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      
