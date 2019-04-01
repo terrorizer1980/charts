@@ -21,11 +21,6 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command:
-            - /app/docker-entrypoint.sh
-            - /app/stream-loader.py
           env:
             {{- if .Values.senzing.dataSource }}
             - name: SENZING_DATA_SOURCE
@@ -75,10 +70,11 @@ spec:
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
-          ports:
-            - name: http
-              containerPort: 80
-              protocol: TCP
+          command:
+            - /app/docker-entrypoint.sh
+            - /app/stream-loader.py
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.optSenzingClaim }}
@@ -92,11 +88,11 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
-# --- Standard suffix ---      
+# --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}     
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
