@@ -53,6 +53,18 @@ java -jar senzing-api-server.jar \
 
 ## Port-forward
 
+  1. Example:
+
+    ```console
+    export MY_PORT=8889
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "ibm-db2express-c.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    
+    kubectl port-forward \
+      --address 0.0.0.0 \
+      --namespace {{ .Release.Namespace }} \
+      svc/${POD_NAME} ${MY_PORT}:80
+    ```
+
 {{- end }}
 
 
