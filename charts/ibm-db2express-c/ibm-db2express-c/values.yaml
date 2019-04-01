@@ -28,7 +28,7 @@ senzing:
   optSenzingClaim: "opt-senzing-claim"
 
 service:
-  port: 80
+  port: 50000
   type: ClusterIP
 
 tolerations: []
