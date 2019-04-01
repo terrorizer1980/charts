@@ -1,3 +1,12 @@
+## Overview
+
+A job to install the Senzing_API.tgz package onto /opt/senzing.
+
+Normally, /opt/senzing is a Persistent Volume.
+
+For more information, visit:
+ - https://github.com/Senzing/senzing-package
+
 ## Command
 
 The command being run:
@@ -48,10 +57,19 @@ For more information, visit https://github.com/Senzing/senzing-package
 
 {{- else if contains "ClusterIP" .Values.service.type }}
 
-  ```console
-  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-package.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
-  echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl port-forward $POD_NAME 8080:80
-  ```
+  1. How to port-forward:
+
+    ```console
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-package.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    echo "Visit http://127.0.0.1:8080 to use your application"
+    kubectl port-forward $POD_NAME 8080:80
+    ```
+
+  2. How to log into container.
+
+    ```console
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-package.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
+    ```
 
 {{- end }}
