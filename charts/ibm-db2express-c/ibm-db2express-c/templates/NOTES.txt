@@ -6,16 +6,28 @@
   {{- end }}
 {{- end }}
 {{- else if contains "NodePort" .Values.service.type }}
+
+  ```console
   export NODE_PORT=$(kubectl get --namespace {{ .Release.Namespace }} -o jsonpath="{.spec.ports[0].nodePort}" services {{ include "ibm-db2express-c.fullname" . }})
   export NODE_IP=$(kubectl get nodes --namespace {{ .Release.Namespace }} -o jsonpath="{.items[0].status.addresses[0].address}")
   echo http://$NODE_IP:$NODE_PORT
+  ```
+
 {{- else if contains "LoadBalancer" .Values.service.type }}
      NOTE: It may take a few minutes for the LoadBalancer IP to be available.
            You can watch the status of by running 'kubectl get svc -w {{ include "ibm-db2express-c.fullname" . }}'
+
+  ```console
   export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "ibm-db2express-c.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
   echo http://$SERVICE_IP:{{ .Values.service.port }}
+  ```
+
 {{- else if contains "ClusterIP" .Values.service.type }}
+
+  ```console
   export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "ibm-db2express-c.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
-  echo "Visit http://127.0.0.1:8080 to use your application"
-  kubectl port-forward $POD_NAME 8080:80
+  kubectl port-forward ${POD_NAME} 50000:50000
+  kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
+  ```
+
 {{- end }}
