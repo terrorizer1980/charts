@@ -31,7 +31,7 @@ spec:
               value: "{{ .Values.db2.license }}"
             {{- end }}
           command:
-            - entrypoint.sh
+            - /entrypoint.sh
           args:
             - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
