@@ -29,20 +29,7 @@ python senzing-package.py {{ .Values.senzing.subcommand -}}
 ```
 
 {{- if .Values.ingress.enabled }}
-
 {{- else if contains "NodePort" .Values.service.type }}
-
 {{- else if contains "LoadBalancer" .Values.service.type }}
-
 {{- else if contains "ClusterIP" .Values.service.type }}
-
-## Login
-
-  1. Example:
-
-    ```console
-    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-package.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
-    kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
-    ```
-
 {{- end }}
