@@ -57,7 +57,7 @@ java -jar senzing-api-server.jar \
 
     ```console
     export MY_PORT=8889
-    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "ibm-db2express-c.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-api-server.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
     
     kubectl port-forward \
       --address 0.0.0.0 \
