@@ -31,9 +31,9 @@ spec:
               value: "{{ .Values.db2.license }}"
             {{- end }}
           command:
-            - sleep
+            - entrypoint.sh
           args:
-            - infinity
+            - db2start
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
