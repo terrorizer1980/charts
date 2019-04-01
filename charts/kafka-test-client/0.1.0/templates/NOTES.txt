@@ -10,7 +10,7 @@
     Command:
 
     ```console
-    rancher kubectl exec \
+    kubectl exec \
       -it \
       -n {{ .Release.Namespace }} \
       {{ .Release.Name }} -- /usr/bin/kafka-console-consumer \
