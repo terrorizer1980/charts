@@ -51,9 +51,9 @@ java -jar senzing-api-server.jar \
     kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
     ```
 
+## Port-forward
+
 {{- end }}
-
-
 
 
 ## Application URL
