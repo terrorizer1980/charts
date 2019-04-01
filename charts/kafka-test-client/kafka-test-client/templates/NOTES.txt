@@ -18,10 +18,8 @@ More information:
 2.  Command:
 
     ```console
-    kubectl exec \
-      --interactive \
+    kubectl exec -it \
       --namespace {{ .Release.Namespace }} \
-      --tty \
       {{ .Release.Name }} -- /usr/bin/kafka-console-consumer \
         --bootstrap-server ${KAFKA_BOOTSTRAP_SERVER} \
         --topic ${KAFKA_TOPIC} \
