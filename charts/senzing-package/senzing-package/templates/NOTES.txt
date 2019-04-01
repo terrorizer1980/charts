@@ -4,8 +4,9 @@ A job to install the Senzing_API.tgz package onto /opt/senzing.
 
 Normally, /opt/senzing is a Persistent Volume.
 
-For more information, visit:
+More information:
  - https://github.com/Senzing/senzing-package
+ - https://github.com/Senzing/charts/tree/master/charts/senzing-package/senzing-package
 
 ## Command
 
@@ -26,8 +27,6 @@ python senzing-package.py {{ .Values.senzing.subcommand -}}
   --sleep-time {{ .Values.senzing.sleepTime }}
   {{- end }}
 ```
-
-For more information, visit https://github.com/Senzing/senzing-package
 
 {{- if .Values.ingress.enabled }}
 

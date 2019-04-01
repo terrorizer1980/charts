@@ -14,6 +14,18 @@ spec:
             - name: "SENZING_DEBUG"
               value: "{{ .Values.senzing.debug }}"
             {{- end }}
+            {{- if .Values.senzing.senzingDir }}
+            - name: "SENZING_DIR"
+              value: "{{ .Values.senzing.senzingDir }}"
+            {{- end }}
+            {{- if .Values.senzing.senzingPackage }}
+            - name: "SENZING_PACKAGE"
+              value: "{{ .Values.senzing.senzingPackage }}"
+            {{- end }}
+            {{- if .Values.senzing.subcommand }}
+            - name: "SENZING_SLEEP_TIME"
+              value: "{{ .Values.senzing.sleepTime }}"
+            {{- end }}
             {{- if .Values.senzing.subcommand }}
             - name: "SENZING_SUBCOMMAND"
               value: "{{ .Values.senzing.subcommand }}"
