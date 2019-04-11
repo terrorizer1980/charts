@@ -23,7 +23,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
-1. Database URL for `SENZING_DATABASE_URL`.
+1. A URL for the database storing Senzing data. (`SENZING_DATABASE_URL`).
 
     Components of the URL:
 
