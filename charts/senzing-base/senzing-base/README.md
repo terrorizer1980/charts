@@ -77,7 +77,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 | `image.repository` | Image name | `senzing/senzing-base` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
-| `senzing.databaseURL` | Value of ${SENZING_DATABASE_URL}. | `nil`, which uses the internal SQLite database. |
+| `senzing.databaseURL` | Value of `${SENZING_DATABASE_URL}`. | `nil`, which uses the internal SQLite database. |
 | `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
 | `senzing.entrypointSleep` | Sleep, in seconds. `0` is infinity, `nil` is don't sleep | `nil`, don't sleep. |
 
