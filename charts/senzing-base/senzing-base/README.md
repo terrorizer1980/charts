@@ -17,13 +17,13 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
 ## Prerequisites
 
-1. Install Senzing helm charts.
+1. Install Senzing helm charts. Example:
 
     ```console
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
-1. A URL for the database storing Senzing data. (`SENZING_DATABASE_URL`).
+1. Specify a URL for the database storing Senzing data. (`SENZING_DATABASE_URL`).
 
     Components of the URL:
 
@@ -57,7 +57,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
     ```console
     helm install \
-      --name senzing-base \
+      --name my-senzing-base \
       --set senzing.databaseUrl=${SENZING_DATABASE_URL} \
       senzing/senzing-base
     ```
@@ -67,7 +67,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 1. Uninstall/delete the deployment. Example:
 
     ```console
-    helm delete senzing-base
+    helm delete my-senzing-base
     ```
 
 ## Configuration
@@ -80,6 +80,24 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 | `senzing.databaseURL` | Value of `${SENZING_DATABASE_URL}`. | `nil`, which uses the internal SQLite database. |
 | `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
 | `senzing.entrypointSleep` | Sleep, in seconds. `0` is infinity, `nil` is don't sleep | `nil`, don't sleep. |
+
+1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. Example:
+
+    ```console
+    helm install \
+      --name my-senzing-base \
+      --set senzing.debug=true \
+      senzing/senzing-base
+    ```
+
+1. Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. Example:
+
+    ```console
+    helm install \
+      --name my-senzing-base \
+      --values my-additional-values.yaml \
+      senzing/senzing-base
+    ```
 
 ## CHANGELOG
 
