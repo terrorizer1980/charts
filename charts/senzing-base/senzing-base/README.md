@@ -2,7 +2,9 @@
 
 ## Overview
 
-A generic Senzing environment.
+This chart bootstraps a [generic Senzing environment](https://github.com/Senzing/docker-senzing-base) deployment on a
+[Kubernetes](http://kubernetes.io) cluster using the
+[Helm](https://helm.sh) package manager.
 
 ### Contents
 
@@ -15,25 +17,69 @@ A generic Senzing environment.
 
 ## Prerequisites
 
+1. Install Senzing helm charts.
+
+    ```console
+    helm repo add senzing 'https://senzing.github.io/charts/'
+    ```
+
+1. Database URL for `SENZING_DATABASE_URL`.
+
+    Components of the URL:
+
+    ```console
+    export DATABASE_PROTOCOL=<postgresql, mysql, or db2>
+    export DATABASE_USERNAME=<my-username>
+    export DATABASE_PASSWORD=<my-password>
+    export DATABASE_HOST=<hostname>
+    export DATABASE_PORT=<db2-connnection-port>
+    export DATABASE_DATABASE=<database-name>
+    ```
+
+    Example:
+
+    ```console
+    export DATABASE_PROTOCOL=postgresql
+    export DATABASE_USERNAME=johnsmith
+    export DATABASE_PASSWORD=secret
+    export DATABASE_HOST=my.database.com
+    export DATABASE_PORT=5432
+    export DATABASE_DATABASE=G2
+
+    export SENZING_DATABASE_URL="${DATABASE_PROTOCOL}://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_DATABASE}"
+
+    echo ${SENZING_DATABASE_URL}
+    ```
+
 ## Installing the Chart
 
+1. Install into default namespace. Example:
+
+    ```console
+    helm install \
+      --name senzing-base \
+      --set senzing.databaseUrl=${SENZING_DATABASE_URL} \
+      senzing/senzing-base
+    ```
+
 ## Uninstalling the Chart
+
+1. Uninstall/delete the deployment. Example:
+
+    ```console
+    helm delete senzing-base
+    ```
 
 ## Configuration
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `global.imageRegistry` | Global Docker image registry | `nil` |
-| `global.imagePullSecrets` | Global Docker registry secret names as an array | `[]` (does not add image pull secrets to deployed pods) |
-| `image.registry` | Redis Image registry | `docker.io` |
-| `image.repository` | Redis Image name | `senzing/senzing-base` |
-| `image.tag` | Redis Image tag | `{VERSION}` |
-| `image.pullPolicy` | Image pull policy | `Always` |
-| `image.pullSecrets` | Specify docker-registry secret names as an array | `nil` |
-| `senzing.databaseURL` | URL to the database | `nil` |
-| `senzing.debug` | Turn debugging on (1) or off (0) | 0 |
-| `senzing.entrypointSleep` | Sleep, in seconds. 0 is infinity, `nil` is don't sleep | `nil` |
-
+| `image.repository` | Image name | `senzing/senzing-base` |
+| `image.tag` | Image tag | `latest` |
+| `image.pullPolicy` | Image pull policy | `IfNotPresent` |
+| `senzing.databaseURL` | URL to the database | `nil`, which uses the internal SQLite database. |
+| `senzing.debug` | Turn debugging on (1) or off (0) | 0, which is off. |
+| `senzing.entrypointSleep` | Sleep, in seconds. 0 is infinity, `nil` is don't sleep | `nil`, don't sleep. |
 
 ## CHANGELOG
 
