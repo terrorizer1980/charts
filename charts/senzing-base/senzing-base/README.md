@@ -81,18 +81,19 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 | `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
 | `senzing.entrypointSleep` | Sleep, in seconds. `0` is infinity, `nil` is don't sleep | `nil`, don't sleep. |
 
-1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. Example:
+1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
 
     ```console
     helm install \
       --name my-senzing-base \
+      --set senzing.databaseURL="postgresql://johnsmith:secret@my.database.com:5432/G2" \
       --set senzing.debug=true \
       senzing/senzing-base
     ```
 
 1. Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart.
 
-    Example `my-additional-values.yaml` YAML file:
+    `my-additional-values.yaml` YAML file example contents:
 
     ```yaml
     senzing:
