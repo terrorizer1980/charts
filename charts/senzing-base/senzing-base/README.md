@@ -32,7 +32,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
     export DATABASE_USERNAME=<my-username>
     export DATABASE_PASSWORD=<my-password>
     export DATABASE_HOST=<hostname>
-    export DATABASE_PORT=<db2-connnection-port>
+    export DATABASE_PORT=<database-connnection-port>
     export DATABASE_DATABASE=<database-name>
     ```
 
@@ -77,9 +77,9 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 | `image.repository` | Image name | `senzing/senzing-base` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
-| `senzing.databaseURL` | URL to the database | `nil`, which uses the internal SQLite database. |
-| `senzing.debug` | Turn debugging on (1) or off (0) | 0, which is off. |
-| `senzing.entrypointSleep` | Sleep, in seconds. 0 is infinity, `nil` is don't sleep | `nil`, don't sleep. |
+| `senzing.databaseURL` | Value of ${SENZING_DATABASE_URL}. | `nil`, which uses the internal SQLite database. |
+| `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
+| `senzing.entrypointSleep` | Sleep, in seconds. `0` is infinity, `nil` is don't sleep | `nil`, don't sleep. |
 
 ## CHANGELOG
 
