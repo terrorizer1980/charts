@@ -135,6 +135,7 @@ Used by:
       "phppgadmin" \
       "postgresql-client" \
       "senzing-api-server" \
+      "senzing-base" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
       "senzing-mock-data-generator" \
