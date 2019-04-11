@@ -101,7 +101,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
       debug: true
     ```
 
-    Example:
+    Install helm chart. Example:
 
     ```console
     helm install \
