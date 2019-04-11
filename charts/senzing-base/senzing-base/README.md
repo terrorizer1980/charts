@@ -6,6 +6,10 @@ A generic Senzing environment.
 
 ### Contents
 
+1. [Prerequisites](#prerequisites)
+1. [Installing the Chart](#installing-the-chart)
+1. [Uninstalling the Chart](#uninstalling-the-chart)
+1. [Configuration](#configuration)
 1. [CHANGELOG](#changelog)
 1. [References](#references)
 
@@ -26,6 +30,9 @@ A generic Senzing environment.
 | `image.tag` | Redis Image tag | `{VERSION}` |
 | `image.pullPolicy` | Image pull policy | `Always` |
 | `image.pullSecrets` | Specify docker-registry secret names as an array | `nil` |
+| `senzing.databaseURL` | URL to the database | `nil` |
+| `senzing.debug` | Turn debugging on (1) or off (0) | 0 |
+| `senzing.entrypointSleep` | Sleep, in seconds. 0 is infinity, `nil` is don't sleep | `nil` |
 
 
 ## CHANGELOG
