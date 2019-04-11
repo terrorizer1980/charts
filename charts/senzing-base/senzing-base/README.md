@@ -90,7 +90,16 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
       senzing/senzing-base
     ```
 
-1. Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. Example:
+1. Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart.
+
+    Example `my-additional-values.yaml` YAML file:
+
+    ```yaml
+    senzing:
+      debug: true
+    ```
+
+    Example:
 
     ```console
     helm install \
