@@ -1,0 +1,31 @@
+affinity: {}
+fullnameOverride: ""
+
+image:
+  pullPolicy: IfNotPresent
+  repository: senzing/senzing-base
+  tag: latest
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - chart-example.local
+  paths: []
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  databaseUrl: ""
+  debug: 0
+  entrypointSleep: 0
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
