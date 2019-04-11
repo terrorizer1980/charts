@@ -96,6 +96,7 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
     ```yaml
     senzing:
+      databaseURL: "postgresql://johnsmith:secret@my.database.com:5432/G2"
       debug: true
     ```
 
