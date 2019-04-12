@@ -136,6 +136,7 @@ Used by:
       "postgresql-client" \
       "senzing-api-server" \
       "senzing-base" \
+      "senzing-debug" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
       "senzing-mock-data-generator" \
