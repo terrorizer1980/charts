@@ -1,11 +1,10 @@
 affinity: {}
+fullnameOverride: ""
 
 image:
   pullPolicy: IfNotPresent
   repository: confluentinc/cp-kafka
   tag: 4.0.1-1
-
-fullnameOverride: ""
 
 ingress:
   annotations: {}

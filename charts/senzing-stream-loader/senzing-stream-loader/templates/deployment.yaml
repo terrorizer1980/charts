@@ -58,9 +58,25 @@ spec:
             - name: SENZING_LOG_LEVEL
               value: "{{ .Values.senzing.logLevel }}"
             {{- end }}
-            {{- if .Values.senzing.monitoringPeriod }}
-            - name: SENZING_MONITORING_PERIOD
-              value: "{{ .Values.senzing.monitoringPeriod }}"
+            {{- if .Values.senzing.monitoringPeriodInSeconds }}
+            - name: SENZING_MONITORING_PERIOD_IN_SECONDS
+              value: "{{ .Values.senzing.monitoringPeriodInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqHost }}
+            - name: "SENZING_RABBITMQ_HOST"
+              value: "{{ .Values.senzing.rabbitmqHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPassword }}
+            - name: "SENZING_RABBITMQ_PASSWORD"
+              value: "{{ .Values.senzing.rabbitmqPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqQueue }}
+            - name: "SENZING_RABBITMQ_QUEUE"
+              value: "{{ .Values.senzing.rabbitmqQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqUsername }}
+            - name: "SENZING_RABBITMQ_USERNAME"
+              value: "{{ .Values.senzing.rabbitmqUsername }}"
             {{- end }}
             {{- if .Values.senzing.threadsPerProcess }}
             - name: SENZING_THREADS_PER_PROCESS

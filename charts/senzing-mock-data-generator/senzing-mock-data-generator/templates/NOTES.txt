@@ -30,6 +30,18 @@ python mock-data-generator.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.kafkaTopic }} \
   --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
   {{- end }}
+  {{- if .Values.senzing.rabbitmqHost }}
+  --rabbitmq-host "{{ .Values.senzing.rabbitmqHost }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqPassword }}
+  --rabbitmq-password "{{ .Values.senzing.rabbitmqPassword }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqQueue }}
+  --rabbitmq-queue "{{ .Values.senzing.rabbitmqQueue }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqUsername }}
+  --rabbitmq-username "{{ .Values.senzing.rabbitmqUsername }}"
+  {{- end }}
   {{- if .Values.senzing.randomSeed }} \
   --random-seed {{ .Values.senzing.randomSeed }}
   {{- end }}

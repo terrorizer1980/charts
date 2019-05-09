@@ -1,14 +1,12 @@
-# Default values for senzing-hello-world.
-
-replicaCount: 1
+fullnameOverride: ""
 
 image:
+  pullPolicy: IfNotPresent
   repository: senzing/hello-world
   tag: latest
-  pullPolicy: IfNotPresent
 
 nameOverride: ""
-fullnameOverride: ""
+replicaCount: 1
 
 senzing:
   sleepTime: 300

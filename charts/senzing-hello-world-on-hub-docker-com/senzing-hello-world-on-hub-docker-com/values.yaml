@@ -1,14 +1,12 @@
-# Default values for senzing-hello-world-on-hub-docker-com.
-
-replicaCount: 1
+fullnameOverride: ""
 
 image:
+  pullPolicy: IfNotPresent
   repository: senzing/hello-world-on-hub-docker-com
   tag: latest
-  pullPolicy: IfNotPresent
 
 nameOverride: ""
-fullnameOverride: ""
+replicaCount: 1
 
 senzing:
   sleepTime: 300

@@ -1,10 +1,15 @@
 affinity: {}
 
 db2:
-  license: ""
   databasePassword: db2inst1
+  license: ""
 
 fullnameOverride: ""
+
+image:
+  pullPolicy: IfNotPresent
+  repository: ibmcom/db2express-c
+  tag: latest
 
 ingress:
   annotations: {}
@@ -13,11 +18,6 @@ ingress:
     - chart-example.local
   paths: []
   tls: []
-
-image:
-  pullPolicy: IfNotPresent
-  repository: ibmcom/db2express-c
-  tag: latest
 
 nameOverride: ""
 nodeSelector: {}
