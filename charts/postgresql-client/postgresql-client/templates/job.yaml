@@ -16,13 +16,13 @@ spec:
           command: ["psql"]
           args:
             - "-U"
-            - "{{ .Values.postgresql.password }}"
+            - {{ .Values.postgresql.password }}
             - "-h"
-            - "{{ .Values.postgresql.host }}"
+            - {{ .Values.postgresql.host }}
             - "-d"
-            - "{{ .Values.postgresql.database }}"
+            - {{ .Values.postgresql.database }}
             - "-f"
-            - "/data/{{ .Values.postgresql.file }}"
+            - "/data/{{ .Values.postgresql.file }}
           {{- if .Values.postgresql.storageClaim }}
           volumeMounts:
             - name: postgresql-storage
@@ -34,11 +34,11 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.postgresql.storageClaim }}
       {{- end }}
-# --- Standard suffix ---      
+# --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}     
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -47,4 +47,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      

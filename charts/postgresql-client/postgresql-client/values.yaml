@@ -8,11 +8,11 @@ image:
 nameOverride: ""
 
 postgresql:
-  database: "G2"
+  database: G2
   file: "g2/data/g2core-schema-postgresql-create.sql"
   host: ""
-  password: "postgres"
-  storageClaim: "opt-senzing-claim"
-  username: "postgres"
+  password: postgres
+  storageClaim: opt-senzing-claim
+  username: postgres
 
 replicaCount: 1
