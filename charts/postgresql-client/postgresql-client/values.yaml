@@ -8,7 +8,7 @@ image:
 nameOverride: ""
 
 postgresql:
-  database: G2
+  database: g2
   file: "g2/data/g2core-schema-postgresql-create.sql"
   host: ""
   password: postgres

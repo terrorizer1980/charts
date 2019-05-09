@@ -23,9 +23,9 @@ questions:
 
   - variable: postgresql.database
     label: postgresql database
-    description: "Example: G2"
+    description: "Example: g2"
     type: string
-    default: "G2"
+    default: "g2"
 
   - variable: postgresql.storageClaim
     label: postgresql storage claim for input file
