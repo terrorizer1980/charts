@@ -16,7 +16,7 @@ spec:
           command: ["psql"]
           args:
             - "-U"
-            - {{ .Values.postgresql.password }}
+            - {{ .Values.postgresql.username }}
             - "-h"
             - {{ .Values.postgresql.host }}
             - "-d"
