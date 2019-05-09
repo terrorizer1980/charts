@@ -22,7 +22,7 @@ spec:
             - "-d"
             - {{ .Values.postgresql.database }}
             - "-f"
-            - "/data/{{ .Values.postgresql.file }}
+            - "/data/{{ .Values.postgresql.file }}"
           {{- if .Values.postgresql.storageClaim }}
           volumeMounts:
             - name: postgresql-storage
