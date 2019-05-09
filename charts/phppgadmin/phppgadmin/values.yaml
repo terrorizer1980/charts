@@ -1,5 +1,5 @@
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: dockage/phppgadmin
   tag: latest
 

@@ -9,7 +9,7 @@ fullnameOverride: ""
 image:
   pullPolicy: IfNotPresent
   repository: ibmcom/db2express-c
-  tag: latest
+  tag: 10.5.0.5-3.10.0
 
 ingress:
   annotations: {}

@@ -1,7 +1,7 @@
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: jbergknoff/postgresql-client
   tag: latest
 

@@ -2,7 +2,7 @@ affinity: {}
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: senzing/senzing-debug
   tag: latest
 
@@ -23,7 +23,7 @@ senzing:
   databaseUrl: ""
   debug: 0
   optSenzingClaim: "opt-senzing-claim"
-  
+
 service:
   port: 80
   type: ClusterIP

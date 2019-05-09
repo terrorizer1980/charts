@@ -1,7 +1,7 @@
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: senzing/hello-world
   tag: latest
 
