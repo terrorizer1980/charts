@@ -1,5 +1,5 @@
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: dockage/phppgadmin
   tag: latest
 
@@ -21,7 +21,7 @@ phppgadmin:
   ownedOnly: false
   serverDefaultDb: template1
   serverDesc: PostgreSQL
-  serverHost: 
+  serverHost:
   serverPgDumpAllPath: /usr/bin/pg_dumpall
   serverPgDumpPath: /usr/bin/pg_dump
   serverPort: 5432

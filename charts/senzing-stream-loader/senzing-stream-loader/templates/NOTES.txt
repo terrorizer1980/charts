@@ -33,11 +33,23 @@ python stream-loader.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.kafkaTopic }} \
   --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
   {{- end }}
-  {{- if .Values.senzing.monitoringPeriod }} \
-  --monitoring-period {{ .Values.senzing.monitoringPeriod }}
+  {{- if .Values.senzing.monitoringPeriodInSeconds }} \
+  --monitoring-period-in-seconds {{ .Values.senzing.monitoringPeriodInSeconds }}
   {{- end }}
   {{- if .Values.senzing.processes }} \
   --processes {{ .Values.senzing.processes }}
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqHost }}
+  --rabbitmq-host "{{ .Values.senzing.rabbitmqHost }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqPassword }}
+  --rabbitmq-password "{{ .Values.senzing.rabbitmqPassword }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqQueue }}
+  --rabbitmq-queue "{{ .Values.senzing.rabbitmqQueue }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqUsername }}
+  --rabbitmq-username "{{ .Values.senzing.rabbitmqUsername }}"
   {{- end }}
   {{- if .Values.senzing.senzingDir }} \
   --senzing-dir {{ .Values.senzing.senzingDir }}

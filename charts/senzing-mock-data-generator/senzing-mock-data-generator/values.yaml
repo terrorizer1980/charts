@@ -2,7 +2,7 @@ affinity: {}
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   repository: senzing/mock-data-generator
   tag: latest
 

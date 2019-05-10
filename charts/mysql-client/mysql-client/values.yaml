@@ -1,17 +1,18 @@
-replicaCount: 1
-
-image:
-  repository: senzing/mysql-init
-  tag: latest
-  pullPolicy: IfNotPresent
-
-nameOverride: ""
 fullnameOverride: ""
 
+image:
+  pullPolicy: Always
+  repository: senzing/mysql-init
+  tag: latest
+
+nameOverride: ""
+
 mysql:
-  username: "g2"
-  password: "g2"
-  host: ""
   database: "G2"
   file: "g2/data/g2core-schema-mysql-create.sql"
+  host: ""
+  password: "g2"
   storageClaim: "opt-senzing-claim"
+  username: "g2"
+
+replicaCount: 1

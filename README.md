@@ -128,7 +128,6 @@ Used by:
       "db2-client" \
       "helm-create-example" \
       "ibm-db2express-c" \
-      "helm-create-example" \
       "kafka-test-client" \
       "mysql-client" \
       "phpmyadmin" \

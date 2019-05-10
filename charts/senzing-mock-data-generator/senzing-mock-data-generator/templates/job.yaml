@@ -34,6 +34,22 @@ spec:
             - name: "SENZING_KAFKA_TOPIC"
               value: "{{ .Values.senzing.kafkaTopic }}"
             {{- end }}
+            {{- if .Values.senzing.rabbitmqHost }}
+            - name: "SENZING_RABBITMQ_HOST"
+              value: "{{ .Values.senzing.rabbitmqHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPassword }}
+            - name: "SENZING_RABBITMQ_PASSWORD"
+              value: "{{ .Values.senzing.rabbitmqPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqQueue }}
+            - name: "SENZING_RABBITMQ_QUEUE"
+              value: "{{ .Values.senzing.rabbitmqQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqUsername }}
+            - name: "SENZING_RABBITMQ_USERNAME"
+              value: "{{ .Values.senzing.rabbitmqUsername }}"
+            {{- end }}
             {{- if .Values.senzing.randomSeed }}
             - name: "SENZING_RANDOM_SEED"
               value: "{{ .Values.senzing.randomSeed }}"
@@ -59,11 +75,11 @@ spec:
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
       restartPolicy: Never
-# --- Standard suffix ---      
+# --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}     
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
