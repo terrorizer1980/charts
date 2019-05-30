@@ -1,0 +1,32 @@
+affinity: {}
+fullnameOverride: ""
+
+image:
+  pullPolicy: IfNotPresent
+  registry: docker.io
+  repository: coleifer/sqlite-web
+  tag: latest
+
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  optSenzingClaim: "opt-senzing-claim"
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
