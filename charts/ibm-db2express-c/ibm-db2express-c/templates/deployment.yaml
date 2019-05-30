@@ -34,7 +34,7 @@ spec:
             - /entrypoint.sh
           args:
             - db2start
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
