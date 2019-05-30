@@ -4,7 +4,7 @@ fullnameOverride: ""
 image:
   pullPolicy: Always
   registry: docker.io
-  repository: senzing/senzing-package
+  repository: store/senzing/senzing-package
   tag: latest
 
 imagePullSecrets: []
