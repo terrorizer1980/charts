@@ -10,7 +10,7 @@ spec:
           command:
             - /app/docker-entrypoint.sh
             - /opt/senzing/g2/python/G2ConfigTool.py
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:

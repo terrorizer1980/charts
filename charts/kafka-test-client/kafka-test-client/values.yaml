@@ -3,6 +3,7 @@ fullnameOverride: ""
 
 image:
   pullPolicy: IfNotPresent
+  registry: docker.io
   repository: confluentinc/cp-kafka
   tag: 4.0.1-1
 

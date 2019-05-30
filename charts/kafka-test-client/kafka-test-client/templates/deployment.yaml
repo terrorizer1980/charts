@@ -25,7 +25,7 @@ spec:
             - sh
             - -c
             - "exec tail -f /dev/null"
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

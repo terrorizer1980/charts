@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: "DB2INST1_PASSWORD"
@@ -42,12 +42,12 @@ spec:
         - name: opt-senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.db2.optSenzingStorageClaim }}
-      {{- end }}      
-# --- Standard suffix ---      
+      {{- end }}
+# --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}     
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -3,6 +3,7 @@ fullnameOverride: ""
 
 image:
   pullPolicy: Always
+  registry: docker.io
   repository: senzing/senzing-g2configtool
   tag: latest
 

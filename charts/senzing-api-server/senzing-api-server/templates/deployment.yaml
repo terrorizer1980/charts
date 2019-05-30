@@ -60,7 +60,7 @@ spec:
             {{- if .Values.senzing.verbose }}
             - "-verbose
             {{- end }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -80,11 +80,11 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
-# --- Standard suffix ---      
+# --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
         {{- toYaml . | nindent 8 }}
-      {{- end }}     
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

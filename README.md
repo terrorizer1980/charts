@@ -125,6 +125,7 @@ Used by:
 
     ```console
     export CHART_NAMES=( \
+      "coleifer-sqlite-web" \
       "db2-client" \
       "helm-create-example" \
       "ibm-db2express-c" \
@@ -136,6 +137,7 @@ Used by:
       "senzing-api-server" \
       "senzing-base" \
       "senzing-debug" \
+      "senzing-g2configtool" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
       "senzing-mock-data-generator" \
