@@ -121,7 +121,7 @@ Used by:
 
 ### Identify public charts
 
-1. Example:
+1. :pencil2: List docker images in an environment variable.  Example:
 
     ```console
     export CHART_NAMES=( \
@@ -148,11 +148,17 @@ Used by:
 
 ### Helm lint
 
-1. Single chart.  Example:
+1. Single chart.
+
+    :pencil2: Identify chart.
 
     ```console
     export CHART_NAME=senzing-hello-world
+    ```
 
+    Example:
+
+    ```console
     cd ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}
     helm lint
     ```
@@ -172,9 +178,15 @@ Used by:
 
 1. Single chart. Example:
 
+    :pencil2: Identify chart.
+
     ```console
     export CHART_NAME=senzing-hello-world
+    ```
 
+    Example:
+
+    ```console
     cd ${GIT_REPOSITORY_DIR}/docs
     helm package ${GIT_REPOSITORY_DIR}/charts/${CHART_NAME}/${CHART_NAME}
     helm repo index .
