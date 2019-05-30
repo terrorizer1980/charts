@@ -137,7 +137,6 @@ Used by:
       "senzing-api-server" \
       "senzing-base" \
       "senzing-debug" \
-      "senzing-g2configtool" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
       "senzing-mock-data-generator" \
