@@ -3,9 +3,9 @@ entries:
   db2-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.956731993-04:00
+    created: "2019-06-03T10:01:54.333253634-04:00"
     description: Support for DB2 command line interface (CLI)
-    digest: 763808b2647ef98bb45f2ea209e0771583ef5f3f495b4e1bb6e26a97ce2126bc
+    digest: b745fd6aff5ea0e6ee2948269910eec1d5fa6a99a15b43c02d34b3c0ef984b78
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -17,9 +17,9 @@ entries:
   helm-create-example:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.957082789-04:00
+    created: "2019-06-03T10:01:54.33369414-04:00"
     description: A Helm chart for Kubernetes
-    digest: d541cffef800bc59482a3588a30b16fdc2d39334bfc9d874eb0c8e4fea35ef6d
+    digest: fcea80418b964a687d8e635717ba8263004bc92a746b472866b080fbb3c24f96
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     name: helm-create-example
     urls:
@@ -28,9 +28,9 @@ entries:
   ibm-db2express-c:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.957723539-04:00
+    created: "2019-06-03T10:01:54.33450954-04:00"
     description: IBM DB2 Express-C
-    digest: 161cf4c6daf4da90dbf12b3d065a2ff349414b898954eb6ee01b862d5c9791f3
+    digest: 7b7837d5c6743e64b928e002bbfaeb4bc0239c30725a8c93c235d9046d70bd6e
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
     - db2
@@ -43,9 +43,9 @@ entries:
   kafka-test-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.958352995-04:00
+    created: "2019-06-03T10:01:54.335272205-04:00"
     description: Kafka test client
-    digest: 9f007417cdac9a94e8a7ad026196ec9a548414bc624b0cdb15d5515ea679827d
+    digest: 11eb85d531a57791caa54e8fcf024940527703659bb208a6c64a95a6a745f86a
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -57,9 +57,9 @@ entries:
   mysql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.958840698-04:00
+    created: "2019-06-03T10:01:54.335901246-04:00"
     description: MySQL client
-    digest: a0e0c2a1c029721f4cf036750b500d18f3cd4059978f9b695363c00db0d9b7f7
+    digest: 397dff239a320de00debeba9572b8ccdd7fe00a64dadcde430dee8430233d03d
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -70,9 +70,9 @@ entries:
     version: 0.2.0
   phpmyadmin:
   - appVersion: 4.8.5
-    created: 2019-05-10T17:23:25.959664963-04:00
+    created: "2019-06-03T10:01:54.337201735-04:00"
     description: phpMyAdmin, an mysql administration frontend
-    digest: f519bf282395c22bc8e3cc5b8bbf99cdcee8eef40b4f329fc5d9f137d5978195
+    digest: 7d6c68cc03e5ddded0a601b3136d834cecc2d6e0303f231f36362fb6601512a1
     engine: gotpl
     home: https://www.phpmyadmin.net/
     icon: https://bitnami.com/assets/stacks/phpmyadmin/img/phpmyadmin-stack-2.0.334.png
@@ -90,10 +90,10 @@ entries:
     version: 2.0.4
   phppgadmin:
   - apiVersion: v1
-    created: 2019-05-10T17:23:25.963641809-04:00
+    created: "2019-06-03T10:01:54.341708606-04:00"
     description: phpPgAdmin is a web-based administration tool for PostgreSQL. It
       is perfect for PostgreSQL DBAs, newbies, and hosting services.
-    digest: 518d6b4de70d35907122f935106550596b97b6cc5679399bcf2378aa97dba286
+    digest: 8300fe8fa8133d3cc2709767bbb09a908f7cea0b76edc684ee2bf95c01decfd3
     home: http://phppgadmin.sourceforge.net/doku.php
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -108,9 +108,9 @@ entries:
   postgresql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.964324817-04:00
+    created: "2019-06-03T10:01:54.342201805-04:00"
     description: Postgresql client
-    digest: 562ea0860edd4ad0dcaff2c1375c82885fda469afb4e8c91e9b3c7b8d5d015f1
+    digest: b50060dafdf41943b741c2077f03f1f700c31be40825445d0c567830e3a88f00
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -122,9 +122,9 @@ entries:
   senzing-api-server:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.965113662-04:00
+    created: "2019-06-03T10:01:54.342759651-04:00"
     description: Senzing API server
-    digest: 6efeeb994fda38c067580d4778bc67374ac194a03c5c72318827c767338c0aa4
+    digest: ac8f9f8a653186b499e6a4039e844dd76ca41c3564d66e72112d8c1da6c9e07b
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -139,9 +139,9 @@ entries:
   senzing-base:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.965915435-04:00
+    created: "2019-06-03T10:01:54.343325589-04:00"
     description: A Senzing environment
-    digest: 78828243842cbe217348956e894db5c5674848856b8ccc371500a459ce1cdfc6
+    digest: cb3163ff99ab9aaf2423ac1b6b7f580b9cd885bb5b1308f560c3dcf6b5bfb45c
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -155,9 +155,9 @@ entries:
   senzing-debug:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.966727647-04:00
+    created: "2019-06-03T10:01:54.343929376-04:00"
     description: A Senzing environment for debugging
-    digest: 5eb78827a3cf5e107a0d725de994111421cbaf957e40a9661777783ec48bafbe
+    digest: 9336e4df3b0129f0553fb463b2e5494d83c5c04182bab31dfd08b78d120f3a91
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -172,9 +172,9 @@ entries:
   senzing-hello-world:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.967402923-04:00
+    created: "2019-06-03T10:01:54.34477293-04:00"
     description: Prints timestamped hello-world messages
-    digest: 334b6d41f5312ddf6aa8271afb379b427762abc024ba3994eeb5616512e33526
+    digest: ee50459d0f69c5950bef54e938f3f6b291008aa42e58ceb3c20d424a65ab8f85
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -188,9 +188,9 @@ entries:
   senzing-hello-world-on-hub-docker-com:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.968081772-04:00
+    created: "2019-06-03T10:01:54.345648552-04:00"
     description: Prints timestamped hello-world messages
-    digest: b44845ea05f7968aa8ec712f7f4182a83dc31773352e09e0d32def9114da0b9e
+    digest: 49d441d39852d60a754839106d9492fde798c4887b59a17873b5d3fe2a7d5554
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -204,9 +204,9 @@ entries:
   senzing-mock-data-generator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.968840561-04:00
+    created: "2019-06-03T10:01:54.346593619-04:00"
     description: A generator of Senzing data to feed Kafka
-    digest: 8a48a7b4dd078410dc2ec6014c42e9ebfa376ab3407bfaac1f3a6cb3cb1d2256
+    digest: 1f0e8fb6a6e5fcb29cbfc6209f99451072a7156fc1aa0fb34b723727fdc4775e
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -221,9 +221,9 @@ entries:
   senzing-package:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.969547053-04:00
+    created: "2019-06-03T10:01:54.347548558-04:00"
     description: A package manager for Senzing_API.tgz
-    digest: 3496666466f5a2fa95efacdd376067ad2d6a406cffff120a3d7bdb5a770706fb
+    digest: 1dee8c039941778b6e18883f4e27fc7a5e1b9d356e47d16cd4007347837a50a3
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -237,9 +237,9 @@ entries:
   senzing-stream-loader:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-10T17:23:25.970550897-04:00
+    created: "2019-06-03T10:01:54.348637689-04:00"
     description: A stream-based loader for Senzing
-    digest: 7e7d9874e22290bd14e8539cb4cd105e8597bdd49007e3c0048353379b28493e
+    digest: ca71dc1bfdfca317ac328efc3adf28a91a9efa86a13c8f51b21bd9881cc64b9f
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -251,4 +251,4 @@ entries:
     urls:
     - senzing-stream-loader-0.2.0.tgz
     version: 0.2.0
-generated: 2019-05-10T17:23:25.956037681-04:00
+generated: "2019-06-03T10:01:54.332295427-04:00"
