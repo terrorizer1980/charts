@@ -2,6 +2,7 @@ fullnameOverride: ""
 
 image:
   pullPolicy: Always
+  registry: docker.io
   repository: senzing/mysql-init
   tag: latest
 

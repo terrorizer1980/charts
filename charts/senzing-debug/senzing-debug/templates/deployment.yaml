@@ -34,7 +34,7 @@ spec:
             - name: SENZING_ENTRYPOINT_SLEEP
               value: "{{ .Values.senzing.entrypointSleep }}"
             {{- end }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

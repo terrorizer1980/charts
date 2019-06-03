@@ -8,7 +8,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: "PGPASSWORD"

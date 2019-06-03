@@ -1,5 +1,6 @@
 image:
   pullPolicy: Always
+  registry: docker.io
   repository: dockage/phppgadmin
   tag: latest
 

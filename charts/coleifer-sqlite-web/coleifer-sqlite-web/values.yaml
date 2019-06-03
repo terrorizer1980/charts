@@ -4,21 +4,26 @@ fullnameOverride: ""
 image:
   pullPolicy: IfNotPresent
   registry: docker.io
-  repository: confluentinc/cp-kafka
-  tag: 4.0.1-1
+  repository: coleifer/sqlite-web
+  tag: latest
+
+imagePullSecrets: []
 
 ingress:
   annotations: {}
   enabled: false
   hosts:
-    - chart-example.local
-  paths: []
+    - host: chart-example.local
+      paths: []
   tls: []
 
 nameOverride: ""
 nodeSelector: {}
 replicaCount: 1
 resources: {}
+
+senzing:
+  optSenzingClaim: "opt-senzing-claim"
 
 service:
   port: 80
