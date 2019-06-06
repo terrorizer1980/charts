@@ -5,7 +5,7 @@ image:
   pullPolicy: Always
   registry: docker.io
   repository: store/senzing/senzing-package
-  tag: latest
+  tag: 1.9.19155
 
 imagePullSecrets: []
 
