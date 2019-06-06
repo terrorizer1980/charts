@@ -3,7 +3,7 @@ entries:
   db2-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.333253634-04:00"
+    created: "2019-06-06T16:27:51.257011787-04:00"
     description: Support for DB2 command line interface (CLI)
     digest: b745fd6aff5ea0e6ee2948269910eec1d5fa6a99a15b43c02d34b3c0ef984b78
     home: http://senzing.com
@@ -17,7 +17,7 @@ entries:
   helm-create-example:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.33369414-04:00"
+    created: "2019-06-06T16:27:51.257426643-04:00"
     description: A Helm chart for Kubernetes
     digest: fcea80418b964a687d8e635717ba8263004bc92a746b472866b080fbb3c24f96
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
@@ -28,7 +28,7 @@ entries:
   ibm-db2express-c:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.33450954-04:00"
+    created: "2019-06-06T16:27:51.258216088-04:00"
     description: IBM DB2 Express-C
     digest: 7b7837d5c6743e64b928e002bbfaeb4bc0239c30725a8c93c235d9046d70bd6e
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
@@ -43,7 +43,7 @@ entries:
   kafka-test-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.335272205-04:00"
+    created: "2019-06-06T16:27:51.259030311-04:00"
     description: Kafka test client
     digest: 11eb85d531a57791caa54e8fcf024940527703659bb208a6c64a95a6a745f86a
     home: http://senzing.com
@@ -57,7 +57,7 @@ entries:
   mysql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.335901246-04:00"
+    created: "2019-06-06T16:27:51.259807364-04:00"
     description: MySQL client
     digest: 397dff239a320de00debeba9572b8ccdd7fe00a64dadcde430dee8430233d03d
     home: http://senzing.com
@@ -70,7 +70,7 @@ entries:
     version: 0.2.0
   phpmyadmin:
   - appVersion: 4.8.5
-    created: "2019-06-03T10:01:54.337201735-04:00"
+    created: "2019-06-06T16:27:51.261001112-04:00"
     description: phpMyAdmin, an mysql administration frontend
     digest: 7d6c68cc03e5ddded0a601b3136d834cecc2d6e0303f231f36362fb6601512a1
     engine: gotpl
@@ -90,7 +90,7 @@ entries:
     version: 2.0.4
   phppgadmin:
   - apiVersion: v1
-    created: "2019-06-03T10:01:54.341708606-04:00"
+    created: "2019-06-06T16:27:51.264165079-04:00"
     description: phpPgAdmin is a web-based administration tool for PostgreSQL. It
       is perfect for PostgreSQL DBAs, newbies, and hosting services.
     digest: 8300fe8fa8133d3cc2709767bbb09a908f7cea0b76edc684ee2bf95c01decfd3
@@ -108,7 +108,7 @@ entries:
   postgresql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.342201805-04:00"
+    created: "2019-06-06T16:27:51.264985744-04:00"
     description: Postgresql client
     digest: b50060dafdf41943b741c2077f03f1f700c31be40825445d0c567830e3a88f00
     home: http://senzing.com
@@ -122,7 +122,7 @@ entries:
   senzing-api-server:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.342759651-04:00"
+    created: "2019-06-06T16:27:51.265907116-04:00"
     description: Senzing API server
     digest: ac8f9f8a653186b499e6a4039e844dd76ca41c3564d66e72112d8c1da6c9e07b
     home: http://senzing.com
@@ -139,7 +139,7 @@ entries:
   senzing-base:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.343325589-04:00"
+    created: "2019-06-06T16:27:51.278427417-04:00"
     description: A Senzing environment
     digest: cb3163ff99ab9aaf2423ac1b6b7f580b9cd885bb5b1308f560c3dcf6b5bfb45c
     home: http://senzing.com
@@ -155,7 +155,7 @@ entries:
   senzing-debug:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.343929376-04:00"
+    created: "2019-06-06T16:27:51.279522828-04:00"
     description: A Senzing environment for debugging
     digest: 9336e4df3b0129f0553fb463b2e5494d83c5c04182bab31dfd08b78d120f3a91
     home: http://senzing.com
@@ -172,7 +172,7 @@ entries:
   senzing-hello-world:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.34477293-04:00"
+    created: "2019-06-06T16:27:51.280317119-04:00"
     description: Prints timestamped hello-world messages
     digest: ee50459d0f69c5950bef54e938f3f6b291008aa42e58ceb3c20d424a65ab8f85
     home: http://senzing.com
@@ -188,7 +188,7 @@ entries:
   senzing-hello-world-on-hub-docker-com:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.345648552-04:00"
+    created: "2019-06-06T16:27:51.281287681-04:00"
     description: Prints timestamped hello-world messages
     digest: 49d441d39852d60a754839106d9492fde798c4887b59a17873b5d3fe2a7d5554
     home: http://senzing.com
@@ -204,7 +204,7 @@ entries:
   senzing-mock-data-generator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.346593619-04:00"
+    created: "2019-06-06T16:27:51.282177548-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: 1f0e8fb6a6e5fcb29cbfc6209f99451072a7156fc1aa0fb34b723727fdc4775e
     home: http://senzing.com
@@ -221,9 +221,9 @@ entries:
   senzing-package:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.347548558-04:00"
+    created: "2019-06-06T16:27:51.28273486-04:00"
     description: A package manager for Senzing_API.tgz
-    digest: 1dee8c039941778b6e18883f4e27fc7a5e1b9d356e47d16cd4007347837a50a3
+    digest: a07745ec0e0d21821eb316fc98c740be521256ddc025affd4453f58f8fd2841d
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -237,7 +237,7 @@ entries:
   senzing-stream-loader:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-06-03T10:01:54.348637689-04:00"
+    created: "2019-06-06T16:27:51.283582784-04:00"
     description: A stream-based loader for Senzing
     digest: ca71dc1bfdfca317ac328efc3adf28a91a9efa86a13c8f51b21bd9881cc64b9f
     home: http://senzing.com
@@ -251,4 +251,4 @@ entries:
     urls:
     - senzing-stream-loader-0.2.0.tgz
     version: 0.2.0
-generated: "2019-06-03T10:01:54.332295427-04:00"
+generated: "2019-06-06T16:27:51.254526232-04:00"
