@@ -32,7 +32,7 @@ spec:
               value: "{{ .Values.senzing.databaseUrl }}"
             {{- end }}
             {{- if .Values.senzing.debug }}
-            - name: "SENZING_DEBUG"
+            - name: SENZING_DEBUG
               value: "{{ .Values.senzing.debug }}"
             {{- end }}
             {{- if .Values.senzing.entityType }}
@@ -44,15 +44,15 @@ spec:
               value: "{{ .Values.senzing.logLevel }}"
             {{- end }}
             {{- if .Values.senzing.senzingDir }}
-            - name: "SENZING_DIR"
+            - name: SENZING_DIR
               value: "{{ .Values.senzing.senzingDir }}"
             {{- end }}
             {{- if .Values.senzing.subcommand }}
-            - name: "SENZING_SLEEP_TIME"
+            - name: SENZING_SLEEP_TIME
               value: "{{ .Values.senzing.sleepTime }}"
             {{- end }}
             {{- if .Values.senzing.subcommand }}
-            - name: "SENZING_SUBCOMMAND"
+            - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
           image: {{ template "senzing.image" . }}
