@@ -14,7 +14,7 @@ ingress:
   enabled: false
   hosts:
     - host: chart-example.local
-      paths: []
+  paths: []
   tls: []
 
 nameOverride: ""

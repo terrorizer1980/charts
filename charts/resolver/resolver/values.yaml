@@ -2,11 +2,13 @@ affinity: {}
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   registry: docker.io
   repository: senzing/resolver
   tag: latest
+
 imagePullSecrets: []
+
 ingress:
   annotations: {}
   enabled: false
@@ -21,7 +23,8 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  debug: 0
+  optSenzingClaim: opt-senzing-claim
+  subcommand: service
 
 service:
   port: 80

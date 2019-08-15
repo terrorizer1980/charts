@@ -1,3 +1,44 @@
+## Overview
+
+A job to run Senzing's Resolver.
+
+More information:
+ - https://github.com/Senzing/resolver
+ - https://github.com/Senzing/charts/tree/master/charts/resolver/resolver
+
+## Command
+
+The command being run:
+
+```console
+python resolver.py {{ .Values.senzing.subcommand -}}
+  {{- if .Values.senzing.dataSource }} \
+  --data-source "{{ .Values.senzing.dataSource }}"
+  {{- end }}
+  {{- if .Values.senzing.debug }} \
+  --debug "{{ .Values.senzing.debug }}"
+  {{- end }}
+  {{- if .Values.senzing.senzingDir }} \
+  --senzing-dir {{ .Values.senzing.senzingDir }}
+  {{- end }}
+  {{- if .Values.senzing.senzingPackage }} \
+  --senzing-package {{ .Values.senzing.senzingPackage }}
+  {{- end }}
+  {{- if .Values.senzing.sleepTime }} \
+  --sleep-time {{ .Values.senzing.sleepTime }}
+  {{- end }}
+```
+
+{{- if .Values.ingress.enabled }}
+{{- else if contains "NodePort" .Values.service.type }}
+{{- else if contains "LoadBalancer" .Values.service.type }}
+{{- else if contains "ClusterIP" .Values.service.type }}
+{{- end }}
+
+
+
+
+
 1. Get the application URL by running these commands:
 {{- if .Values.ingress.enabled }}
 {{- range $host := .Values.ingress.hosts }}
