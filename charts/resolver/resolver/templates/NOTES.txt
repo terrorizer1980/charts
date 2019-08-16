@@ -34,8 +34,6 @@ python resolver.py {{ .Values.senzing.subcommand -}}
 
 ## Metadata
 
-1. Get the application URL by running these commands:
-
 {{- if .Values.ingress.enabled }}
 
 {{- range $host := .Values.ingress.hosts }}
@@ -59,21 +57,19 @@ python resolver.py {{ .Values.senzing.subcommand -}}
 
 {{- else if contains "ClusterIP" .Values.service.type }}
 
-service.type = ClusterIP
+1. Running service.type = ClusterIP
+1. Get POD_NAME. Example:
 
 ```console
 export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "resolver.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
 ```
 
-To forward port
+1. Example of forwarding internal port 5000 to external port of 5001:
 
 ```console
 kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ .Release.Name }} 5001:5000
 ```
-
 {{- end }}
-
-
 
 {{- if .Values.ingress.enabled }}
 {{- else if contains "NodePort" .Values.service.type }}
