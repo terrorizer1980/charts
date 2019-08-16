@@ -47,9 +47,9 @@ spec:
             - name: SENZING_DIR
               value: "{{ .Values.senzing.senzingDir }}"
             {{- end }}
-            {{- if .Values.senzing.subcommand }}
-            - name: SENZING_SLEEP_TIME
-              value: "{{ .Values.senzing.sleepTime }}"
+            {{- if .Values.senzing.sleepTimeInSeconds }}
+            - name: SENZING_SLEEP_TIME_IN_SECONDS
+              value: "{{ .Values.senzing.sleepTimeInSeconds }}"
             {{- end }}
             {{- if .Values.senzing.subcommand }}
             - name: SENZING_SUBCOMMAND
