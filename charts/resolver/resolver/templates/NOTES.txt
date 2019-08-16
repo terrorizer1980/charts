@@ -3,8 +3,9 @@
 A job to run Senzing's Resolver.
 
 More information:
- - https://github.com/Senzing/resolver
- - https://github.com/Senzing/charts/tree/master/charts/resolver/resolver
+
+- [GitHub](https://github.com/Senzing/resolver)
+- [Helm Chart](https://github.com/Senzing/charts/tree/master/charts/resolver/resolver)
 
 ## Command
 
@@ -71,7 +72,7 @@ export SENZING_RESOLVER_POD_NAME=$(kubectl get pods \
 kubectl exec -it --namespace {{ .Release.Namespace }} ${SENZING_RESOLVER_POD_NAME} -- /bin/bash
 ```
 
-1. Forward internal port 5000 to external port of 5001:
+1. Forward internal port 5000 to external port of 5001. Example:
 
 ```console
 kubectl port-forward \
