@@ -4,8 +4,8 @@ fullnameOverride: ""
 image:
   pullPolicy: Always
   registry: docker.io
-  repository: store/senzing/senzing-package
-  tag: 1.10.19214
+  repository: senzing/resolver
+  tag: latest
 
 imagePullSecrets: []
 
@@ -23,11 +23,11 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: "opt-senzing-claim"
-  subcommand: "install"
+  optSenzingClaim: opt-senzing-claim
+  subcommand: service
 
 service:
-  port: 80
+  port: 5000
   type: ClusterIP
 
 tolerations: []

@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "resolver.fullname" . }}
+  labels:
+{{ include "resolver.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "resolver.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "resolver.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          env:
+            {{- if .Values.senzing.dataSource }}
+            - name: SENZING_DATA_SOURCE
+              value: "{{ .Values.senzing.dataSource }}"
+            {{- end }}
+            {{- if .Values.senzing.databaseUrl }}
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.debug }}
+            - name: SENZING_DEBUG
+              value: "{{ .Values.senzing.debug }}"
+            {{- end }}
+            {{- if .Values.senzing.entityType }}
+            - name: SENZING_ENTITY_TYPE
+              value: "{{ .Values.senzing.entityType }}"
+            {{- end }}
+            {{- if .Values.senzing.logLevel }}
+            - name: SENZING_LOG_LEVEL
+              value: "{{ .Values.senzing.logLevel }}"
+            {{- end }}
+            {{- if .Values.senzing.senzingDir }}
+            - name: SENZING_DIR
+              value: "{{ .Values.senzing.senzingDir }}"
+            {{- end }}
+            {{- if .Values.senzing.subcommand }}
+            - name: SENZING_SLEEP_TIME
+              value: "{{ .Values.senzing.sleepTime }}"
+            {{- end }}
+            {{- if .Values.senzing.subcommand }}
+            - name: SENZING_SUBCOMMAND
+              value: "{{ .Values.senzing.subcommand }}"
+            {{- end }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing
+          {{- end }}
+          workingDir: /app
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

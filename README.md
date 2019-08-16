@@ -134,6 +134,7 @@ Used by:
       "phpmyadmin" \
       "phppgadmin" \
       "postgresql-client" \
+      "resolver" \
       "senzing-api-server" \
       "senzing-base" \
       "senzing-debug" \
