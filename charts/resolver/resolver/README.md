@@ -48,8 +48,8 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `image.repository` | Image name | `senzing/resolver` |
-| `image.tag` | Image tag | `latest` |
+| `image.repository` | Image name        | `senzing/resolver` |
+| `image.tag`         | Image tag         | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
 
 1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
