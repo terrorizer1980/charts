@@ -19,7 +19,7 @@ python resolver.py {{ .Values.senzing.subcommand -}}
   --database-url "{{ .Values.senzing.databaseUrl }}"
   {{- end }}
   {{- if .Values.senzing.debug }} \
-  --debug "{{ .Values.senzing.debug }}"
+  --debug
   {{- end }}
   {{- if .Values.senzing.entityType }} \
   --entity-type "{{ .Values.senzing.entityType }}"
