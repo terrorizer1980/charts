@@ -28,6 +28,7 @@ senzing:
 
 service:
   port: 5000
+  targetPort: http
   type: ClusterIP
 
 tolerations: []
