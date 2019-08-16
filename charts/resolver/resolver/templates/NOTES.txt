@@ -58,16 +58,25 @@ python resolver.py {{ .Values.senzing.subcommand -}}
 {{- else if contains "ClusterIP" .Values.service.type }}
 
 1. Running service.type = ClusterIP
-1. Get POD_NAME. Example:
+1. Log into pod. Example:
 
 ```console
-export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "resolver.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+export SENZING_RESOLVER_POD_NAME=$(kubectl get pods \
+  --namespace {{ .Release.Namespace }} \
+  --selector "app.kubernetes.io/name={{ include "resolver.name" . }}, \
+              app.kubernetes.io/instance={{ .Release.Name }}" \
+  --output jsonpath="{.items[0].metadata.name}"
+)
+
+kubectl exec -it --namespace {{ .Release.Namespace }} ${SENZING_RESOLVER_POD_NAME} -- /bin/bash
 ```
 
-1. Example of forwarding internal port 5000 to external port of 5001:
+1. Forward internal port 5000 to external port of 5001:
 
 ```console
-kubectl port-forward --namespace {{ .Release.Namespace }} svc/{{ .Release.Name }} 5001:5000
+kubectl port-forward \
+  --namespace {{ .Release.Namespace }} \
+  svc/{{ .Release.Name }} 5001:5000
 ```
 {{- end }}
 
