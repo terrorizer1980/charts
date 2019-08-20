@@ -26,6 +26,34 @@ cluster using the
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
+1. Specify a URL for the database storing Senzing data. (`SENZING_DATABASE_URL`).
+
+    Components of the URL:
+
+    ```console
+    export DATABASE_PROTOCOL=<postgresql, mysql, or db2>
+    export DATABASE_USERNAME=<my-username>
+    export DATABASE_PASSWORD=<my-password>
+    export DATABASE_HOST=<hostname>
+    export DATABASE_PORT=<database-connnection-port>
+    export DATABASE_DATABASE=<database-name>
+    ```
+
+    Example:
+
+    ```console
+    export DATABASE_PROTOCOL=postgresql
+    export DATABASE_USERNAME=johnsmith
+    export DATABASE_PASSWORD=secret
+    export DATABASE_HOST=my.database.com
+    export DATABASE_PORT=5432
+    export DATABASE_DATABASE=G2
+
+    export SENZING_DATABASE_URL="${DATABASE_PROTOCOL}://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_DATABASE}"
+
+    echo ${SENZING_DATABASE_URL}
+    ```
+
 ## Installing the Chart
 
 1. Install into default namespace. Example:
@@ -33,6 +61,7 @@ cluster using the
     ```console
     helm install \
       --name my-senzing-debug \
+      --set senzing.databaseUrl=${SENZING_DATABASE_URL} \
       senzing/senzing-debug
     ```
 
@@ -51,6 +80,8 @@ cluster using the
 | `image.repository` | Image name | `senzing/senzing-debug` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
+| `senzing.databaseURL` | Value of `${SENZING_DATABASE_URL}`. | `nil`, which uses the internal SQLite database. |
+| `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
 | `senzing.optSenzingClaim` | A Persistent Volume Claim (PVC) that can store `/opt/senzing` data | `opt-senzing-claim` |
 
 1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
@@ -58,7 +89,8 @@ cluster using the
     ```console
     helm install \
       --name my-senzing-debug \
-      --set senzing.optSenzingClaim="my-new-senzing-claim" \
+      --set senzing.databaseURL="postgresql://johnsmith:secret@my.database.com:5432/G2" \
+      --set senzing.debug=true \
       senzing/senzing-debug
     ```
 
@@ -68,7 +100,8 @@ cluster using the
 
     ```yaml
     senzing:
-      optSenzingClaim: my-new-senzing-claim
+      databaseURL: "postgresql://johnsmith:secret@my.database.com:5432/G2"
+      debug: true
     ```
 
     Install helm chart. Example:
@@ -81,10 +114,6 @@ cluster using the
     ```
 
 ## CHANGELOG
-
-### 1.0.0
-
-1. Migrated to RPM-based installation
 
 ### 0.2.0
 

@@ -21,6 +21,19 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
+          env:
+            {{- if .Values.senzing.databaseUrl }}
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.debug }}
+            - name: SENZING_DEBUG
+              value: "{{ .Values.senzing.debug }}"
+            {{- end }}
+            {{- if .Values.senzing.entrypointSleep }}
+            - name: SENZING_ENTRYPOINT_SLEEP
+              value: "{{ .Values.senzing.entrypointSleep }}"
+            {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
@@ -28,17 +41,7 @@ spec:
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
-              mountPath: /opt/senzing/data
-              subPath: senzing-data
-            - name: opt-senzing-storage
-              mountPath: /etc/opt/senzing
-              subPath: senzing-etc
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing/g2
-              subPath: senzing-g2
-            - name: opt-senzing-storage
-              mountPath: /var/opt/senzing
-              subPath: senzing-var
+              mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
