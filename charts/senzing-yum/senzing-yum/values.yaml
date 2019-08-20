@@ -17,6 +17,6 @@ resources: {}
 senzing:
   acceptEula: I_ACCEPT_THE_SENZING_EULA
   optSenzingClaim: opt-senzing-claim
-  yumParameters: ["-y", "install", "tree"]
+  yumParameters: ["-y", "localinstall", "/rpms/senzingapi-1.11.0-19221.x86_64.rpm"]
 
 tolerations: []
