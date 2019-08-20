@@ -22,18 +22,18 @@ spec:
           volumeMounts:
             - name:  opt-senzing-storage
               mountPath: /opt/senzing
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing/data
-              subPath: senzing-data
-            - name: opt-senzing-storage
-              mountPath: /opt/senzing/g2
-              subPath: senzing-g2
-            - name: opt-senzing-storage
-              mountPath: /etc/opt/senzing
-              subPath: senzing-etc
-            - name: opt-senzing-storage
-              mountPath: /var/opt/senzing
-              subPath: senzing-var
+#            - name: opt-senzing-storage
+#              mountPath: /opt/senzing/data
+#              subPath: senzing-data
+#            - name: opt-senzing-storage
+#              mountPath: /opt/senzing/g2
+#              subPath: senzing-g2
+#            - name: opt-senzing-storage
+#              mountPath: /etc/opt/senzing
+#              subPath: senzing-etc
+#            - name: opt-senzing-storage
+#              mountPath: /var/opt/senzing
+#              subPath: senzing-var
           {{- end }}
       restartPolicy: Never
       volumes:
