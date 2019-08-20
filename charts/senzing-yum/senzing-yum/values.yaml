@@ -15,8 +15,8 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  acceptEula: "I_ACCEPT_THE_SENZING_EULA"
-  optSenzingClaim: "opt-senzing-claim"
+  acceptEula: I_ACCEPT_THE_SENZING_EULA
+  optSenzingClaim: opt-senzing-claim
   yumParameters: ["-y", "install", "tree"]
 
 tolerations: []
