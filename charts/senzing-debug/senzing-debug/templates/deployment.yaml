@@ -29,7 +29,7 @@ spec:
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
-              subPath: senzing-data
+              subPath: senzing-data/1.0.0
             - name: opt-senzing-storage
               mountPath: /etc/opt/senzing
               subPath: senzing-etc
