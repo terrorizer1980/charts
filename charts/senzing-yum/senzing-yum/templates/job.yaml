@@ -20,7 +20,7 @@ spec:
             {{- end }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
-            - name: null-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
