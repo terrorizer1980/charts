@@ -28,15 +28,15 @@ questions:
 
   - variable: senzing.dataSource
     label: Default Senzing data source, if none specified
-    description: "Example: PEOPLE"
+    description: "Example: TEST"
     type: string
-    default: "PEOPLE"
+    default: "TEST"
 
   - variable: senzing.entityType
     label: Default Senzing entity type, if none specified
-    description: "Example: PEOPLE"
+    description: "Example: TEST"
     type: string
-    default: "PEOPLE"
+    default: "TEST"
 
   - variable: senzing.kafkaBootstrapServerHost
     label: Kafka Bootstrap server hostname
