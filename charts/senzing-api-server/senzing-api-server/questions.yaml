@@ -37,7 +37,7 @@ questions:
     label: "The path to the Senzing INI file to with which to initialize"
     description: "Example: /opt/senzing/g2/python/G2Module.ini"
     type: string
-    default: "/opt/senzing/g2/python/G2Module.ini"
+    default: "/etc/opt/senzing/G2Module.ini"
 
   - variable: senzing.optSenzingClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.

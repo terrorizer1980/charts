@@ -20,7 +20,7 @@ spec:
         - name: {{ .Chart.Name }}
           args:
             - "-httpPort"
-            - "80"
+            - "8080"
             {{- if .Values.senzing.allowedOrigins }}
             - "-allowedOrigins"
             - {{ .Values.senzing.allowedOrigins | quote }}
@@ -52,7 +52,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
