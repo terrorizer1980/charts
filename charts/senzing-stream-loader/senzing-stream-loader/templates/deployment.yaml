@@ -86,9 +86,6 @@ spec:
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
-          command:
-            - /app/docker-entrypoint.sh
-            - /app/stream-loader.py
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:

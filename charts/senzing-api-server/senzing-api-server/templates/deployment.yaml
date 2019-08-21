@@ -34,9 +34,6 @@ spec:
             - name: SENZING_ENTRYPOINT_SLEEP
               value: "{{ .Values.senzing.entrypointSleep }}"
             {{- end }}
-          command:
-            - /app/docker-entrypoint.sh
-            - java -jar /app/senzing-api-server.jar
           args:
             - "-httpPort 80"
             {{- if .Values.senzing.allowedOrigins }}
