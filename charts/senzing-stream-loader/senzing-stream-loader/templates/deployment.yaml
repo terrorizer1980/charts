@@ -93,7 +93,17 @@ spec:
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
-              mountPath: /opt/senzing
+              mountPath: /opt/senzing/data
+              subPath: senzing-data/1.0.0
+            - name: opt-senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
           {{- end }}
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
