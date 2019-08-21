@@ -25,11 +25,6 @@ python init-container.py {{ .Values.senzing.subcommand -}}
   {{- end }}
 ```
 
-{{- if .Values.ingress.enabled }}
-{{- else if contains "NodePort" .Values.service.type }}
-{{- else if contains "LoadBalancer" .Values.service.type }}
-{{- else if contains "ClusterIP" .Values.service.type }}
-
 
 1. Get the application URL by running these commands:
 {{- if .Values.ingress.enabled }}
