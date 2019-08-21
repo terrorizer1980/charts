@@ -29,7 +29,7 @@ questions:
 
   - variable: senzing.databaseUrl
     label: "URL to the relational database service Template: protocol://username:password@host:port/database"
-    description: "Example: postgresql://postgres:postgres@my-postgresql-postgresql:5432/G2"
+    description: "Example: postgresql://postgres:postgres@my-postgresql:5432/G2"
     type: string
     default: "mysql://g2:g2@my-mysql-mysql:3306/G2"
 

@@ -17,7 +17,7 @@ questions:
 
   - variable: postgresql.host
     label: postgresql host
-    description: "Example: my-postgresql-postgresql"
+    description: "Example: my-postgresql"
     type: string
     default: ""
 
