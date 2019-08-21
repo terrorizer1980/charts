@@ -21,5 +21,5 @@ Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
 
 ## References
 
-1. DockerHub
+1. [DockerHub](https://hub.docker.com/r/senzing/stream-loader)
 1. [GitHub](https://github.com/Senzing/stream-loader)

@@ -24,5 +24,5 @@ Normally, `/opt/senzing` is a Persistent Volume.
 
 ## References
 
-1. DockerHub
+1. [DockerHub](https://hub.docker.com/_/senzing-package)
 1. [GitHub](https://github.com/Senzing/senzing-package)
