@@ -6,7 +6,6 @@ icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
 keywords:
  - senzing
 name: senzing-init-container
-stream-loader
 sources:
  - https://github.com/Senzing/docker-init-container
 version: 1.0.0
