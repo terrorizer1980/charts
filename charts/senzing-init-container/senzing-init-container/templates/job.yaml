@@ -1,31 +1,18 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: {{ include "senzing-init-container.fullname" . }}
   labels:
 {{ include "senzing-init-container.labels" . | indent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: {{ include "senzing-init-container.name" . }}
-      app.kubernetes.io/instance: {{ .Release.Name }}
   template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: {{ include "senzing-init-container.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-    {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           env:
-            {{- if .Values.senzing.dataSource }}
-            - name: SENZING_DATA_SOURCE
-              value: "{{ .Values.senzing.dataSource }}"
+            {{- if .Values.senzing.debug }}
+            - name: "SENZING_DEBUG"
+              value: "{{ .Values.senzing.debug }}"
             {{- end }}
             {{- if .Values.senzing.databaseUrl }}
             - name: SENZING_DATABASE_URL
@@ -33,8 +20,6 @@ spec:
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
@@ -50,6 +35,7 @@ spec:
               mountPath: /var/opt/senzing
               subPath: senzing-var
           {{- end }}
+      restartPolicy: Never
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: opt-senzing-storage
@@ -59,6 +45,10 @@ spec:
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

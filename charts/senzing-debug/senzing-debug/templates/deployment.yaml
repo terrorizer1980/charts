@@ -3,10 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-debug.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-debug.name" . }}
-    helm.sh/chart: {{ include "senzing-debug.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-debug.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -49,6 +46,10 @@ spec:
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}
