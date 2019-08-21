@@ -34,7 +34,7 @@ More information:
   1. Example:
 
     ```console
-    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-stream-loader.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-entity-search-web-app.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
     kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
     ```
 
