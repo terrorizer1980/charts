@@ -4,6 +4,7 @@ Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
 
 More information:
  - https://github.com/Senzing/senzing-stream-loader
+ - https://github.com/Senzing/stream-loader/blob/master/stream-loader.py
  - https://github.com/Senzing/charts/tree/master/charts/senzing-stream-loader/senzing-stream-loader
 
 ## Command

@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: {{ include "senzing-stream-loader.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
-    helm.sh/chart: {{ include "senzing-stream-loader.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-stream-loader.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

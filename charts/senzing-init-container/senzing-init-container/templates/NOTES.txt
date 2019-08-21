@@ -1,3 +1,36 @@
+## Overview
+
+Performs all of the Senzing initializations which require root permission.
+The initializations are seen in the init-container.py script.
+
+More information:
+ - https://github.com/Senzing/docker-init-container
+ - https://github.com/Senzing/docker-init-container/blob/master/init-container.py
+ - https://github.com/Senzing/charts/tree/master/charts/senzing-init-container/senzing-init-container
+
+## Command
+
+The command being run:
+
+```console
+python init-container.py {{ .Values.senzing.subcommand -}}
+  {{- if .Values.senzing.dataSource }} \
+  --data-source "{{ .Values.senzing.dataSource }}"
+  {{- end }}
+  {{- if .Values.senzing.debug }} \
+  --debug "{{ .Values.senzing.debug }}"
+  {{- end }}
+  {{- if .Values.senzing.senzingDir }} \
+  --senzing-dir {{ .Values.senzing.senzingDir }}
+  {{- end }}
+```
+
+{{- if .Values.ingress.enabled }}
+{{- else if contains "NodePort" .Values.service.type }}
+{{- else if contains "LoadBalancer" .Values.service.type }}
+{{- else if contains "ClusterIP" .Values.service.type }}
+
+
 1. Get the application URL by running these commands:
 {{- if .Values.ingress.enabled }}
 {{- range $host := .Values.ingress.hosts }}
