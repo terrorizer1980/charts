@@ -35,27 +35,34 @@ spec:
               value: "{{ .Values.senzing.entrypointSleep }}"
             {{- end }}
           args:
-            - "-httpPort 80"
+            - "-httpPort"
+            - "80"
             {{- if .Values.senzing.allowedOrigins }}
-            - "-allowedOrigins {{ .Values.senzing.allowedOrigins }}"
+            - "-allowedOrigins"
+            - {{ .Values.senzing.allowedOrigins | quote }}
             {{- end }}
             {{- if .Values.senzing.bindAddr }}
-            - "-bindAddr {{ .Values.senzing.bindAddr }}"
+            - "-bindAddr"
+            - {{ .Values.senzing.bindAddr | quote }}
             {{- end }}
             {{- if .Values.senzing.concurrency }}
-            - "-concurrency {{ .Values.senzing.concurrency }}"
+            - "-concurrency"
+            - {{ .Values.senzing.concurrency | quote }}
             {{- end }}
             {{- if .Values.senzing.iniFile }}
-            - "-iniFile {{ .Values.senzing.iniFile }}"
+            - "-iniFile"
+            - {{ .Values.senzing.iniFile | quote }}
             {{- end }}
             {{- if .Values.senzing.moduleName }}
-            - "-moduleName {{ .Values.senzing.moduleName }}"
+            - "-moduleName"
+            - {{ .Values.senzing.moduleName | quote }}
             {{- end }}
             {{- if .Values.senzing.monitorFile }}
-            - "-monitorFile {{ .Values.senzing.monitorFile }}"
+            - "-monitorFile"
+            - {{ .Values.senzing.monitorFile | quote }}
             {{- end }}
             {{- if .Values.senzing.verbose }}
-            - "-verbose
+            - "-verbose"
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
