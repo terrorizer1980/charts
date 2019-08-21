@@ -6,8 +6,6 @@ More information:
  - https://github.com/Senzing/entity-search-web-app
  - https://github.com/Senzing/charts/tree/master/charts/senzing-entity-search-web-app/senzing-entity-search-web-app
 
-```
-
 {{- if .Values.ingress.enabled }}
 
 {{- range $host := .Values.ingress.hosts }}
