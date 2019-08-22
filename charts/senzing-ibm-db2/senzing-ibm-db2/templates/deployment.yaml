@@ -43,7 +43,6 @@ spec:
               subPath: senzing-g2
             - name: db2-database-storage
               mountPath: /database
-              subPath: senzing-ibm-db2
       volumes:
         - name: senzing-storage
           persistentVolumeClaim:
