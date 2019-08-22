@@ -101,6 +101,9 @@ spec:
             - name: opt-senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
+            - name: opt-senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
