@@ -35,23 +35,22 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.senzing.optSenzingClaim }}
           securityContext:
             privileged: true
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing/g2
               subPath: senzing-g2
-            - name: opt-senzing-storage
+            - name: db2-database-storage
               mountPath: /database
               subPath: senzing-ibm-db2
-          {{- end }}
-      {{- if .Values.senzing.optSenzingClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
-      {{- end }}
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
+        - name: db2-database-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.db2.persistentVolumeClaim }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:

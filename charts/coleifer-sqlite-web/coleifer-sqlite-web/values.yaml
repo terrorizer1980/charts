@@ -23,7 +23,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: "opt-senzing-claim"
+  optSenzingClaim: "senzing-persistent-volume-claim"
 
 service:
   port: 80

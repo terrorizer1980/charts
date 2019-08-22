@@ -51,7 +51,7 @@ cluster using the
 | `image.repository` | Image name | `senzing/senzing-debug` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
-| `senzing.optSenzingClaim` | A Persistent Volume Claim (PVC) that can store `/opt/senzing` data | `opt-senzing-claim` |
+| `senzing.optSenzingClaim` | A Persistent Volume Claim (PVC) that can store `/opt/senzing` data | `senzing-persistent-volume-claim` |
 
 1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
 

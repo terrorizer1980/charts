@@ -4,6 +4,7 @@ fullnameOverride: ""
 db2:
   db2instPassword: db2inst1
   license: accept
+  persistentVolumeClaim: db2-database-claim
 
 image:
   pullPolicy: Always
@@ -27,7 +28,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: opt-senzing-claim
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 50000
