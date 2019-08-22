@@ -16,37 +16,56 @@ spec:
         app.kubernetes.io/name: {{ include "ibm-db2.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-    {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          env:
+            {{- if .Values.db2.db2instPassword }}
+            - name: DB2INST1_PASSWORD
+              value: {{ .Values.db2.db2instPassword | quote }}
+            {{- end }}
+            {{- if .Values.db2.license }}
+            - name: LICENSE
+              value: {{ .Values.db2.license | quote }}
+            {{- end }}
+          image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 50000
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /database
+              subPath: senzing-ibm-db2
+          {{- end }}
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
+      {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-    {{- end }}
+      {{- end }}

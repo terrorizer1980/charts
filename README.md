@@ -141,6 +141,7 @@ Used by:
       "senzing-entity-search-web-app" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
+      "senzing-ibm-db2" \
       "senzing-init-container" \
       "senzing-mock-data-generator" \
       "senzing-package" \
