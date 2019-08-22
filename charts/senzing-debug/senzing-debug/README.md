@@ -82,7 +82,7 @@ cluster using the
 
 ## CHANGELOG
 
-### 1.0.0
+### 0.3.0
 
 1. Migrated to RPM-based installation
 

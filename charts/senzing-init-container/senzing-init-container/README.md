@@ -11,7 +11,7 @@ Performs all of the Senzing initialization requiring "root" authority.
 
 ## CHANGELOG
 
-### 1.0.0
+### 0.1.0
 
 1. Initial public version
 

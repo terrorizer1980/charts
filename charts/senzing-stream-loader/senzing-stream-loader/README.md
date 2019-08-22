@@ -11,6 +11,10 @@ Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
 
 ## CHANGELOG
 
+### 0.3.0
+
+1. Migrate to RPM installation.
+
 ### 0.2.0
 
 1. Initial public version
