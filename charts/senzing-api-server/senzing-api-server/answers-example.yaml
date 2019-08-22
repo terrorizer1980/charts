@@ -3,4 +3,4 @@ senzing.bindAddr: all
 senzing.concurrency: 8
 senzing.databaseUrl: "mysql://g2:g2@my-mysql-mysql:3306/G2"
 senzing.iniFile: /etc/opt/senzing/G2Module.ini
-senzing.optSenzingClaim: senzing-persistent-volume-claim
+senzing.persistentVolumeClaim: senzing-persistent-volume-claim

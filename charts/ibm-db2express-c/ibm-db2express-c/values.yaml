@@ -26,7 +26,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: "senzing-persistent-volume-claim"
+  persistentVolumeClaim: "senzing-persistent-volume-claim"
 
 service:
   port: 50000

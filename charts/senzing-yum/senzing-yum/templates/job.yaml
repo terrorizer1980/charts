@@ -18,7 +18,7 @@ spec:
             - name: "SENZING_ACCEPT_EULA"
               value: {{ .Values.senzing.acceptEula | quote }}
             {{- end }}
-          {{- if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
@@ -39,17 +39,17 @@ spec:
       initContainers:
         - name: senzing-mount-maker
           image: busybox:1.28
-          {{- if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name:  opt-senzing-storage
               mountPath: /opt/senzing
           {{- end }}
       restartPolicy: Never
       volumes:
-        {{- if .Values.senzing.optSenzingClaim }}
+        {{- if .Values.senzing.persistentVolumeClaim }}
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
         {{- end }}
         {{- if .Values.senzing.senzingDataClaim }}
         - name: senzing-data-storage

@@ -24,7 +24,7 @@ resources: {}
 
 senzing:
   apiServerUrl: kafka
-  optSenzingClaim: senzing-persistent-volume-claim
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 80

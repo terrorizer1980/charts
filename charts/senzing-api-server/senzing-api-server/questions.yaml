@@ -39,7 +39,7 @@ questions:
     type: string
     default: "/etc/opt/senzing/G2Module.ini"
 
-  - variable: senzing.optSenzingClaim
+  - variable: senzing.persistentVolumeClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.
     description: "Example: senzing-persistent-volume-claim"
     type: string

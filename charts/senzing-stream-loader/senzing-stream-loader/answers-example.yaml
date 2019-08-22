@@ -9,5 +9,5 @@ senzing.kafkaBootstrapServerPort: 9092
 senzing.kafkaTopic: "senzing-kafka-topic"
 senzing.logLevel: "info"
 senzing.monitoringPeriod: 60
-senzing.optSenzingClaim: "senzing-persistent-volume-claim"
+senzing.persistentVolumeClaim: "senzing-persistent-volume-claim"
 senzing.threadsPerProcess: 4
