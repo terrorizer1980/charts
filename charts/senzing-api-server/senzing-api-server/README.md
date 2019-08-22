@@ -2,7 +2,7 @@
 
 ## Overview
 
-A server that supports the 
+A server that supports the
 [Senzing REST API](https://github.com/Senzing/senzing-rest-api).
 
 ### Contents
@@ -22,5 +22,5 @@ A server that supports the
 
 ## References
 
-1. DockerHub
+1. [DockerHub](https://hub.docker.com/r/senzing/senzing-api-server)
 1. [GitHub](https://github.com/Senzing/senzing-api-server)

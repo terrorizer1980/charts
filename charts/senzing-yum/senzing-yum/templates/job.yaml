@@ -1,0 +1,90 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "senzing-yum.fullname" . }}
+spec:
+  template:
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.senzing.yumParameters }}
+          args:
+            {{- toYaml .Values.senzing.yumParameters | nindent 12 }}
+          {{- end }}
+          env:
+            {{- if .Values.senzing.acceptEula }}
+            - name: "SENZING_ACCEPT_EULA"
+              value: {{ .Values.senzing.acceptEula | quote }}
+            {{- end }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/data
+              subPath: senzing-data
+            - name: opt-senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /rpms
+              subPath: senzing-rpms
+            - name: opt-senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
+          {{- end }}
+      initContainers:
+        - name: senzing-mount-maker
+          image: busybox:1.28
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name:  opt-senzing-storage
+              mountPath: /opt/senzing
+          {{- end }}
+      restartPolicy: Never
+      volumes:
+        {{- if .Values.senzing.optSenzingClaim }}
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+        {{- end }}
+        {{- if .Values.senzing.senzingDataClaim }}
+        - name: senzing-data-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.senzingDataClaim }}
+        {{- end }}
+        {{- if .Values.senzing.senzingEtcClaim }}
+        - name: senzing-etc-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.senzingEtcClaim }}
+        {{- end }}
+        {{- if .Values.senzing.senzingG2Claim }}
+        - name: senzing-g2-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.senzingG2Claim }}
+        {{- end }}
+        {{- if .Values.senzing.senzingVarClaim }}
+        - name: senzing-var-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.senzingVarClaim }}
+        {{- end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

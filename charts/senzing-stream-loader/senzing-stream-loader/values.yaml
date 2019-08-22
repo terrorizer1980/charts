@@ -7,12 +7,14 @@ image:
   repository: senzing/stream-loader
   tag: latest
 
+imagePullSecrets: []
+
 ingress:
   annotations: {}
   enabled: false
   hosts:
-    - chart-example.local
-  paths: []
+    - host: chart-example.local
+      paths: []
   tls: []
 
 nameOverride: ""
@@ -21,8 +23,8 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: "opt-senzing-claim"
-  subcommand: "kafka"
+  optSenzingClaim: opt-senzing-claim
+  subcommand: kafka
 
 service:
   port: 80

@@ -9,4 +9,4 @@ keywords:
 name: senzing-stream-loader
 sources:
  - https://github.com/Senzing/stream-loader
-version: 0.2.0
+version: 0.3.0

@@ -1,0 +1,61 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "senzing-init-container.fullname" . }}
+  labels:
+{{ include "senzing-init-container.labels" . | indent 4 }}
+spec:
+  template:
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          env:
+            {{- if .Values.senzing.debug }}
+            - name: "SENZING_DEBUG"
+              value: "{{ .Values.senzing.debug }}"
+            {{- end }}
+            {{- if .Values.senzing.databaseUrl }}
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+            {{- end }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/data
+              subPath: senzing-data/1.0.0
+            - name: opt-senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
+          {{- end }}
+      restartPolicy: Never
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
+      {{- end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

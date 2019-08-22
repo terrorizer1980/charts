@@ -22,11 +22,11 @@ resources: {}
 
 senzing:
   bindAddr: all
-  iniFile: "/opt/senzing/g2/python/G2Module.ini"
-  optSenzingClaim: "opt-senzing-claim"
+  iniFile: /etc/opt/senzing/G2Module.ini
+  optSenzingClaim: opt-senzing-claim
 
 service:
-  port: 80
+  port: 8080
   type: ClusterIP
 
 tolerations: []

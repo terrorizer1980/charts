@@ -21,5 +21,5 @@ A job to read JSON LINES from a URL-addressable file and send them to Kafka.
 
 ## References
 
-1. DockerHub
+1. [DockerHub](https://hub.docker.com/r/senzing/mock-data-generator)
 1. [GitHub](https://github.com/Senzing/mock-data-generator)

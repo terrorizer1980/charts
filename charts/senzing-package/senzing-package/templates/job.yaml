@@ -7,8 +7,6 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: {{ template "senzing.image" . }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             {{- if .Values.senzing.debug }}
             - name: "SENZING_DEBUG"
@@ -30,6 +28,8 @@ spec:
             - name: "SENZING_SUBCOMMAND"
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage

@@ -87,5 +87,5 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
 
 ## References
 
-1. [DockerHub](https://hub.docker.com/r/senzing/senzing-base)
-1. [GitHub](https://github.com/Senzing/docker-senzing-base)
+1. [DockerHub](https://hub.docker.com/r/senzing/resolver)
+1. [GitHub](https://github.com/Senzing/resolver)

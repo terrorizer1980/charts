@@ -138,11 +138,14 @@ Used by:
       "senzing-api-server" \
       "senzing-base" \
       "senzing-debug" \
+      "senzing-entity-search-web-app" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
+      "senzing-init-container" \
       "senzing-mock-data-generator" \
       "senzing-package" \
       "senzing-stream-loader" \
+      "senzing-yum" \
     )
     ```
 

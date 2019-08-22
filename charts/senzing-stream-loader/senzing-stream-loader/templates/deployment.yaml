@@ -3,10 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-stream-loader.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
-    helm.sh/chart: {{ include "senzing-stream-loader.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-stream-loader.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -86,9 +83,6 @@ spec:
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
-          command:
-            - /app/docker-entrypoint.sh
-            - /app/stream-loader.py
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
@@ -96,7 +90,17 @@ spec:
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
             - name: opt-senzing-storage
-              mountPath: /opt/senzing
+              mountPath: /opt/senzing/data
+              subPath: senzing-data/1.0.0
+            - name: opt-senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
           {{- end }}
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
@@ -107,6 +111,10 @@ spec:
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

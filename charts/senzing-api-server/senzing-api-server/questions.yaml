@@ -29,7 +29,7 @@ questions:
 
   - variable: senzing.databaseUrl
     label: "URL to the relational database service Template: protocol://username:password@host:port/database"
-    description: "Example: postgresql://postgres:postgres@my-postgresql-postgresql:5432/G2"
+    description: "Example: postgresql://postgres:postgres@my-postgresql:5432/G2"
     type: string
     default: "mysql://g2:g2@my-mysql-mysql:3306/G2"
 
@@ -37,7 +37,7 @@ questions:
     label: "The path to the Senzing INI file to with which to initialize"
     description: "Example: /opt/senzing/g2/python/G2Module.ini"
     type: string
-    default: "/opt/senzing/g2/python/G2Module.ini"
+    default: "/etc/opt/senzing/G2Module.ini"
 
   - variable: senzing.optSenzingClaim
     label: If defined, Persistent Volume Claim for /opt/senzing.

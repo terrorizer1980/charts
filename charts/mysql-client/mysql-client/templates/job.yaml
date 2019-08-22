@@ -28,8 +28,6 @@ spec:
           env:
             - name: "SENZING_SENTINEL_FILE"
               value: "/data/mysql-init.sentinel"
-
-          command: ["/app/docker-entrypoint.sh"]
           args:
             - "--user={{ .Values.mysql.username }}"
             - "--password={{ .Values.mysql.password }}"

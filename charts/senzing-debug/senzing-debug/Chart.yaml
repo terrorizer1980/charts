@@ -9,4 +9,4 @@ keywords:
 name: senzing-debug
 sources:
  - https://github.com/Senzing/docker-senzing-debug
-version: 0.2.0
+version: 0.3.0

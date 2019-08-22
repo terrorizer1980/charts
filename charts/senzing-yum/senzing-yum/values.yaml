@@ -1,0 +1,21 @@
+affinity: {}
+fullnameOverride: ""
+
+image:
+  pullPolicy: Always
+  registry: docker.io
+  repository: senzing/yum
+  tag: latest
+
+imagePullSecrets: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  acceptEula: ""
+  optSenzingClaim: opt-senzing-claim
+
+tolerations: []
