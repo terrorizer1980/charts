@@ -11,7 +11,7 @@ A wrapper over the `yum` command.
 
 ## CHANGELOG
 
-### 0.2.0
+### 0.1.0
 
 1. Initial public version
 
