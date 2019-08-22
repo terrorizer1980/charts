@@ -1,0 +1,32 @@
+affinity: {}
+fullnameOverride: ""
+
+image:
+  pullPolicy: Always
+  registry: docker.io
+  repository: senzing/db2-driver-installer
+  tag: latest
+
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  persistentVolumeClaim: senzing-persistent-volume-claims
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
