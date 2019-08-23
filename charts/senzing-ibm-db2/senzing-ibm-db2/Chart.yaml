@@ -6,7 +6,7 @@ icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
 keywords:
  - senzing
  - db2
-name: ibm-db2
+name: senzing-ibm-db2
 sources:
  - https://github.com/Senzing/docker-ibm-db2
 version: 0.1.0
