@@ -19,32 +19,23 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
-            - name: SENZING_PORT
-              value: "{{ .Values.service.port }}"
-            {{- if .Values.senzing.databaseUrl }}
-            - name: SENZING_DATABASE_URL
-              value: "{{ .Values.senzing.databaseUrl }}"
+            {{- if .Values.senzing.database }}
+            - name: SQLITE_DATABASE
+              value: "{{ .Values.senzing.database }}"
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8080
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
-              mountPath: /opt/senzing
+              mountPath: /data
+              subPath: senzing-var
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:

@@ -32,20 +32,6 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
-Common labels
-*/}}
-{{- define "coleifer-sqlite-web.labels" -}}
-app.kubernetes.io/name: {{ include "coleifer-sqlite-web.name" . }}
-helm.sh/chart: {{ include "coleifer-sqlite-web.chart" . }}
-app.kubernetes.io/instance: {{ .Release.Name }}
-{{- if .Chart.AppVersion }}
-app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
-{{- end }}
-app.kubernetes.io/managed-by: {{ .Release.Service }}
-{{- end -}}
-
-
-{{/*
 Return the proper image name
 */}}
 {{- define "senzing.image" -}}
@@ -68,3 +54,15 @@ Also, we can't use a single if because lazy evaluation is not an option
 {{- end -}}
 {{- end -}}
 
+{{/*
+Common labels
+*/}}
+{{- define "coleifer-sqlite-web.labels" -}}
+app.kubernetes.io/name: {{ include "coleifer-sqlite-web.name" . }}
+helm.sh/chart: {{ include "coleifer-sqlite-web.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
