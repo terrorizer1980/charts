@@ -23,7 +23,7 @@ resources: {}
 senzing:
   bindAddr: all
   iniFile: /etc/opt/senzing/G2Module.ini
-  optSenzingClaim: opt-senzing-claim
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 8080

@@ -1,23 +1,20 @@
 affinity: {}
-
-db2:
-  databasePassword: db2inst1
-  license: ""
-
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   registry: docker.io
-  repository: ibmcom/db2express-c
-  tag: 10.5.0.5-3.10.0
+  repository: senzing/db2-driver-installer
+  tag: latest
+
+imagePullSecrets: []
 
 ingress:
   annotations: {}
   enabled: false
   hosts:
-    - chart-example.local
-  paths: []
+    - host: chart-example.local
+      paths: []
   tls: []
 
 nameOverride: ""
@@ -26,10 +23,10 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  optSenzingClaim: "opt-senzing-claim"
+  persistentVolumeClaim: senzing-persistent-volume-claims
 
 service:
-  port: 50000
+  port: 80
   type: ClusterIP
 
 tolerations: []

@@ -128,7 +128,7 @@ Used by:
       "coleifer-sqlite-web" \
       "db2-client" \
       "helm-create-example" \
-      "ibm-db2express-c" \
+      "ibm-db2-driver-installer" \
       "kafka-test-client" \
       "mysql-client" \
       "phpmyadmin" \
@@ -141,6 +141,7 @@ Used by:
       "senzing-entity-search-web-app" \
       "senzing-hello-world" \
       "senzing-hello-world-on-hub-docker-com" \
+      "senzing-ibm-db2" \
       "senzing-init-container" \
       "senzing-mock-data-generator" \
       "senzing-package" \

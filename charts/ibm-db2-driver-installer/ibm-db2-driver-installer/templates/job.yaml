@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "ibm-db2-driver-installer.fullname" . }}
+  labels:
+{{ include "ibm-db2-driver-installer.labels" . | indent 4 }}
+spec:
+  template:
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: opt-senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
+      restartPolicy: Never
+      volumes:
+        - name: opt-senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

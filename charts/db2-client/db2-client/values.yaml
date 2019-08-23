@@ -1,5 +1,5 @@
 db2:
-  optSenzingStorageClaim: "opt-senzing-claim"
+  optSenzingStorageClaim: "senzing-persistent-volume-claim"
   password: "db2inst1"
 
 fullnameOverride: ""

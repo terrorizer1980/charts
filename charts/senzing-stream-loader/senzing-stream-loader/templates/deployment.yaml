@@ -87,7 +87,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
@@ -101,12 +101,15 @@ spec:
             - name: opt-senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
+            - name: opt-senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
           {{- end }}
-      {{- if .Values.senzing.optSenzingClaim }}
+      {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}

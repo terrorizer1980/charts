@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
@@ -37,11 +37,11 @@ spec:
               mountPath: /var/opt/senzing
               subPath: senzing-var
           {{- end }}
-      {{- if .Values.senzing.optSenzingClaim }}
+      {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}

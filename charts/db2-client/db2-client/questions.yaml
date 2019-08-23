@@ -11,6 +11,6 @@ questions:
 
   - variable: db2.optSenzingStorageClaim
     label: db2 storage claim for input file
-    description: "Example: opt-senzing-claim"
+    description: "Example: senzing-persistent-volume-claim"
     type: string
-    default: "opt-senzing-claim"
+    default: "senzing-persistent-volume-claim"

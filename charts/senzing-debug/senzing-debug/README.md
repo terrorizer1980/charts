@@ -51,14 +51,14 @@ cluster using the
 | `image.repository` | Image name | `senzing/senzing-debug` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
-| `senzing.optSenzingClaim` | A Persistent Volume Claim (PVC) that can store `/opt/senzing` data | `opt-senzing-claim` |
+| `senzing.persistentVolumeClaim` | A Persistent Volume Claim (PVC) that can store `/opt/senzing` data | `senzing-persistent-volume-claim` |
 
 1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
 
     ```console
     helm install \
       --name my-senzing-debug \
-      --set senzing.optSenzingClaim="my-new-senzing-claim" \
+      --set senzing.persistentVolumeClaim="my-new-senzing-claim" \
       senzing/senzing-debug
     ```
 
@@ -68,7 +68,7 @@ cluster using the
 
     ```yaml
     senzing:
-      optSenzingClaim: my-new-senzing-claim
+      persistentVolumeClaim: my-new-senzing-claim
     ```
 
     Install helm chart. Example:

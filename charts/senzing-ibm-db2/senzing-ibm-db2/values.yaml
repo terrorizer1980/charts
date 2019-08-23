@@ -1,0 +1,37 @@
+affinity: {}
+fullnameOverride: ""
+
+db2:
+  db2instPassword: db2inst1
+  license: accept
+  persistentVolumeClaim: db2-database-claim
+
+image:
+  pullPolicy: Always
+  registry: docker.io
+  repository: senzing/ibm-db2
+  tag: latest
+
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+senzing:
+  persistentVolumeClaim: senzing-persistent-volume-claim
+
+service:
+  port: 50000
+  type: ClusterIP
+
+tolerations: []

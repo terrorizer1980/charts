@@ -20,7 +20,7 @@ spec:
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          {{- if .Values.senzing.optSenzingClaim }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
               mountPath: /opt/senzing/data
@@ -34,13 +34,16 @@ spec:
             - name: opt-senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
+            - name: opt-senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
           {{- end }}
       restartPolicy: Never
-      {{- if .Values.senzing.optSenzingClaim }}
+      {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: opt-senzing-storage
           persistentVolumeClaim:
-            claimName: {{ .Values.senzing.optSenzingClaim }}
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}

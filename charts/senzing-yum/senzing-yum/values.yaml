@@ -16,6 +16,6 @@ resources: {}
 
 senzing:
   acceptEula: ""
-  optSenzingClaim: opt-senzing-claim
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 tolerations: []
