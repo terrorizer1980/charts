@@ -128,7 +128,7 @@ Used by:
       "coleifer-sqlite-web" \
       "db2-client" \
       "helm-create-example" \
-      "ibm-db2express-c" \
+      "ibm-db2-driver-installer" \
       "kafka-test-client" \
       "mysql-client" \
       "phpmyadmin" \
