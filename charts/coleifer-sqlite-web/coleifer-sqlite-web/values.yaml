@@ -27,7 +27,7 @@ senzing:
   persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
-  port: 80
+  port: 8080
   type: ClusterIP
 
 tolerations: []
