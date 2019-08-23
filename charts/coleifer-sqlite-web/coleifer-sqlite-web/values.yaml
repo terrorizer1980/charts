@@ -23,7 +23,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  database: G2C.db
+  database: sqlite/G2C.db
   persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
