@@ -6,4 +6,6 @@ icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
 keywords:
  - sqlite
 name: coleifer-sqlite-web
+sources:
+ - https://github.com/coleifer/sqlite-web
 version: 0.1.0

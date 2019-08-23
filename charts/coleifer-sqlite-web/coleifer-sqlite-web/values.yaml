@@ -2,7 +2,7 @@ affinity: {}
 fullnameOverride: ""
 
 image:
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   registry: docker.io
   repository: coleifer/sqlite-web
   tag: latest
@@ -23,7 +23,8 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  persistentVolumeClaim: "senzing-persistent-volume-claim"
+  database: G2C.db
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 80
