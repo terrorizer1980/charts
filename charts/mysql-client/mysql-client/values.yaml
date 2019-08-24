@@ -8,12 +8,12 @@ image:
   tag: latest
 
 mysql:
-  database: "G2"
-  file: "g2/data/g2core-schema-mysql-create.sql"
+  database: G2
+  file: senzing-g2/resources/schema/g2core-schema-mysql-create.sql
   host: ""
-  password: "g2"
-  persistentVolumeClaim: "senzing-persistent-volume-claim"
-  username: "g2"
+  password: g2
+  persistentVolumeClaim: senzing-persistent-volume-claim
+  username: g2
 
 nameOverride: ""
 nodeSelector: {}
