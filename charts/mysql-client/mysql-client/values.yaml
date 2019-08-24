@@ -4,7 +4,8 @@ fullnameOverride: ""
 image:
   pullPolicy: Always
   registry: docker.io
-  repository: arey/mysql-client
+# repository: arey/mysql-client
+  repository: senzing/mysql-init
   tag: latest
 
 mysql:
