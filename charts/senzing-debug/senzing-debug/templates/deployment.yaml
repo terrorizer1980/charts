@@ -36,8 +36,6 @@ spec:
             - name: senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
-            - name: senzing-storage
-              mountPath: /data
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
