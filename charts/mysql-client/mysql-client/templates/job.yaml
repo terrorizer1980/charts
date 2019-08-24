@@ -14,11 +14,11 @@ spec:
             - "--password={{ .Values.mysql.password }}"
             - "--host={{ .Values.mysql.host }}"
             - "--database={{ .Values.mysql.database }}"
-            - '--execute="source /data/{{ .Values.mysql.file }}"'
+            - '--execute="source /sql/{{ .Values.mysql.file }}"'
           {{ if .Values.mysql.persistentVolumeClaim }}
           volumeMounts:
             - name: mysql-storage
-              mountPath: /data
+              mountPath: /sql
           {{ end }}
       restartPolicy: Never
       {{ if .Values.mysql.persistentVolumeClaim }}
