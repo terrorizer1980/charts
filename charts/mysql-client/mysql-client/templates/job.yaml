@@ -5,32 +5,42 @@ metadata:
 spec:
   template:
     spec:
-
-      {{ if .Values.mysql.storageClaim }}
-      volumes:
-        - name: mysql-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.mysql.storageClaim }}
-      {{ end }}
-
-      restartPolicy: Never
       containers:
         - name: {{ .Chart.Name }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
-          {{ if .Values.mysql.storageClaim }}
-          volumeMounts:
-            - name: mysql-storage
-              mountPath: /data
-          {{ end }}
-
-          env:
-            - name: "SENZING_SENTINEL_FILE"
-              value: "/data/mysql-init.sentinel"
           args:
             - "--user={{ .Values.mysql.username }}"
             - "--password={{ .Values.mysql.password }}"
             - "--host={{ .Values.mysql.host }}"
             - "--database={{ .Values.mysql.database }}"
-            - '--execute="source /data/{{ .Values.mysql.file }}"'
+            - "--execute=source /sql/{{ .Values.mysql.file }}"
+          {{ if .Values.mysql.persistentVolumeClaim }}
+          volumeMounts:
+            - name: mysql-storage
+              mountPath: /sql
+          {{ end }}
+      restartPolicy: Never
+      {{ if .Values.mysql.persistentVolumeClaim }}
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.mysql.persistentVolumeClaim }}
+      {{ end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

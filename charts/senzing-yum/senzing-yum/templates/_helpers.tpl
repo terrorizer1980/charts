@@ -54,3 +54,15 @@ Also, we can't use a single if because lazy evaluation is not an option
 {{- end -}}
 {{- end -}}
 
+{{/*
+Common labels
+*/}}
+{{- define "senzing-yum.labels" -}}
+app.kubernetes.io/name: {{ include "senzing-yum.name" . }}
+helm.sh/chart: {{ include "senzing-yum.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
