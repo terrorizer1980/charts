@@ -23,7 +23,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  persistentVolumeClaim: "senzing-persistent-volume-claim"
+  optSenzingClaim: "senzing-persistent-volume-claim"
   subcommand: "install"
 
 service:
