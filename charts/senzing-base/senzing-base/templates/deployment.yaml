@@ -25,6 +25,13 @@ spec:
       initContainers:
         - name: senzing-mount-maker
           image: busybox:1.28
+          {{- if .Values.securityContext.enabled }}
+          command:
+            - chown
+            - -R
+            - {{ .Values.securityContext.runAsUser }}:{{ .Values.securityContext.runAsGroup }}
+            - /opt/senzing
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name:  opt-senzing-storage
