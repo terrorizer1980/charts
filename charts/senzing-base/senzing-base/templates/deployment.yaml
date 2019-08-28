@@ -16,6 +16,12 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-base.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+      {{- end }}
       initContainers:
         - name: senzing-mount-maker
           image: busybox:1.28
@@ -52,12 +58,6 @@ spec:
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
           {{- end }}
-      {{- if .Values.securityContext.enabled }}
-      securityContext:
-        fsGroup: {{ .Values.securityContext.fsGroup }}
-        runAsGroup: {{ .Values.securityContext.runAsGroup }}
-        runAsUser: {{ .Values.securityContext.runAsUser }}
-      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: opt-senzing-storage
