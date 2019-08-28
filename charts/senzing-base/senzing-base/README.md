@@ -17,43 +17,17 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
 ## Prerequisites
 
-1. Install Senzing helm charts. Example:
+1. Install Senzing helm charts.
+   Example:
 
     ```console
     helm repo add senzing 'https://senzing.github.io/charts/'
     ```
 
-1. Specify a URL for the database storing Senzing data. (`SENZING_DATABASE_URL`).
-
-    Components of the URL:
-
-    ```console
-    export DATABASE_PROTOCOL=<postgresql, mysql, or db2>
-    export DATABASE_USERNAME=<my-username>
-    export DATABASE_PASSWORD=<my-password>
-    export DATABASE_HOST=<hostname>
-    export DATABASE_PORT=<database-connnection-port>
-    export DATABASE_DATABASE=<database-name>
-    ```
-
-    Example:
-
-    ```console
-    export DATABASE_PROTOCOL=postgresql
-    export DATABASE_USERNAME=johnsmith
-    export DATABASE_PASSWORD=secret
-    export DATABASE_HOST=my.database.com
-    export DATABASE_PORT=5432
-    export DATABASE_DATABASE=G2
-
-    export SENZING_DATABASE_URL="${DATABASE_PROTOCOL}://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_DATABASE}"
-
-    echo ${SENZING_DATABASE_URL}
-    ```
-
 ## Installing the Chart
 
-1. Install into default namespace. Example:
+1. Install into default namespace.
+   Example:
 
     ```console
     helm install \
@@ -64,7 +38,8 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
 ## Uninstalling the Chart
 
-1. Uninstall/delete the deployment. Example:
+1. Uninstall/delete the deployment.
+   Example:
 
     ```console
     helm delete my-senzing-base
@@ -77,17 +52,15 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 | `image.repository` | Image name | `senzing/senzing-base` |
 | `image.tag` | Image tag | `latest` |
 | `image.pullPolicy` | Image pull policy | `IfNotPresent` |
-| `senzing.databaseURL` | Value of `${SENZING_DATABASE_URL}`. | `nil`, which uses the internal SQLite database. |
-| `senzing.debug` | Turn debugging on (`1`) or off (`0`) | `0`, which is off. |
-| `senzing.entrypointSleep` | Sleep, in seconds. `0` is infinity, `nil` is don't sleep | `nil`, don't sleep. |
+| `senzing.persistentVolumeClaim` | Persistent Volume Claim (PVC) | `senzing-persistent-volume-claim` |
 
-1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments. Example:
+1. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install` or use multiple `--set` arguments.
+   Example:
 
     ```console
     helm install \
       --name my-senzing-base \
-      --set senzing.databaseURL="postgresql://johnsmith:secret@my.database.com:5432/G2" \
-      --set senzing.debug=true \
+      --set senzing.persistentVolumeClaim=my-persistent-volume-claim
       senzing/senzing-base
     ```
 
@@ -97,11 +70,10 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 
     ```yaml
     senzing:
-      databaseURL: "postgresql://johnsmith:secret@my.database.com:5432/G2"
-      debug: true
+      persistentVolumeClaim: my-persistent-volume-claim
     ```
 
-    Install helm chart. Example:
+    Install helm chart.  Example:
 
     ```console
     helm install \
@@ -111,6 +83,10 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
     ```
 
 ## CHANGELOG
+
+### 0.3.0
+
+1. Support for RPM installation.
 
 ### 0.2.0
 

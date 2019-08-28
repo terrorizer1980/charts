@@ -3,10 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-base.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-base.name" . }}
-    helm.sh/chart: {{ include "senzing-base.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-base.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -19,29 +16,41 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-base.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      initContainers:
+        - name: senzing-mount-maker
+          image: busybox:1.28
+          {{- if .Values.senzing.persistentVolumeClaim }}
+          volumeMounts:
+            - name:  opt-senzing-storage
+              mountPath: /opt/senzing
+          {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          env:
-            {{- if .Values.senzing.databaseUrl }}
-            - name: SENZING_DATABASE_URL
-              value: "{{ .Values.senzing.databaseUrl }}"
-            {{- end }}
-            {{- if .Values.senzing.debug }}
-            - name: SENZING_DEBUG
-              value: "{{ .Values.senzing.debug }}"
-            {{- end }}
-            {{- if .Values.senzing.entrypointSleep }}
-            - name: SENZING_ENTRYPOINT_SLEEP
-              value: "{{ .Values.senzing.entrypointSleep }}"
-            {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.senzing.args }}
+          args:
+            {{- toYaml .Values.senzing.args | nindent 12 }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
-              mountPath: /opt/senzing
+              mountPath: /opt/senzing/data
+              subPath: senzing-data/1.0.0
+            - name: opt-senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: opt-senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: opt-senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
+            - name: opt-senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
@@ -52,6 +61,10 @@ spec:
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       {{- with .Values.nodeSelector }}

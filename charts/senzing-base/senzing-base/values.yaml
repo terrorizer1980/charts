@@ -21,9 +21,7 @@ replicaCount: 1
 resources: {}
 
 senzing:
-  databaseUrl: ""
-  debug: 0
-  entrypointSleep: 0
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 80
