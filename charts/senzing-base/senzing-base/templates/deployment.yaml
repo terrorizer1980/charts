@@ -34,6 +34,13 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+
+          {{- if .Values.securityContext.enabled }}
+          securityContext:
+            fsGroup: {{ .Values.securityContext.fsGroup }}
+            runAsGroup: {{ .Values.securityContext.runAsGroup }}
+            runAsUser: {{ .Values.securityContext.runAsUser }}
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: opt-senzing-storage
