@@ -20,10 +20,14 @@ nodeSelector: {}
 replicaCount: 1
 resources: {}
 
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+
 senzing:
-  databaseUrl: ""
-  debug: 0
-  entrypointSleep: 0
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 80
