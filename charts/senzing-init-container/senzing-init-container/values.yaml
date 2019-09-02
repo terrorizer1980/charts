@@ -22,6 +22,12 @@ nodeSelector: {}
 replicaCount: 1
 resources: {}
 
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+
 senzing:
   persistentVolumeClaim: senzing-persistent-volume-claim
 
