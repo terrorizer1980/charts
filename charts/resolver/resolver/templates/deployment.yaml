@@ -61,13 +61,13 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
           workingDir: /app
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           optSenzingClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}

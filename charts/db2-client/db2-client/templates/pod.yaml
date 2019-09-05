@@ -30,7 +30,7 @@ spec:
           command: ["sleep", "infinity"]
           {{- if .Values.db2.optSenzingStorageClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.global.image.secretName }}
@@ -39,7 +39,7 @@ spec:
       {{- end }}
       {{- if .Values.db2.optSenzingStorageClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.db2.optSenzingStorageClaim }}
       {{- end }}

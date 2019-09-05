@@ -33,13 +33,13 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /data
               subPath: senzing-var
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}

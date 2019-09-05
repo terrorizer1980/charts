@@ -20,12 +20,12 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
       restartPolicy: Never
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
 # --- Standard suffix ---

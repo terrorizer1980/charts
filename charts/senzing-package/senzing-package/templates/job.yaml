@@ -32,13 +32,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
       restartPolicy: Never
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           optSenzingClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
