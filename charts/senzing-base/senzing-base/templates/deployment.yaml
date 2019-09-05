@@ -27,7 +27,7 @@ spec:
           image: busybox:1.28
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
-            - name:  opt-senzing-storage
+            - name:  senzing-storage
               mountPath: /opt/senzing
           {{- end }}
       containers:
@@ -42,36 +42,36 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing/data
               subPath: senzing-data/1.0.0
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /etc/opt/senzing
               subPath: senzing-etc
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing/g2
               subPath: senzing-g2
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
           {{- end }}
           {{- if .Values.senzing.optSenzingClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
