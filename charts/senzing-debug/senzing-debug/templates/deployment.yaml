@@ -16,6 +16,12 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-debug.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: {{ template "senzing.image" . }}
@@ -36,12 +42,26 @@ spec:
             - name: senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
+            - name: senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
+          {{- end }}
+          {{- if .Values.senzing.optSenzingClaim }}
+          volumeMounts:
+            - name: senzing-storage
+              mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
+      {{- end }}
+      {{- if .Values.senzing.optSenzingClaim }}
+      volumes:
+        - name: senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}
