@@ -68,7 +68,7 @@ spec:
       {{- if .Values.senzing.optSenzingClaim }}
       volumes:
         - name: senzing-storage
-          optSenzingClaim:
+          persistentVolumeClaim:
             claimName: {{ .Values.senzing.optSenzingClaim }}
       {{- end }}
 # --- Standard suffix ---
