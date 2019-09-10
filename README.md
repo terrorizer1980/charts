@@ -132,6 +132,7 @@ Used by:
       "resolver" \
       "senzing-api-server" \
       "senzing-base" \
+      "senzing-configurator" \
       "senzing-debug" \
       "senzing-entity-search-web-app" \
       "senzing-hello-world" \
