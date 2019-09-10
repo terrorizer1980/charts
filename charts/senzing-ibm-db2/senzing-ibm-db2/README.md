@@ -6,14 +6,8 @@ Wrapper over IBM Db2 with Senzing customizations.
 
 ### Contents
 
-1. [CHANGELOG](#changelog)
+1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
-
-## CHANGELOG
-
-### 0.1.0
-
-1. Initial public version
 
 ## References
 

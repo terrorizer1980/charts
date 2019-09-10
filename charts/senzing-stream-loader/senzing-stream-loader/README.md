@@ -6,22 +6,8 @@ Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
 
 ### Contents
 
-1. [CHANGELOG](#changelog)
+1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
-
-## CHANGELOG
-
-### 0.3.0
-
-1. Migrate to RPM installation.
-
-### 0.2.0
-
-1. Initial public version
-
-### 0.1.0
-
-1. Initial draft
 
 ## References
 

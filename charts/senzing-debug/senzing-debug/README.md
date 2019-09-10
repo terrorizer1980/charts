@@ -15,7 +15,7 @@ cluster using the
 1. [Installing the Chart](#installing-the-chart)
 1. [Uninstalling the Chart](#uninstalling-the-chart)
 1. [Configuration](#configuration)
-1. [CHANGELOG](#changelog)
+1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
 ## Prerequisites
@@ -79,20 +79,6 @@ cluster using the
       --values my-additional-values.yaml \
       senzing/senzing-debug
     ```
-
-## CHANGELOG
-
-### 0.3.0
-
-1. Migrated to RPM-based installation
-
-### 0.2.0
-
-1. Initial public version
-
-### 0.1.0
-
-1. Initial draft
 
 ## References
 

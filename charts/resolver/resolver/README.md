@@ -12,7 +12,7 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
 1. [Installing the Chart](#installing-the-chart)
 1. [Uninstalling the Chart](#uninstalling-the-chart)
 1. [Configuration](#configuration)
-1. [CHANGELOG](#changelog)
+1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
 ## Prerequisites
@@ -78,12 +78,6 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
       --values my-additional-values.yaml \
       senzing/resolver
     ```
-
-## CHANGELOG
-
-### 1.0.0
-
-1. Initial draft
 
 ## References
 
