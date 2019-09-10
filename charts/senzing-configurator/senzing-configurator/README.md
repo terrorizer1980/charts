@@ -31,8 +31,8 @@ This chart runs a [senzing/configurator](https://github.com/Senzing/configurator
 
     ```console
     helm install \
-      --name my-configurator \
-      senzing/configurator
+      --name my-senzing-configurator \
+      senzing/senzing-configurator
     ```
 
 ## Uninstalling the Chart
@@ -41,7 +41,7 @@ This chart runs a [senzing/configurator](https://github.com/Senzing/configurator
    Example:
 
     ```console
-    helm delete my-configurator
+    helm delete my-senzing-configurator
     ```
 
 ## Configuration
@@ -56,9 +56,9 @@ This chart runs a [senzing/configurator](https://github.com/Senzing/configurator
 
     ```console
     helm install \
-      --name my-senzing-base \
+      --name my-senzing-configurator \
       --set image.tag=1.10.99999 \
-      senzing/configurator
+      senzing/senzing-configurator
     ```
 
 1. Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart.
@@ -74,9 +74,9 @@ This chart runs a [senzing/configurator](https://github.com/Senzing/configurator
 
     ```console
     helm install \
-      --name my-configurator \
+      --name my-senzing-configurator \
       --values my-additional-values.yaml \
-      senzing/configurator
+      senzing/senzing-configurator
     ```
 
 ## CHANGELOG
