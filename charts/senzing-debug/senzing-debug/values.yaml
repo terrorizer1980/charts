@@ -7,12 +7,14 @@ image:
   repository: senzing/senzing-debug
   tag: latest
 
+imagePullSecrets: []
+
 ingress:
   annotations: {}
   enabled: false
   hosts:
-    - chart-example.local
-  paths: []
+    - host: chart-example.local
+      paths: []
   tls: []
 
 nameOverride: ""
@@ -22,9 +24,9 @@ resources: {}
 
 securityContext:
   enabled: true
-  runAsUser: 0
-  runAsGroup: 0
-  fsGroup: 0
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
 
 senzing:
   debug: 0

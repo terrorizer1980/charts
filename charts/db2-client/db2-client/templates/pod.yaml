@@ -30,16 +30,12 @@ spec:
           command: ["sleep", "infinity"]
           {{- if .Values.db2.optSenzingStorageClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
-      {{- if .Values.global.image.secretName }}
-      imagePullSecrets:
-          - name: {{ .Values.global.image.secretName }}
-      {{- end }}
       {{- if .Values.db2.optSenzingStorageClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.db2.optSenzingStorageClaim }}
       {{- end }}
@@ -48,9 +44,19 @@ spec:
       affinity:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:

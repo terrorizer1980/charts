@@ -7,12 +7,6 @@ metadata:
 spec:
   template:
     spec:
-      {{- if .Values.securityContext.enabled }}
-      securityContext:
-        fsGroup: {{ .Values.securityContext.fsGroup }}
-        runAsGroup: {{ .Values.securityContext.runAsGroup }}
-        runAsUser: {{ .Values.securityContext.runAsUser }}
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           env:
@@ -28,26 +22,26 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing/data
               subPath: senzing-data/1.0.0
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /etc/opt/senzing
               subPath: senzing-etc
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/senzing/g2
               subPath: senzing-g2
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /var/opt/senzing
               subPath: senzing-var
-            - name: opt-senzing-storage
+            - name: senzing-storage
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
           {{- end }}
       restartPolicy: Never
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
-        - name: opt-senzing-storage
+        - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
       {{- end }}
@@ -63,6 +57,12 @@ spec:
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:

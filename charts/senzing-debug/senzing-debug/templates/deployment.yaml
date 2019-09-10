@@ -16,12 +16,6 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-debug.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
-      {{- if .Values.securityContext.enabled }}
-      securityContext:
-        fsGroup: {{ .Values.securityContext.fsGroup }}
-        runAsGroup: {{ .Values.securityContext.runAsGroup }}
-        runAsUser: {{ .Values.securityContext.runAsUser }}
-      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: {{ template "senzing.image" . }}
@@ -75,6 +69,12 @@ spec:
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:

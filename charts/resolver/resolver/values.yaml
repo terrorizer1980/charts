@@ -14,13 +14,19 @@ ingress:
   enabled: false
   hosts:
     - host: chart-example.local
-  paths: []
+      paths: []
   tls: []
 
 nameOverride: ""
 nodeSelector: {}
 replicaCount: 1
 resources: {}
+
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
 
 senzing:
   optSenzingClaim: senzing-persistent-volume-claim

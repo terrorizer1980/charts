@@ -1,3 +1,5 @@
+affinity: {}
+
 db2:
   optSenzingStorageClaim: "senzing-persistent-volume-claim"
   password: "db2inst1"
@@ -14,12 +16,24 @@ image:
   repository: ibmcom/db2express-c
   tag: 10.5.0.5-3.10.0
 
+imagePullSecrets: []
+
 ingress:
   enabled: false
 
 nameOverride: ""
+nodeSelector: {}
 replicaCount: 1
+resources: {}
+
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
 
 service:
   port: 80
   type: ClusterIP
+
+tolerations: []
