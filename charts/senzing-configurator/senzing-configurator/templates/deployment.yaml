@@ -81,7 +81,7 @@ spec:
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
           {{- end }}
-      restartPolicy: Never
+      restartPolicy: Always
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage
