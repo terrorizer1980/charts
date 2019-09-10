@@ -29,7 +29,7 @@ securityContext:
   fsGroup: 1001
 
 senzing:
-  persistentVolumeClaim: senzing-persistent-volume-claims
+  persistentVolumeClaim: senzing-persistent-volume-claim
 
 service:
   port: 80

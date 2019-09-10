@@ -7,12 +7,14 @@ image:
   repository: senzing/senzing-debug
   tag: latest
 
+imagePullSecrets: []
+
 ingress:
   annotations: {}
   enabled: false
   hosts:
-    - chart-example.local
-  paths: []
+    - host: chart-example.local
+      paths: []
   tls: []
 
 nameOverride: ""

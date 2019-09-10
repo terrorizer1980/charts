@@ -1,3 +1,4 @@
+affinity: {}
 fullnameOverride: ""
 
 image:
@@ -6,8 +7,28 @@ image:
   repository: senzing/hello-world-on-hub-docker-com
   tag: latest
 
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
 nameOverride: ""
+nodeSelector: {}
 replicaCount: 1
+resources: {}
+
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
 
 senzing:
   sleepTime: 300
+
+tolerations: []
