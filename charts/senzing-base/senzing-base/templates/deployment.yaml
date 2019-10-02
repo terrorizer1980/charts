@@ -19,6 +19,10 @@ spec:
       initContainers:
         - name: senzing-mount-maker
           image: busybox:1.28
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name:  senzing-storage
@@ -34,6 +38,10 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: senzing-storage
@@ -57,6 +65,10 @@ spec:
             - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccount: {{ template "senzing-base.fullname" . }}
+      serviceAccountName: {{ template "senzing-base.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

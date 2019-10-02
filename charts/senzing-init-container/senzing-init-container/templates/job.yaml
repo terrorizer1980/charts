@@ -20,6 +20,10 @@ spec:
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: senzing-storage
@@ -39,6 +43,10 @@ spec:
               subPath: senzing-db2-drivers
           {{- end }}
       restartPolicy: Never
+      {{- if .Values.rbacEnabled}}
+      serviceAccount: {{ template "senzing-init-container.fullname" . }}
+      serviceAccountName: {{ template "senzing-init-container.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

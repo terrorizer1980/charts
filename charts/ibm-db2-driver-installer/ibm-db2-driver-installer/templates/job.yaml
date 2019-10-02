@@ -13,11 +13,19 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           volumeMounts:
             - name: senzing-storage
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
       restartPolicy: Never
+      {{- if .Values.rbacEnabled}}
+      serviceAccount: {{ template "ibm-db2-driver-installer.fullname" . }}
+      serviceAccountName: {{ template "ibm-db2-driver-installer.fullname" . }}
+      {{- end }}
       volumes:
         - name: senzing-storage
           persistentVolumeClaim:
