@@ -22,7 +22,7 @@ spec:
           {{- if .Values.rbacEnabled}}
           securityContext:
             privileged: true
-          {{- end }}          
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name:  senzing-storage
@@ -66,8 +66,8 @@ spec:
               mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.rbacEnabled}}
-      serviceAccount: {{ template "senzing-debug.fullname" . }}
-      serviceAccountName: {{ template "senzing-debug.fullname" . }}
+      serviceAccount: {{ template "senzing-base.fullname" . }}
+      serviceAccountName: {{ template "senzing-base.fullname" . }}
       {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
