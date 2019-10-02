@@ -18,6 +18,10 @@ spec:
             - name: "SENZING_ACCEPT_EULA"
               value: {{ .Values.senzing.acceptEula | quote }}
             {{- end }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: senzing-storage
@@ -39,6 +43,10 @@ spec:
       initContainers:
         - name: senzing-mount-maker
           image: busybox:1.28
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name:  senzing-storage
@@ -71,6 +79,10 @@ spec:
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.senzingVarClaim }}
         {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccount: {{ template "senzing-yum.fullname" . }}
+      serviceAccountName: {{ template "senzing-yum.fullname" . }}
+      {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:
