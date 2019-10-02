@@ -19,6 +19,7 @@ ingress:
 
 nameOverride: ""
 nodeSelector: {}
+rbacEnabled: false
 replicaCount: 1
 resources: {}
 

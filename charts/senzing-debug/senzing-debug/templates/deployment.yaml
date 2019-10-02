@@ -22,6 +22,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           {{- if .Values.senzing.persistentVolumeClaim }}
           volumeMounts:
             - name: senzing-storage
@@ -45,6 +49,10 @@ spec:
             - name: senzing-storage
               mountPath: /opt/senzing
           {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccount: {{ template "senzing-debug.fullname" . }}
+      serviceAccountName: {{ template "senzing-debug.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

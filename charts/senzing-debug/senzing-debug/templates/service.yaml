@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: {{ include "senzing-debug.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-debug.name" . }}
-    helm.sh/chart: {{ include "senzing-debug.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-debug.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
