@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: {{ include "senzing-api-server.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
-    helm.sh/chart: {{ include "senzing-api-server.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{ include "senzing-api-server.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -15,5 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "senzing-api-server.name" . }}
