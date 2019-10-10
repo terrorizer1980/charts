@@ -15,6 +15,11 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
+### Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/senzing/resolver)
+1. [GitHub](https://github.com/Senzing/resolver)
+
 ## Prerequisites
 
 1. Install Senzing helm charts.
@@ -80,6 +85,3 @@ This chart runs a [senzing/resolver](https://github.com/Senzing/resolver) deploy
     ```
 
 ## References
-
-1. [DockerHub](https://hub.docker.com/r/senzing/resolver)
-1. [GitHub](https://github.com/Senzing/resolver)

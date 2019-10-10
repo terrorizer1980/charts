@@ -10,7 +10,9 @@ A server that supports the
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
-## References
+### Related artifacts
 
 1. [DockerHub](https://hub.docker.com/r/senzing/senzing-api-server)
 1. [GitHub](https://github.com/Senzing/senzing-api-server)
+
+## References

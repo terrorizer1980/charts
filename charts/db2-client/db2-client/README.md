@@ -7,8 +7,6 @@ Replaced by
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-
 ### Contents
 
 1. [CHANGELOG](CHANGELOG.md)
-

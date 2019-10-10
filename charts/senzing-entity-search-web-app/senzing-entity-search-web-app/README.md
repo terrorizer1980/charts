@@ -10,7 +10,9 @@ A server that supports the
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
-## References
+### Related artifacts
 
 1. [DockerHub](https://hub.docker.com/r/senzing/entity-search-web-app)
 1. [GitHub](https://github.com/Senzing/entity-search-web-app)
+
+## References

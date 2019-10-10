@@ -18,6 +18,11 @@ cluster using the
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
+### Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/senzing/senzing-debug)
+1. [GitHub](https://github.com/Senzing/docker-senzing-debug)
+
 ## Prerequisites
 
 1. Install Senzing helm charts. Example:
@@ -81,6 +86,3 @@ cluster using the
     ```
 
 ## References
-
-1. [DockerHub](https://hub.docker.com/r/senzing/senzing-debug)
-1. [GitHub](https://github.com/Senzing/docker-senzing-debug)
