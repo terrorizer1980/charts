@@ -9,7 +9,9 @@ A wrapper over the `yum` command.
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
-## References
+### Related artifacts
 
 1. [DockerHub](https://hub.docker.com/r/senzing/yum)
 1. [GitHub](https://github.com/Senzing/docker-yum)
+
+## References

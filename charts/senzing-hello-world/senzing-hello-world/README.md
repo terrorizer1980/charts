@@ -10,6 +10,8 @@ The "senzing/hello-world" docker image is **not** hosted on hub.docker.com.
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
-## References
+### Related artifacts
 
 1. [GitHub](https://www.github.com/Senzing/docker-hello-world)
+
+## References

@@ -4,10 +4,15 @@
 
 [phpMyAdmin](https://www.phpmyadmin.net/) is a free and open source administration tool for MySQL and MariaDB. As a portable web application written primarily in PHP, it has become one of the most popular MySQL administration tools, especially for web hosting services.
 
+## Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/bitnami/phpmyadmin)
+1. [GitHub](https://www.github.com/bitnami/bitnami-docker-phpmyadmin)
+
 ## TL;DR
 
 ```console
-$ helm install stable/phpmyadmin
+helm install stable/phpmyadmin
 ```
 
 ## Introduction
@@ -25,7 +30,7 @@ Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment
 To install the chart with the release name `my-release`:
 
 ```console
-$ helm install --name my-release stable/phpmyadmin
+helm install --name my-release stable/phpmyadmin
 ```
 
 The command deploys phpMyAdmin on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists the parameters that can be configured during installation.
@@ -37,7 +42,7 @@ The command deploys phpMyAdmin on the Kubernetes cluster in the default configur
 To uninstall/delete the `my-release` deployment:
 
 ```console
-$ helm delete my-release
+helm delete my-release
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -84,7 +89,7 @@ For more information please refer to the [bitnami/phpmyadmin](http://github.com/
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
 ```console
-$ helm install --name my-release \
+helm install --name my-release \
   --set db.host=mymariadb,db.port=3306 stable/phpmyadmin
 ```
 
@@ -93,7 +98,7 @@ The above command sets the phpMyAdmin to connect to a database in `mymariadb` ho
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-$ helm install --name my-release -f values.yaml stable/phpmyadmin
+helm install --name my-release -f values.yaml stable/phpmyadmin
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
@@ -106,5 +111,5 @@ Backwards compatibility is not guaranteed unless you modify the labels used on t
 Use the workaround below to upgrade from versions previous to `1.0.0`. The following example assumes that the release name is `phpmyadmin`:
 
 ```console
-$ kubectl patch deployment phpmyadmin-phpmyadmin --type=json -p='[{"op": "remove", "path": "/spec/selector/matchLabels/chart"}]'
+kubectl patch deployment phpmyadmin-phpmyadmin --type=json -p='[{"op": "remove", "path": "/spec/selector/matchLabels/chart"}]'
 ```

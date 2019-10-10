@@ -9,7 +9,9 @@ A SQLite database browser.
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
-## References
+### Related artifacts
 
 1. [DockerHub](https://hub.docker.com/r/coleifer/sqlite-web/)
 1. [GitHub](https://github.com/coleifer/sqlite-web)
+
+## References

@@ -15,6 +15,11 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
 1. [CHANGELOG](CHANGELOG.md)
 1. [References](#references)
 
+### Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/senzing/senzing-base)
+1. [GitHub](https://github.com/Senzing/docker-senzing-base)
+
 ## Prerequisites
 
 1. Install Senzing helm charts.
@@ -83,6 +88,3 @@ This chart bootstraps a [generic Senzing environment](https://github.com/Senzing
     ```
 
 ## References
-
-1. [DockerHub](https://hub.docker.com/r/senzing/senzing-base)
-1. [GitHub](https://github.com/Senzing/docker-senzing-base)
