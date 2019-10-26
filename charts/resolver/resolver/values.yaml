@@ -29,11 +29,11 @@ securityContext:
   fsGroup: 1001
 
 senzing:
-  optSenzingClaim: senzing-persistent-volume-claim
+  persistentVolumeClaim: senzing-persistent-volume-claim
   subcommand: service
 
 service:
-  port: 5000
+  port: 8252
   targetPort: http
   type: ClusterIP
 
