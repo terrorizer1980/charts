@@ -31,6 +31,10 @@ spec:
             - name: SENZING_DEBUG
               value: "{{ .Values.senzing.debug }}"
             {{- end }}
+            {{- if .Values.senzing.engineConfigurationJson }}
+            - name: SENZING_ENGINE_CONFIGURATION_JSON
+              value: "{{ .Values.senzing.engineConfigurationJson }}"
+            {{- end }}
             {{- if .Values.senzing.entityType }}
             - name: SENZING_ENTITY_TYPE
               value: "{{ .Values.senzing.entityType }}"
