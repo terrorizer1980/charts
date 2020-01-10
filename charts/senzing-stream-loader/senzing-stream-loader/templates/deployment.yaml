@@ -33,7 +33,8 @@ spec:
             {{- end }}
             {{- if .Values.senzing.engineConfigurationJson }}
             - name: SENZING_ENGINE_CONFIGURATION_JSON
-              value: >- {{ .Values.senzing.engineConfigurationJson }}
+              value: >-
+              {{ .Values.senzing.engineConfigurationJson  | nindent 16 }}
             {{- end }}
             {{- if .Values.senzing.entityType }}
             - name: SENZING_ENTITY_TYPE
