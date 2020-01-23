@@ -1,0 +1,113 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "senzing-redoer.fullname" . }}
+  labels:
+{{ include "senzing-redoer.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "senzing-redoer.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "senzing-redoer.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          env:
+            {{- if .Values.senzing.databaseUrl }}
+            - name: SENZING_DATABASE_URL
+              value: "{{ .Values.senzing.databaseUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.debug }}
+            - name: SENZING_DEBUG
+              value: "{{ .Values.senzing.debug }}"
+            {{- end }}
+            {{- if .Values.senzing.engineConfigurationJson }}
+            - name: SENZING_ENGINE_CONFIGURATION_JSON
+              value: >-
+              {{ .Values.senzing.engineConfigurationJson  | nindent 16 }}
+            {{- end }}
+            {{- if .Values.senzing.entrypointSleep }}
+            - name: SENZING_ENTRYPOINT_SLEEP
+              value: "{{ .Values.senzing.entrypointSleep }}"
+            {{- end }}
+            {{- if .Values.senzing.logLevel }}
+            - name: SENZING_LOG_LEVEL
+              value: "{{ .Values.senzing.logLevel }}"
+            {{- end }}
+            {{- if .Values.senzing.monitoringPeriodInSeconds }}
+            - name: SENZING_MONITORING_PERIOD_IN_SECONDS
+              value: "{{ .Values.senzing.monitoringPeriodInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.queueMaxSize }}
+            - name: SENZING_QUEUE_MAX_SIZE
+              value: "{{ .Values.senzing.queueMaxSize }}"
+            {{- end }}
+            {{- if .Values.senzing.redoSleepTimeInSeconds }}
+            - name: SENZING_REDO_SLEEP_TIME_IN_SECONDS
+              value: "{{ .Values.senzing.redoSleepTimeInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.threadsPerProcess }}
+            - name: SENZING_THREADS_PER_PROCESS
+              value: "{{ .Values.senzing.threadsPerProcess }}"
+            {{- end }}
+            {{- if .Values.senzing.subcommand }}
+            - name: SENZING_SUBCOMMAND
+              value: "{{ .Values.senzing.subcommand }}"
+            {{- end }}
+          image: {{ template "senzing.image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.senzing.persistentVolumeClaim }}
+          volumeMounts:
+            - name: senzing-storage
+              mountPath: /opt/senzing/data
+              subPath: senzing-data/1.0.0
+            - name: senzing-storage
+              mountPath: /etc/opt/senzing
+              subPath: senzing-etc
+            - name: senzing-storage
+              mountPath: /opt/senzing/g2
+              subPath: senzing-g2
+            - name: senzing-storage
+              mountPath: /var/opt/senzing
+              subPath: senzing-var
+            - name: senzing-storage
+              mountPath: /opt/IBM
+              subPath: senzing-db2-drivers
+          {{- end }}
+      {{- if .Values.senzing.persistentVolumeClaim }}
+      volumes:
+        - name: senzing-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.senzing.persistentVolumeClaim }}
+      {{- end }}
+# --- Standard suffix ---
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- if .Values.securityContext.enabled }}
+      securityContext:
+        fsGroup: {{ .Values.securityContext.fsGroup }}
+        runAsGroup: {{ .Values.securityContext.runAsGroup }}
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

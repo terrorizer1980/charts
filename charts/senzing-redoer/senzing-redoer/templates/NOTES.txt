@@ -1,0 +1,40 @@
+## Overview
+
+Pull messages from Senzing's "redo" queue, kept in the Senzing database, and send to Senzing for re-processing.
+
+More information:
+ - https://github.com/Senzing/redoer
+ - https://github.com/Senzing/redoer/blob/master/redoer.py
+
+## Command
+
+The command being run:
+
+```console
+python3 redoer.py {{ .Values.senzing.subcommand -}}
+  {{- if .Values.senzing.debug }} \
+  --debug "{{ .Values.senzing.debug }}"
+  {{- end }}
+  {{- if .Values.senzing.engineConfigurationJson }} \
+  --engine-configuration-json {{ .Values.senzing.engineConfigurationJson }}
+  {{- end }}
+  {{- if .Values.senzing.threadsPerProcess }} \
+  --threads-per-process {{ .Values.senzing.threadsPerProcess }}
+  {{- end }}
+```
+
+{{- if .Values.ingress.enabled }}
+{{- else if contains "NodePort" .Values.service.type }}
+{{- else if contains "LoadBalancer" .Values.service.type }}
+{{- else if contains "ClusterIP" .Values.service.type }}
+
+## Logon
+
+  1. Example:
+
+    ```console
+    export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "senzing-redoer.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+    kubectl exec -it --namespace {{ .Release.Namespace }} ${POD_NAME} -- /bin/bash
+    ```
+
+{{- end }}
