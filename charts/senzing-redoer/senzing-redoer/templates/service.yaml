@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "senzing-stream-loader.fullname" . }}
+  name: {{ include "senzing-redoer.fullname" . }}
   labels:
-{{ include "senzing-stream-loader.labels" . | indent 4 }}
+{{ include "senzing-redoer.labels" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,5 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
+    app.kubernetes.io/name: {{ include "senzing-redoer.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

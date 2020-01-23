@@ -141,6 +141,7 @@ Used by:
       "senzing-init-container" \
       "senzing-mock-data-generator" \
       "senzing-package" \
+      "senzing-redoer" \
       "senzing-stream-loader" \
       "senzing-yum" \
     )

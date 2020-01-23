@@ -1,13 +1,6 @@
-image.repository: "data.dockter.com:5000/senzing/stream-loader"
+image.repository: "senzing/redoer"
 image.tag: "latest"
-senzing.subcommand: "kafka"
+senzing.subcommand: "redo"
 senzing.databaseUrl: "mysql://g2:g2@my-mysql-mysql:3306/G2"
-senzing.dataSource: "TEST"
-senzing.entityType: "TEST"
-senzing.kafkaBootstrapServerHost: "my-kafka-kafka"
-senzing.kafkaBootstrapServerPort: 9092
-senzing.kafkaTopic: "senzing-kafka-topic"
 senzing.logLevel: "info"
-senzing.monitoringPeriod: 60
 senzing.persistentVolumeClaim: "senzing-persistent-volume-claim"
-senzing.threadsPerProcess: 4

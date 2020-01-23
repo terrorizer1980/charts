@@ -1,8 +1,8 @@
-# senzing-stream-loader
+# senzing-redoer
 
 ## Overview
 
-Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
+Pull messages from Senzing's "redo" queue, kept in the Senzing database, and send to Senzing for re-processing.
 
 ### Contents
 
@@ -11,7 +11,7 @@ Pull messages from a queue (e.g. Kafka, RabbitMQ) and send to Senzing.
 
 ### Related artifacts
 
-1. [DockerHub](https://hub.docker.com/r/senzing/stream-loader)
-1. [GitHub](https://github.com/Senzing/stream-loader)
+1. [DockerHub](https://hub.docker.com/r/senzing/redoer)
+1. [GitHub](https://github.com/Senzing/redoer)
 
 ## References
