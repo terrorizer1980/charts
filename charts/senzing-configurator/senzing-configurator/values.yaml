@@ -33,7 +33,7 @@ senzing:
   subcommand: service
 
 service:
-  port: 5000
+  port: 8253
   type: ClusterIP
 
 tolerations: []
