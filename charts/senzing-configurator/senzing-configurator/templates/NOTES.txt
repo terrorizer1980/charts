@@ -74,11 +74,11 @@ export SENZING_CONFIGURATOR_POD_NAME=$(kubectl get pods \
 kubectl exec -it --namespace {{ .Release.Namespace }} ${SENZING_CONFIGURATOR_POD_NAME} -- /bin/bash
 ```
 
-1. Forward internal port 5000 to external port of 5001. Example:
+1. Forward internal port 8253 to external port of 8253. Example:
 
 ```console
 kubectl port-forward \
   --namespace {{ .Release.Namespace }} \
-  svc/{{ .Release.Name }} 5001:5000
+  svc/{{ .Release.Name }} 8253:8253
 ```
 {{- end }}
