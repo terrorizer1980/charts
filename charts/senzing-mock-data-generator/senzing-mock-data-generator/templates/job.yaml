@@ -75,6 +75,9 @@ spec:
               value: "{{ .Values.senzing.subcommand }}"
             {{- end }}
       restartPolicy: Never
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-mock-data-generator.fullname" . }}
+      {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:

@@ -23,13 +23,14 @@ spec:
               subPath: senzing-db2-drivers
       restartPolicy: Never
       {{- if .Values.rbacEnabled}}
-      serviceAccount: {{ template "ibm-db2-driver-installer.fullname" . }}
       serviceAccountName: {{ template "ibm-db2-driver-installer.fullname" . }}
       {{- end }}
+      {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage
           persistentVolumeClaim:
             claimName: {{ .Values.senzing.persistentVolumeClaim }}
+      {{- end }}
 # --- Standard suffix ---
       {{- with .Values.affinity }}
       affinity:

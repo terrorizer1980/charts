@@ -110,6 +110,9 @@ spec:
               mountPath: /opt/IBM
               subPath: senzing-db2-drivers
           {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-stream-loader.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

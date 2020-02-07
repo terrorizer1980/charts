@@ -50,7 +50,6 @@ spec:
               mountPath: /opt/senzing
           {{- end }}
       {{- if .Values.rbacEnabled}}
-      serviceAccount: {{ template "senzing-debug.fullname" . }}
       serviceAccountName: {{ template "senzing-debug.fullname" . }}
       {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}

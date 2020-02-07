@@ -37,6 +37,9 @@ spec:
               mountPath: /data
               subPath: senzing-var
           {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "coleifer-sqlite-web.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

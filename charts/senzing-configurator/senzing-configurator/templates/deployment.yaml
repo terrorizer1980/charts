@@ -82,6 +82,9 @@ spec:
               subPath: senzing-db2-drivers
           {{- end }}
       restartPolicy: Always
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-configurator.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

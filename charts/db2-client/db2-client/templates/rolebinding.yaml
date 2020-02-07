@@ -1,0 +1,18 @@
+{{- if .Values.rbacEnabled }}
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "db2-client.fullname" . }}-endpoint-reader
+  labels:
+    app: {{ template "db2-client.name" . }}
+    chart: {{ template "db2-client.chart" .  }}
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+subjects:
+- kind: ServiceAccount
+  name: {{ template "db2-client.fullname" . }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "db2-client.fullname" . }}-endpoint-reader
+{{- end }}

@@ -11,4 +11,4 @@ keywords:
 name: ibm-db2-driver-installer
 sources:
  - https://github.com/Senzing/docker-db2-driver-installer
-version: 1.1.0
+version: 1.1.1

@@ -56,7 +56,6 @@ spec:
           {{- end }}
       restartPolicy: Never
       {{- if .Values.rbacEnabled}}
-      serviceAccount: {{ template "senzing-yum.fullname" . }}
       serviceAccountName: {{ template "senzing-yum.fullname" . }}
       {{- end }}
       volumes:
