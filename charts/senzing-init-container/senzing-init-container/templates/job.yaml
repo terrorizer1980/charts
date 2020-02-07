@@ -44,7 +44,6 @@ spec:
           {{- end }}
       restartPolicy: Never
       {{- if .Values.rbacEnabled}}
-      serviceAccount: {{ template "senzing-init-container.fullname" . }}
       serviceAccountName: {{ template "senzing-init-container.fullname" . }}
       {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}

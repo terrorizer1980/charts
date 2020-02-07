@@ -85,6 +85,9 @@ spec:
               subPath: senzing-db2-drivers
           {{- end }}
           workingDir: /app
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-api-server.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage

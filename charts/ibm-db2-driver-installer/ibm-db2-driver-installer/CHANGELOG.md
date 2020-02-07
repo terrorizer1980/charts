@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.1] - 2020-02-07
+
+### Added in 1.1.1
+
+1. Added `serviceAccountName`
+
 ## [1.1.0] - 2019-10-02
 
 ### Added in 1.1.0

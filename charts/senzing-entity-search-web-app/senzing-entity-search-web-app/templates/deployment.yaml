@@ -48,6 +48,9 @@ spec:
               mountPath: /var/opt/senzing
               subPath: senzing-var
           {{- end }}
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-entity-search-web-app.fullname" . }}
+      {{- end }}
       {{- if .Values.senzing.persistentVolumeClaim }}
       volumes:
         - name: senzing-storage
