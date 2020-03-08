@@ -35,14 +35,15 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          securityContext:
-            privileged: true
           volumeMounts:
             - name: senzing-storage
               mountPath: /opt/senzing/g2
               subPath: senzing-g2
             - name: db2-database-storage
               mountPath: /database
+      {{- if .Values.rbacEnabled}}
+      serviceAccountName: {{ template "senzing-ibm-db2.fullname" . }}
+      {{- end }}
       volumes:
         - name: senzing-storage
           persistentVolumeClaim:

@@ -9,4 +9,4 @@ keywords:
 name: senzing-ibm-db2
 sources:
  - https://github.com/Senzing/docker-ibm-db2
-version: 1.0.1
+version: 1.0.2
