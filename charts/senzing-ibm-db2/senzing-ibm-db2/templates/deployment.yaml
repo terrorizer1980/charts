@@ -35,6 +35,10 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- if .Values.rbacEnabled}}
+          securityContext:
+            privileged: true
+          {{- end }}
           volumeMounts:
             - name: senzing-storage
               mountPath: /opt/senzing/g2
