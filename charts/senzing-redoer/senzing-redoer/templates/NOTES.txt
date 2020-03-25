@@ -12,129 +12,105 @@ The command being run:
 
 ```console
 python3 redoer.py {{ .Values.senzing.subcommand -}}
-  {{- if .Values.senzing.debug }} \
-  --debug "{{ .Values.senzing.debug }}"
-  {{- end }}
-  {{- if .Values.senzing.engineConfigurationJson }} \
-  --engine-configuration-json {{ .Values.senzing.engineConfigurationJson }}
-  {{- end }}
-  {{- if .Values.senzing.threadsPerProcess }} \
-  --threads-per-process {{ .Values.senzing.threadsPerProcess }}
-  {{- end }}
-
-
   {{- if .Values.senzing.configPath }} \
   --config-path {{ .Values.senzing.configPath }}
   {{- end }}
   {{- if .Values.senzing.databaseUrl }} \
   --database-url {{ .Values.senzing.databaseUrl }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --debug {{ .Values.senzing. }}
+  {{- if .Values.senzing.debug }} \
+  --debug {{ .Values.senzing.debug }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --delay-in-seconds {{ .Values.senzing. }}
+  {{- if .Values.senzing.engineConfigurationJson }} \
+  --engine-configuration-json {{ .Values.senzing.engineConfigurationJson }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --engine-configuration-json {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaBootstrapServer }} \
+  --kafka-bootstrap-server {{ .Values.senzing.kafkaBootstrapServer }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --expiration-warning-in-days {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaFailureBootstrapServer }} \
+  --kafka-failure-bootstrap-server {{ .Values.senzing.kafkaFailureBootstrapServer }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-bootstrap-server {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaFailureTopic }} \
+  --kafka-failure-topic {{ .Values.senzing.kafkaFailureTopic }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-failure-bootstrap-server {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaInfoBootstrapServer }} \
+  --kafka-info-bootstrap-server {{ .Values.senzing.kafkaInfoBootstrapServer }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-failure-topic {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaInfoTopic }} \
+  --kafka-info-topic {{ .Values.senzing.kafkaInfoTopic }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-info-bootstrap-server {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaRedoBootstrapServer }} \
+  --kafka-redo-bootstrap-server {{ .Values.senzing.kafkaRedoBootstrapServer }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-info-topic {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaRedoGroup }} \
+  --kafka-redo-group {{ .Values.senzing.kafkaRedoGroup }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-redo-bootstrap-server {{ .Values.senzing. }}
+  {{- if .Values.senzing.kafkaRedoTopic }} \
+  --kafka-redo-topic {{ .Values.senzing.kafkaRedoTopic }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-redo-group {{ .Values.senzing. }}
+  {{- if .Values.senzing.monitoringPeriodInSeconds }} \
+  --monitoring-period-in-seconds {{ .Values.senzing.monitoringPeriodInSeconds }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --kafka-redo-topic {{ .Values.senzing. }}
+  {{- if .Values.senzing.queueMaxSize }} \
+  --queue-max-size {{ .Values.senzing.queueMaxSize }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --log-license-period-in-seconds {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqDeliveryMode }} \
+  --rabbitmq-delivery-mode {{ .Values.senzing.rabbitmqDeliveryMode }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --monitoring-period-in-seconds {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqFailureHost }} \
+  --rabbitmq-failure-host {{ .Values.senzing.rabbitmqFailureHost }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --queue-max-size {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqFailurePassword }} \
+  --rabbitmq-failure-password {{ .Values.senzing.rabbitmqFailurePassword }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-delivery-mode {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqFailureQueue }} \
+  --rabbitmq-failure-queue {{ .Values.senzing.rabbitmqFailureQueue }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-failure-host {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqFailureUsername }} \
+  --rabbitmq-failure-username {{ .Values.senzing.rabbitmqFailureUsername }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-failure-password {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqHost }} \
+  --rabbitmq-host {{ .Values.senzing.rabbitmqHost }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-failure-queue {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqInfoHost }} \
+  --rabbitmq-info-host {{ .Values.senzing.rabbitmqInfoHost }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-failure-username {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqInfoPassword }} \
+  --rabbitmq-info-password {{ .Values.senzing.rabbitmqInfoPassword }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-host {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqInfoQueue }} \
+  --rabbitmq-info-queue {{ .Values.senzing.rabbitmqInfoQueue }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-info-host {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqInfoUsername }} \
+  --rabbitmq-info-username {{ .Values.senzing.rabbitmqInfoUsername }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-info-password {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqPassword }} \
+  --rabbitmq-password {{ .Values.senzing.rabbitmqPassword }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-info-queue {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqPrefetchCount }} \
+  --rabbitmq-prefetch-count {{ .Values.senzing.rabbitmqPrefetchCount }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-info-username {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqRedoHost }} \
+  --rabbitmq-redo-host {{ .Values.senzing.rabbitmqRedoHost }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-password {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqRedoPassword }} \
+  --rabbitmq-redo-password {{ .Values.senzing.rabbitmqRedoPassword }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-queue {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqRedoQueue }} \
+  --rabbitmq-redo-queue {{ .Values.senzing.rabbitmqRedoQueue }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-redo-host {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqRedoUsername }} \
+  --rabbitmq-redo-username {{ .Values.senzing.rabbitmqRedoUsername }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-redo-password {{ .Values.senzing. }}
+  {{- if .Values.senzing.rabbitmqUsername }} \
+  --rabbitmq-username {{ .Values.senzingrabbitmqUsername. }}
   {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-redo-username {{ .Values.senzing. }}
-  {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq-username {{ .Values.senzing. }}
-  {{- end }}
-  {{- if .Values.senzing. }} \
-  --rabbitmq_prefetch_count {{ .Values.senzing. }}
-  {{- end }}
-  {{- if .Values.senzing. }} \
-  --resource-path {{ .Values.senzing. }}
-  {{- end }}
-  {{- if .Values.senzing. }} \
-  --sleep-time-in-seconds {{ .Values.senzing. }}
+  {{- if .Values.senzing.redoSleepTimeInSeconds }} \
+  --redo-sleep-time-in-seconds {{ .Values.senzing.redoSleepTimeInSeconds }}
     {{- end }}
-  {{- if .Values.senzing. }} \
-  --sleep-time-in-seconds {{ .Values.senzing. }}
+  {{- if .Values.senzing.threadsPerProcess }} \
+  --threads-per-process {{ .Values.senzing.threadsPerProcess }}
   {{- end }}
-
 ```
 
 {{- if .Values.ingress.enabled }}
