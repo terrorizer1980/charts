@@ -19,6 +19,10 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
+            {{- if .Values.senzing.configPath }}
+            - name: SENZING_CONFIG_PATH
+              value: "{{ .Values.senzing.configPath }}"
+            {{- end }}
             {{- if .Values.senzing.databaseUrl }}
             - name: SENZING_DATABASE_URL
               value: "{{ .Values.senzing.databaseUrl }}"
@@ -36,6 +40,38 @@ spec:
             - name: SENZING_ENTRYPOINT_SLEEP
               value: "{{ .Values.senzing.entrypointSleep }}"
             {{- end }}
+            {{- if .Values.senzing.kafkaBootstrapServer }}
+            - name: SENZING_KAFKA_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaFailureBootstrapServer }}
+            - name: SENZING_KAFKA_FAILURE_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaFailureBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaFailureTopic }}
+            - name: SENZING_KAFKA_FAILURE_TOPIC
+              value: "{{ .Values.senzing.kafkaFailureTopic }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaInfoBootstrapServer }}
+            - name: SENZING_KAFKA_INFO_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaInfoBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaInfoTopic }}
+            - name: SENZING_KAFKA_INFO_TOPIC
+              value: "{{ .Values.senzing.kafkaInfoTopic }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaRedoBootstrapServer }}
+            - name: SENZING_KAFKA_REDO_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaRedoBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaRedoGroup }}
+            - name: SENZING_KAFKA_REDO_GROUP
+              value: "{{ .Values.senzing.kafkaRedoGroup }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaRedoTopic }}
+            - name: SENZING_KAFKA_REDO_TOPIC
+              value: "{{ .Values.senzing.kafkaRedoTopic }}"
+            {{- end }}
             {{- if .Values.senzing.logLevel }}
             - name: SENZING_LOG_LEVEL
               value: "{{ .Values.senzing.logLevel }}"
@@ -48,17 +84,85 @@ spec:
             - name: SENZING_QUEUE_MAX_SIZE
               value: "{{ .Values.senzing.queueMaxSize }}"
             {{- end }}
+            {{- if .Values.senzing.rabbitmqDeliveryMode }}
+            - name: SENZING_RABBITMQ_DELIVERY_MODE
+              value: "{{ .Values.senzing.rabbitmqDeliveryMode }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureHost }}
+            - name: SENZING_RABBITMQ_FAILURE_HOST
+              value: "{{ .Values.senzing.rabbitmqFailureHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailurePassword }}
+            - name: SENZING_RABBITMQ_FAILURE_PASSWORD
+              value: "{{ .Values.senzing.rabbitmqFailurePassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureQueue }}
+            - name: SENZING_RABBITMQ_FAILURE_QUEUE
+              value: "{{ .Values.senzing.rabbitmqFailureQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureUsername }}
+            - name: SENZING_RABBITMQ_FAILURE_USERNAME
+              value: "{{ .Values.senzing.rabbitmqFailureUsername }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqHost }}
+            - name: SENZING_RABBITMQ_HOST
+              value: "{{ .Values.senzing.rabbitmqHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoHost }}
+            - name: SENZING_RABBITMQ_INFO_HOST
+              value: "{{ .Values.senzing.rabbitmqInfoHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoPassword }}
+            - name: SENZING_RABBITMQ_INFO_PASSWORD
+              value: "{{ .Values.senzing.rabbitmqInfoPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoQueue }}
+            - name: SENZING_RABBITMQ_INFO_QUEUE
+              value: "{{ .Values.senzing.rabbitmqInfoQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoUsername }}
+            - name: SENZING_RABBITMQ_INFO_USERNAME
+              value: "{{ .Values.senzing.rabbitmqInfoUsername }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPassword }}
+            - name: SENZING_RABBITMQ_PASSWORD
+              value: "{{ .Values.senzing.rabbitmqPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPrefetchCount }}
+            - name: SENZING_RABBITMQ_PREFETCH_COUNT
+              value: "{{ .Values.senzing.rabbitmqPrefetchCount }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqRedoHost }}
+            - name: SENZING_RABBITMQ_REDO_HOST
+              value: "{{ .Values.senzing.rabbitmqRedoHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqRedoPassword }}
+            - name: SENZING_RABBITMQ_REDO_PASSWORD
+              value: "{{ .Values.senzing.rabbitmqRedoPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqRedoQueue }}
+            - name: SENZING_RABBITMQ_REDO_QUEUE
+              value: "{{ .Values.senzing.rabbitmqRedoQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqRedoUsername }}
+            - name: SENZING_RABBITMQ_REDO_USERNAME
+              value: "{{ .Values.senzing.rabbitmqRedoUsername }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqUsername }}
+            - name: SENZING_RABBITMQ_USERNAME
+              value: "{{ .Values.senzing.rabbitmqUsername }}"
+            {{- end }}
             {{- if .Values.senzing.redoSleepTimeInSeconds }}
             - name: SENZING_REDO_SLEEP_TIME_IN_SECONDS
               value: "{{ .Values.senzing.redoSleepTimeInSeconds }}"
             {{- end }}
-            {{- if .Values.senzing.threadsPerProcess }}
-            - name: SENZING_THREADS_PER_PROCESS
-              value: "{{ .Values.senzing.threadsPerProcess }}"
-            {{- end }}
             {{- if .Values.senzing.subcommand }}
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
+            {{- end }}
+            {{- if .Values.senzing.threadsPerProcess }}
+            - name: SENZING_THREADS_PER_PROCESS
+              value: "{{ .Values.senzing.threadsPerProcess }}"
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
