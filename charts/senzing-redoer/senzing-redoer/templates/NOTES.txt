@@ -103,7 +103,7 @@ python3 redoer.py {{ .Values.senzing.subcommand -}}
   --rabbitmq-redo-username {{ .Values.senzing.rabbitmqRedoUsername }}
   {{- end }}
   {{- if .Values.senzing.rabbitmqUsername }} \
-  --rabbitmq-username {{ .Values.senzingrabbitmqUsername. }}
+  --rabbitmq-username {{ .Values.senzing.rabbitmqUsername }}
   {{- end }}
   {{- if .Values.senzing.redoSleepTimeInSeconds }} \
   --redo-sleep-time-in-seconds {{ .Values.senzing.redoSleepTimeInSeconds }}
