@@ -1,0 +1,66 @@
+## Overview
+
+A job to read JSON LINES from a URL-addressable file and send them to Kafka.
+
+More information:
+ - https://github.com/Senzing/stream-producer
+ - https://github.com/Senzing/charts/tree/master/charts/senzing-stream-producer/senzing-stream-producer
+
+## Command
+
+The command being run:
+
+```console
+python stream-producer.py {{ .Values.senzing.subcommand -}}
+  {{- if .Values.senzing.dataSource }} \
+  --data-source "{{ .Values.senzing.dataSource }}"
+  {{- end }}
+  {{- if .Values.senzing.debug }} \
+  --debug "{{ .Values.senzing.debug }}"
+  {{- end }}
+  {{- if .Values.senzing.entityType }} \
+  --entity-type "{{ .Values.senzing.entityType }}"
+  {{- end }}
+  {{- if .Values.senzing.inputUrl }} \
+  --input-url "{{ .Values.senzing.inputUrl }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaBootstrapServerHost }} \
+  --kafka-bootstrap-server "{{ .Values.senzing.kafkaBootstrapServerHost }}:{{ .Values.senzing.kafkaBootstrapServerPort }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaTopic }} \
+  --kafka-topic "{{ .Values.senzing.kafkaTopic }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqHost }}
+  --rabbitmq-host "{{ .Values.senzing.rabbitmqHost }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqPassword }}
+  --rabbitmq-password "{{ .Values.senzing.rabbitmqPassword }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqQueue }}
+  --rabbitmq-queue "{{ .Values.senzing.rabbitmqQueue }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqUsername }}
+  --rabbitmq-username "{{ .Values.senzing.rabbitmqUsername }}"
+  {{- end }}
+  {{- if .Values.senzing.randomSeed }} \
+  --random-seed {{ .Values.senzing.randomSeed }}
+  {{- end }}
+  {{- if .Values.senzing.recordMax }} \
+  --record-max {{ .Values.senzing.recordMax }}
+  {{- end }}
+  {{- if .Values.senzing.recordMin }} \
+  --record-min {{ .Values.senzing.recordMin }}
+  {{- end }}
+  {{- if .Values.senzing.recordMonitor }} \
+  --record-monitor {{ .Values.senzing.recordMonitor }}
+  {{- end }}
+  {{- if .Values.senzing.recordsPerSecond }} \
+  --records-per-second {{ .Values.senzing.recordsPerSecond }}
+  {{- end }}
+```
+
+{{- if .Values.ingress.enabled }}
+{{- else if contains "NodePort" .Values.service.type }}
+{{- else if contains "LoadBalancer" .Values.service.type }}
+{{- else if contains "ClusterIP" .Values.service.type }}
+{{- end }}
