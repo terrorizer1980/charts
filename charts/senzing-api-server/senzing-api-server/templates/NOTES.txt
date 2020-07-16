@@ -5,7 +5,7 @@ A server that supports the Senzing REST API.
 More information:
  - https://github.com/Senzing/senzing-api-server
  - https://github.com/Senzing/charts/tree/master/charts/senzing-api-server/senzing-api-server
- - https://github.com/Senzing/senzing-rest-api
+ - https://github.com/Senzing/senzing-rest-api-specification
 
 ## Command
 
