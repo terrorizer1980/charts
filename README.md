@@ -143,6 +143,7 @@ Used by:
       "senzing-package" \
       "senzing-redoer" \
       "senzing-stream-loader" \
+      "senzing-stream-producer" \
       "senzing-yum" \
     )
     ```
