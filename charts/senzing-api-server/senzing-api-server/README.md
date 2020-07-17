@@ -3,7 +3,7 @@
 ## Overview
 
 A server that supports the
-[Senzing REST API](https://github.com/Senzing/senzing-rest-api).
+[Senzing REST API](https://github.com/Senzing/senzing-rest-api-specification).
 
 ### Contents
 
