@@ -12,14 +12,14 @@ The command being run:
 
 ```console
 python stream-producer.py {{ .Values.senzing.subcommand -}}
-  {{- if .Values.senzing.dataSource }} \
-  --data-source "{{ .Values.senzing.dataSource }}"
+  {{- if .Values.senzing.defaultDataSource }}
+  --default-data-source "{{ .Values.senzing.defaultDataSource }}"
   {{- end }}
   {{- if .Values.senzing.debug }} \
   --debug "{{ .Values.senzing.debug }}"
   {{- end }}
-  {{- if .Values.senzing.entityType }} \
-  --entity-type "{{ .Values.senzing.entityType }}"
+  {{- if .Values.senzing.defaultEntityType }}
+  --default-entity-type: "{{ .Values.senzing.defaultEntityType }}"
   {{- end }}
   {{- if .Values.senzing.inputUrl }} \
   --input-url "{{ .Values.senzing.inputUrl }}"
@@ -42,9 +42,6 @@ python stream-producer.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.rabbitmqUsername }}
   --rabbitmq-username "{{ .Values.senzing.rabbitmqUsername }}"
   {{- end }}
-  {{- if .Values.senzing.randomSeed }} \
-  --random-seed {{ .Values.senzing.randomSeed }}
-  {{- end }}
   {{- if .Values.senzing.recordMax }} \
   --record-max {{ .Values.senzing.recordMax }}
   {{- end }}
@@ -54,8 +51,29 @@ python stream-producer.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.recordMonitor }} \
   --record-monitor {{ .Values.senzing.recordMonitor }}
   {{- end }}
-  {{- if .Values.senzing.recordsPerSecond }} \
-  --records-per-second {{ .Values.senzing.recordsPerSecond }}
+  {{- if .Values.senzing.delayInSeconds }}
+  --delay-in-seconds "{{ .Values.senzing.delayInSeconds }}"
+  {{- end }}
+  {{- if .Values.senzing.kafkaPollInterval }}
+  --kafka-poll-interval {{ .Values.senzing.kafkaPollInterval }}
+  {{- end }}
+  {{- if .Values.senzing.monitoringPeriodInSeconds }}
+  --monitoring-period-in-seconds {{ .Values.senzing.monitoringPeriodInSeconds }}
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqExchange }}
+  --rabbitmq-exchange "{{ .Values.senzing.rabbitmqExchange }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqPort }}
+  --rabbitmq-port {{ .Values.senzing.rabbitmqPort }}
+  {{- end }}
+  {{- if .Values.senzing.readQueueMaxSize }}
+  --read-queue-maxsize {{ .Values.senzing.readQueueMaxSize }}
+  {{- end }}
+  {{- if .Values.senzing.sleepTimeInSeconds }}
+  --sleep-time-in-seconds "{{ .Values.senzing.sleepTimeInSeconds }}"
+  {{- end }}
+  {{- if .Values.senzing.sqsQueueUrl }}
+  -sqs-queue-url "{{ .Values.senzing.sqsQueueUrl }}"
   {{- end }}
 ```
 
