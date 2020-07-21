@@ -1,4 +1,4 @@
-'image.repository': "example.com:5000/senzing/mock-data-generator"
+'image.repository': "example.com:5000/senzing/stream-producer"
 'image.tag': "latest"
 'senzing.subcommand': "url-to-kafka"
 'senzing.kafkaBootstrapServerHost': "my-kafka-kafka"

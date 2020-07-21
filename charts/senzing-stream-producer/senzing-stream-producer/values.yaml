@@ -1,0 +1,44 @@
+affinity: {}
+fullnameOverride: ""
+
+image:
+  pullPolicy: Always
+  registry: docker.io
+  repository: senzing/stream-producer
+  tag: latest
+
+imagePullSecrets: []
+
+ingress:
+  annotations: {}
+  enabled: false
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+
+nameOverride: ""
+nodeSelector: {}
+replicaCount: 1
+resources: {}
+
+securityContext:
+  enabled: true
+  runAsUser: 1001
+  runAsGroup: 1001
+  fsGroup: 1001
+
+senzing:
+  inputUrl: "https://s3.amazonaws.com/public-read-access/TestDataSets/loadtest-dataset-1M.json"
+  kafkaBootstrapServerHost: my-kafka-kafka
+  kafkaBootstrapServerPort: "9092"
+  kafkaTopic: senzing-kafka-topic
+  recordMax: "10000"
+  recordMonitor: "1000"
+  subcommand: url-to-kafka
+
+service:
+  port: 80
+  type: ClusterIP
+
+tolerations: []
