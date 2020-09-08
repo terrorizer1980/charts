@@ -80,6 +80,26 @@ spec:
             - name: "SENZING_RABBITMQ_USERNAME"
               value: "{{ .Values.senzing.rabbitmqUsername }}"
             {{- end }}
+            {{- if .Values.senzing.skipDatabasePerformanceTest }}
+            - name: "SENZING_SKIP_DATABASE_PERFORMANCE_TEST"
+              value: "{{ .Values.senzing.skipDatabasePerformanceTest }}"
+            {{- end }}
+            {{- if .Values.senzing.sqsFailureQueueUrl }}
+            - name: "SENZING_SQS_FAILURE_QUEUE_URL"
+              value: "{{ .Values.senzing.sqsFailureQueueUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.sqsInfoQueueUrl }}
+            - name: "SENZING_SQS_INFO_QUEUE_URL"
+              value: "{{ .Values.senzing.sqsInfoQueueUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.sqsQueueUrl }}
+            - name: "SENZING_SQS_QUEUE_URL"
+              value: "{{ .Values.senzing.sqsQueueUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.sqsWaitTimeSeconds }}
+            - name: "SENZING_SQS_WAIT_TIME_SECONDS"
+              value: "{{ .Values.senzing.sqsWaitTimeSeconds }}"
+            {{- end }}
             {{- if .Values.senzing.threadsPerProcess }}
             - name: SENZING_THREADS_PER_PROCESS
               value: "{{ .Values.senzing.threadsPerProcess }}"
