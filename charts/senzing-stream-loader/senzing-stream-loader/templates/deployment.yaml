@@ -19,6 +19,14 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
+            {{- if .Values.senzing.configPath }}
+            - name: SENZING_CONFIG_PATH
+              value: "{{ .Values.senzing.configPath }}"
+            {{- end }}
+            {{- if .Values.senzing.configurationCheckFrequency }}
+            - name: SENZING_CONFIGURATION_CHECK_FREQUENCY
+              value: "{{ .Values.senzing.configurationCheckFrequency }}"
+            {{- end }}
             {{- if .Values.senzing.dataSource }}
             - name: SENZING_DATA_SOURCE
               value: "{{ .Values.senzing.dataSource }}"
@@ -31,6 +39,10 @@ spec:
             - name: SENZING_DEBUG
               value: "{{ .Values.senzing.debug }}"
             {{- end }}
+            {{- if .Values.senzing.delayInSeconds }}
+            - name: SENZING_DELAY_IN_SECONDS
+              value: "{{ .Values.senzing.delayInSeconds }}"
+            {{- end }}
             {{- if .Values.senzing.engineConfigurationJson }}
             - name: SENZING_ENGINE_CONFIGURATION_JSON
               value: >-
@@ -40,17 +52,49 @@ spec:
             - name: SENZING_ENTITY_TYPE
               value: "{{ .Values.senzing.entityType }}"
             {{- end }}
-            {{- if .Values.senzing.entrypointSleep }}
-            - name: SENZING_ENTRYPOINT_SLEEP
-              value: "{{ .Values.senzing.entrypointSleep }}"
+            {{- if .Values.senzing.exitOnEmptyQueue }}
+            - name: SENZING_EXIT_ON_EMPTY_QUEUE
+              value: "{{ .Values.senzing.exitOnEmptyQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.exitSleepTimeInSeconds }}
+            - name: SENZING_EXIT_SLEEP_TIME_IN_SECONDS
+              value: "{{ .Values.senzing.exitSleepTimeInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.expirationWarningInDays }}
+            - name: SENZING_EXPIRATION_WARNING_IN_DAYS
+              value: "{{ .Values.senzing.expirationWarningInDays }}"
+            {{- end }}
+            {{- if .Values.senzing.g2ConfigurationFile }}
+            - name: SENZING_G2_CONFIGURATION_FILE
+              value: "{{ .Values.senzing.g2ConfigurationFile }}"
+            {{- end }}
+            {{- if .Values.senzing.inputUrl }}
+            - name: SENZING_INPUT_URL
+              value: "{{ .Values.senzing.inputUrl }}"
             {{- end }}
             {{- if .Values.senzing.kafkaBootstrapServerHost }}
             - name: SENZING_KAFKA_BOOTSTRAP_SERVER
               value: "{{ .Values.senzing.kafkaBootstrapServerHost }}:{{ .Values.senzing.kafkaBootstrapServerPort }}"
             {{- end }}
+            {{- if .Values.senzing.kafkaFailureBootstrapServer }}
+            - name: SENZING_KAFKA_FAILURE_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaFailureBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaFailureTopic }}
+            - name: SENZING_KAFKA_FAILURE_TOPIC
+              value: "{{ .Values.senzing.kafkaFailureTopic }}"
+            {{- end }}
             {{- if .Values.senzing.kafkaGroup }}
             - name: SENZING_KAFKA_GROUP
               value: "{{ .Values.senzing.kafkaGroup }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaInfoBootstrapServer }}
+            - name: SENZING_KAFKA_INFO_BOOTSTRAP_SERVER
+              value: "{{ .Values.senzing.kafkaInfoBootstrapServer }}"
+            {{- end }}
+            {{- if .Values.senzing.kafkaInfoTopic }}
+            - name: SENZING_KAFKA_INFO_TOPIC
+              value: "{{ .Values.senzing.kafkaInfoTopic }}"
             {{- end }}
             {{- if .Values.senzing.kafkaTopic }}
             - name: SENZING_KAFKA_TOPIC
@@ -60,29 +104,121 @@ spec:
             - name: SENZING_LOG_LEVEL
               value: "{{ .Values.senzing.logLevel }}"
             {{- end }}
+            {{- if .Values.senzing.logLicensePeriodInSeconds }}
+            - name: SENZING_LOG_LICENSE_PERIOD_IN_SECONDS
+              value: "{{ .Values.senzing.logLicensePeriodInSeconds }}"
+            {{- end }}
             {{- if .Values.senzing.monitoringPeriodInSeconds }}
             - name: SENZING_MONITORING_PERIOD_IN_SECONDS
               value: "{{ .Values.senzing.monitoringPeriodInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.queueMax }}
+            - name: SENZING_QUEUE_MAX
+              value: "{{ .Values.senzing.queueMax }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqExchange }}
+            - name: SENZING_RABBITMQ_EXCHANGE
+              value: "{{ .Values.senzing.rabbitmqExchange }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureExchange }}
+            - name: SENZING_RABBITMQ_FAILURE_EXCHANGE
+              value: "{{ .Values.senzing.rabbitmqFailureExchange }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureHost }}
+            - name: SENZING_RABBITMQ_FAILURE_HOST
+              value: "{{ .Values.senzing.rabbitmqFailureHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailurePassword }}
+            - name: SENZING_RABBITMQ_FAILURE_PASSWORD
+              value: "{{ .Values.senzing.rabbitmqFailurePassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailurePort }}
+            - name: SENZING_RABBITMQ_FAILURE_PORT
+              value: "{{ .Values.senzing.rabbitmqFailurePort }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureQueue }}
+            - name: SENZING_RABBITMQ_FAILURE_QUEUE
+              value: "{{ .Values.senzing.rabbitmqFailureQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureRoutingKey }}
+            - name: SENZING_RABBITMQ_FAILURE_ROUTING_KEY
+              value: "{{ .Values.senzing.rabbitmqFailureRoutingKey }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqFailureUsername }}
+            - name: SENZING_RABBITMQ_FAILURE_USERNAME
+              value: "{{ .Values.senzing.rabbitmqFailureUsername }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqHost }}
             - name: "SENZING_RABBITMQ_HOST"
               value: "{{ .Values.senzing.rabbitmqHost }}"
             {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoExchange }}
+            - name: "SENZING_RABBITMQ_INFO_EXCHANGE"
+              value: "{{ .Values.senzing.rabbitmqInfoExchange }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoHost }}
+            - name: "SENZING_RABBITMQ_INFO_HOST"
+              value: "{{ .Values.senzing.rabbitmqInfoHost }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoPassword }}
+            - name: "SENZING_RABBITMQ_INFO_PASSWORD"
+              value: "{{ .Values.senzing.rabbitmqInfoPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoPort }}
+            - name: "SENZING_RABBITMQ_INFO_PORT"
+              value: "{{ .Values.senzing.rabbitmqInfoPort }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoQueue }}
+            - name: "SENZING_RABBITMQ_INFO_QUEUE"
+              value: "{{ .Values.senzing.rabbitmqInfoQueue }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoRoutingKey }}
+            - name: "SENZING_RABBITMQ_INFO_ROUTING_KEY"
+              value: "{{ .Values.senzing.rabbitmqInfoRoutingKey }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqInfoUsername }}
+            - name: "SENZING_RABBITMQ_INFO_USERNAME"
+              value: "{{ .Values.senzing.rabbitmqInfoUsername }}"
+            {{- end }}
             {{- if .Values.senzing.rabbitmqPassword }}
             - name: "SENZING_RABBITMQ_PASSWORD"
               value: "{{ .Values.senzing.rabbitmqPassword }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPort }}
+            - name: "SENZING_RABBITMQ_PORT"
+              value: "{{ .Values.senzing.rabbitmqPort }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqPrefetchCount }}
+            - name: "SENZING_RABBITMQ_PREFETCH_COUNT"
+              value: "{{ .Values.senzing.rabbitmqPrefetchCount }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqQueue }}
             - name: "SENZING_RABBITMQ_QUEUE"
               value: "{{ .Values.senzing.rabbitmqQueue }}"
             {{- end }}
+            {{- if .Values.senzing.rabbitmqUseExistingEntities }}
+            - name: "SENZING_RABBITMQ_USE_EXISTING_ENTITIES"
+              value: "{{ .Values.senzing.rabbitmqUseExistingEntities }}"
+            {{- end }}
             {{- if .Values.senzing.rabbitmqUsername }}
             - name: "SENZING_RABBITMQ_USERNAME"
               value: "{{ .Values.senzing.rabbitmqUsername }}"
             {{- end }}
+            {{- if .Values.senzing.resourcePath }}
+            - name: "SENZING_RESOURCE_PATH"
+              value: "{{ .Values.senzing.resourcePath }}"
+            {{- end }}
             {{- if .Values.senzing.skipDatabasePerformanceTest }}
             - name: "SENZING_SKIP_DATABASE_PERFORMANCE_TEST"
               value: "{{ .Values.senzing.skipDatabasePerformanceTest }}"
+            {{- end }}
+            {{- if .Values.senzing.sleepTimeInSeconds }}
+            - name: "SENZING_SLEEP_TIME_IN_SECONDS"
+              value: "{{ .Values.senzing.sleepTimeInSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.sqsDeadLetterQueueEnabled }}
+            - name: "SENZING_SQS_DEAD_LETTER_QUEUE_ENABLED"
+              value: "{{ .Values.senzing.sqsDeadLetterQueueEnabled }}"
             {{- end }}
             {{- if .Values.senzing.sqsFailureQueueUrl }}
             - name: "SENZING_SQS_FAILURE_QUEUE_URL"
@@ -99,6 +235,10 @@ spec:
             {{- if .Values.senzing.sqsWaitTimeSeconds }}
             - name: "SENZING_SQS_WAIT_TIME_SECONDS"
               value: "{{ .Values.senzing.sqsWaitTimeSeconds }}"
+            {{- end }}
+            {{- if .Values.senzing.supportPath }}
+            - name: "SENZING_SUPPORT_PATH"
+              value: "{{ .Values.senzing.supportPath }}"
             {{- end }}
             {{- if .Values.senzing.threadsPerProcess }}
             - name: SENZING_THREADS_PER_PROCESS
