@@ -3,7 +3,7 @@ image.tag: "latest"
 senzing.subcommand: "kafka"
 senzing.databaseUrl: "mysql://g2:g2@my-mysql-mysql:3306/G2"
 senzing.dataSource: "TEST"
-senzing.entityType: "TEST"
+senzing.entityType: "GENERIC"
 senzing.kafkaBootstrapServerHost: "my-kafka-kafka"
 senzing.kafkaBootstrapServerPort: 9092
 senzing.kafkaTopic: "senzing-kafka-topic"

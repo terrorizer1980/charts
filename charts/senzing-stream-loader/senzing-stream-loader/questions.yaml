@@ -34,9 +34,9 @@ questions:
 
   - variable: senzing.entityType
     label: Default Senzing entity type, if none specified
-    description: "Example: TEST"
+    description: "Example: GENERIC"
     type: string
-    default: "TEST"
+    default: "GENERIC"
 
   - variable: senzing.kafkaBootstrapServerHost
     label: Kafka Bootstrap server hostname
