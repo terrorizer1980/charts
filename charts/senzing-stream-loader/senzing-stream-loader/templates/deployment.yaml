@@ -19,6 +19,22 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           env:
+            {{- if .Values.senzing.awsAccessKeyId }}
+            - name: AWS_ACCESS_KEY_ID
+              value: "{{ .Values.senzing.awsAccessKeyId }}"
+            {{- end }}
+            {{- if .Values.senzing.awsDefaultRegion }}
+            - name: AWS_DEFAULT_REGION
+              value: "{{ .Values.senzing.awsDefaultRegion }}"
+            {{- end }}
+            {{- if .Values.senzing.awsSecretAccessKey }}
+            - name: AWS_SECRET_ACCESS_KEY
+              value: "{{ .Values.senzing.awsSecretAccessKey }}"
+            {{- end }}
+            {{- if .Values.senzing.awsSessionToken }}
+            - name: AWS_SESSION_TOKEN
+              value: "{{ .Values.senzing.awsSessionToken }}"
+            {{- end }}
             {{- if .Values.senzing.configPath }}
             - name: SENZING_CONFIG_PATH
               value: "{{ .Values.senzing.configPath }}"
@@ -149,95 +165,95 @@ spec:
               value: "{{ .Values.senzing.rabbitmqFailureUsername }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqHost }}
-            - name: "SENZING_RABBITMQ_HOST"
+            - name: SENZING_RABBITMQ_HOST
               value: "{{ .Values.senzing.rabbitmqHost }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoExchange }}
-            - name: "SENZING_RABBITMQ_INFO_EXCHANGE"
+            - name: SENZING_RABBITMQ_INFO_EXCHANGE
               value: "{{ .Values.senzing.rabbitmqInfoExchange }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoHost }}
-            - name: "SENZING_RABBITMQ_INFO_HOST"
+            - name: SENZING_RABBITMQ_INFO_HOST
               value: "{{ .Values.senzing.rabbitmqInfoHost }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoPassword }}
-            - name: "SENZING_RABBITMQ_INFO_PASSWORD"
+            - name: SENZING_RABBITMQ_INFO_PASSWORD
               value: "{{ .Values.senzing.rabbitmqInfoPassword }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoPort }}
-            - name: "SENZING_RABBITMQ_INFO_PORT"
+            - name: SENZING_RABBITMQ_INFO_PORT
               value: "{{ .Values.senzing.rabbitmqInfoPort }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoQueue }}
-            - name: "SENZING_RABBITMQ_INFO_QUEUE"
+            - name: SENZING_RABBITMQ_INFO_QUEUE
               value: "{{ .Values.senzing.rabbitmqInfoQueue }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoRoutingKey }}
-            - name: "SENZING_RABBITMQ_INFO_ROUTING_KEY"
+            - name: SENZING_RABBITMQ_INFO_ROUTING_KEY
               value: "{{ .Values.senzing.rabbitmqInfoRoutingKey }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqInfoUsername }}
-            - name: "SENZING_RABBITMQ_INFO_USERNAME"
+            - name: SENZING_RABBITMQ_INFO_USERNAME
               value: "{{ .Values.senzing.rabbitmqInfoUsername }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqPassword }}
-            - name: "SENZING_RABBITMQ_PASSWORD"
+            - name: SENZING_RABBITMQ_PASSWORD
               value: "{{ .Values.senzing.rabbitmqPassword }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqPort }}
-            - name: "SENZING_RABBITMQ_PORT"
+            - name: SENZING_RABBITMQ_PORT
               value: "{{ .Values.senzing.rabbitmqPort }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqPrefetchCount }}
-            - name: "SENZING_RABBITMQ_PREFETCH_COUNT"
+            - name: SENZING_RABBITMQ_PREFETCH_COUNT
               value: "{{ .Values.senzing.rabbitmqPrefetchCount }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqQueue }}
-            - name: "SENZING_RABBITMQ_QUEUE"
+            - name: SENZING_RABBITMQ_QUEUE
               value: "{{ .Values.senzing.rabbitmqQueue }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqUseExistingEntities }}
-            - name: "SENZING_RABBITMQ_USE_EXISTING_ENTITIES"
+            - name: SENZING_RABBITMQ_USE_EXISTING_ENTITIES
               value: "{{ .Values.senzing.rabbitmqUseExistingEntities }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqUsername }}
-            - name: "SENZING_RABBITMQ_USERNAME"
+            - name: SENZING_RABBITMQ_USERNAME
               value: "{{ .Values.senzing.rabbitmqUsername }}"
             {{- end }}
             {{- if .Values.senzing.resourcePath }}
-            - name: "SENZING_RESOURCE_PATH"
+            - name: SENZING_RESOURCE_PATH
               value: "{{ .Values.senzing.resourcePath }}"
             {{- end }}
             {{- if .Values.senzing.skipDatabasePerformanceTest }}
-            - name: "SENZING_SKIP_DATABASE_PERFORMANCE_TEST"
+            - name: SENZING_SKIP_DATABASE_PERFORMANCE_TEST
               value: "{{ .Values.senzing.skipDatabasePerformanceTest }}"
             {{- end }}
             {{- if .Values.senzing.sleepTimeInSeconds }}
-            - name: "SENZING_SLEEP_TIME_IN_SECONDS"
+            - name: SENZING_SLEEP_TIME_IN_SECONDS
               value: "{{ .Values.senzing.sleepTimeInSeconds }}"
             {{- end }}
             {{- if .Values.senzing.sqsDeadLetterQueueEnabled }}
-            - name: "SENZING_SQS_DEAD_LETTER_QUEUE_ENABLED"
+            - name: SENZING_SQS_DEAD_LETTER_QUEUE_ENABLED
               value: "{{ .Values.senzing.sqsDeadLetterQueueEnabled }}"
             {{- end }}
             {{- if .Values.senzing.sqsFailureQueueUrl }}
-            - name: "SENZING_SQS_FAILURE_QUEUE_URL"
+            - name: SENZING_SQS_FAILURE_QUEUE_URL
               value: "{{ .Values.senzing.sqsFailureQueueUrl }}"
             {{- end }}
             {{- if .Values.senzing.sqsInfoQueueUrl }}
-            - name: "SENZING_SQS_INFO_QUEUE_URL"
+            - name: SENZING_SQS_INFO_QUEUE_URL
               value: "{{ .Values.senzing.sqsInfoQueueUrl }}"
             {{- end }}
             {{- if .Values.senzing.sqsQueueUrl }}
-            - name: "SENZING_SQS_QUEUE_URL"
+            - name: SENZING_SQS_QUEUE_URL
               value: "{{ .Values.senzing.sqsQueueUrl }}"
             {{- end }}
             {{- if .Values.senzing.sqsWaitTimeSeconds }}
-            - name: "SENZING_SQS_WAIT_TIME_SECONDS"
+            - name: SENZING_SQS_WAIT_TIME_SECONDS
               value: "{{ .Values.senzing.sqsWaitTimeSeconds }}"
             {{- end }}
             {{- if .Values.senzing.supportPath }}
-            - name: "SENZING_SUPPORT_PATH"
+            - name: SENZING_SUPPORT_PATH
               value: "{{ .Values.senzing.supportPath }}"
             {{- end }}
             {{- if .Values.senzing.threadsPerProcess }}
