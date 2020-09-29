@@ -19,9 +19,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      {{- if .Values.spec.template.annotations }}
+      {{- with .Values.spec.template.annotations }}
       annotations:
-      {{ toYaml .Values.spec.template.annotations | indent 8 }}
+      {{ toYaml . | indent 8 }}
       {{- end }}
     spec:
       containers:
