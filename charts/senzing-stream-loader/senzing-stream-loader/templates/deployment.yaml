@@ -35,6 +35,14 @@ spec:
             - name: AWS_DEFAULT_REGION
               value: "{{ .Values.senzing.awsDefaultRegion }}"
             {{- end }}
+            {{- if .Values.senzing.awsMetadataServiceNumAttempts }}
+            - name: AWS_METADATA_SERVICE_NUM_ATTEMPTS
+              value: "{{ .Values.senzing.awsMetadataServiceNumAttempts }}"
+            {{- end }}
+            {{- if .Values.senzing.awsMetadataServiceTimeout }}
+            - name: AWS_METADATA_SERVICE_TIMEOUT
+              value: "{{ .Values.senzing.awsMetadataServiceTimeout }}"
+            {{- end }}
             {{- if .Values.senzing.awsSecretAccessKey }}
             - name: AWS_SECRET_ACCESS_KEY
               value: "{{ .Values.senzing.awsSecretAccessKey }}"
