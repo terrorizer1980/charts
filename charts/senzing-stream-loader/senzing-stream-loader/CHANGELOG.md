@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [markdownlint](https://dlaa.me/markdownlint/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.7] - 2020-09-30
+
+### Added in 1.0.7
+
+1. Support for:
+    1. `senzing.awsMetadataServiceNumAttempts`
+    1. `senzing.awsMetadataServiceTimeout`
+
 ## [1.0.6] - 2020-09-29
 
 ### Added in 1.0.6
