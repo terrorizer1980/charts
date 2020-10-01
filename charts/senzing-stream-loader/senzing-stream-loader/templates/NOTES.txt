@@ -19,11 +19,11 @@ python stream-loader.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.configurationCheckFrequency }} \
   --configuration-check-frequency "{{ .Values.senzing.configurationCheckFrequency }}"
   {{- end }}
-  {{- if .Values.senzing.dataSource }} \
-  --data-source "{{ .Values.senzing.dataSource }}"
-  {{- end }}
   {{- if .Values.senzing.databaseUrl }} \
   --database-url "{{ .Values.senzing.databaseUrl }}"
+  {{- end }}
+  {{- if .Values.senzing.dataSource }} \
+  --data-source "{{ .Values.senzing.dataSource }}"
   {{- end }}
   {{- if .Values.senzing.debug }} \
   --debug "{{ .Values.senzing.debug }}"
@@ -79,6 +79,9 @@ python stream-loader.py {{ .Values.senzing.subcommand -}}
   {{- if .Values.senzing.monitoringPeriodInSeconds }} \
   --monitoring-period-in-seconds {{ .Values.senzing.monitoringPeriodInSeconds }}
   {{- end }}
+  {{- if .Values.senzing.primeEngine }} \
+  --prime-engine {{ .Values.senzing.primeEngine }}
+  {{- end }}
   {{- if .Values.senzing.rabbitmqExchange }} \
   --rabbitmq-exchange "{{ .Values.senzing.rabbitmqExchange }}"
   {{- end }}
@@ -102,6 +105,9 @@ python stream-loader.py {{ .Values.senzing.subcommand -}}
   {{- end }}
   {{- if .Values.senzing.rabbitmqFailureUsername }} \
   --rabbitmq-failure-username "{{ .Values.senzing.rabbitmqFailureUsername }}"
+  {{- end }}
+  {{- if .Values.senzing.rabbitmqHeartbeatInSeconds }} \
+  --rabbitmq-heartbeat-in-seconds "{{ .Values.senzing.rabbitmqHeartbeatInSeconds }}"
   {{- end }}
   {{- if .Values.senzing.rabbitmqHost }} \
   --rabbitmq-host "{{ .Values.senzing.rabbitmqHost }}"
