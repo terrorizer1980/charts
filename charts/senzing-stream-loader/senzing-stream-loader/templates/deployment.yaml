@@ -51,21 +51,21 @@ spec:
             - name: AWS_SESSION_TOKEN
               value: "{{ .Values.senzing.awsSessionToken }}"
             {{- end }}
-            {{- if .Values.senzing.configPath }}
-            - name: SENZING_CONFIG_PATH
-              value: "{{ .Values.senzing.configPath }}"
-            {{- end }}
             {{- if .Values.senzing.configurationCheckFrequency }}
             - name: SENZING_CONFIGURATION_CHECK_FREQUENCY
               value: "{{ .Values.senzing.configurationCheckFrequency }}"
             {{- end }}
-            {{- if .Values.senzing.dataSource }}
-            - name: SENZING_DATA_SOURCE
-              value: "{{ .Values.senzing.dataSource }}"
+            {{- if .Values.senzing.configPath }}
+            - name: SENZING_CONFIG_PATH
+              value: "{{ .Values.senzing.configPath }}"
             {{- end }}
             {{- if .Values.senzing.databaseUrl }}
             - name: SENZING_DATABASE_URL
               value: "{{ .Values.senzing.databaseUrl }}"
+            {{- end }}
+            {{- if .Values.senzing.dataSource }}
+            - name: SENZING_DATA_SOURCE
+              value: "{{ .Values.senzing.dataSource }}"
             {{- end }}
             {{- if .Values.senzing.debug }}
             - name: SENZING_DEBUG
@@ -144,6 +144,10 @@ spec:
             - name: SENZING_MONITORING_PERIOD_IN_SECONDS
               value: "{{ .Values.senzing.monitoringPeriodInSeconds }}"
             {{- end }}
+            {{- if .Values.senzing.primeEngine }}
+            - name: SENZING_PRIME_ENGINE
+              value: "{{ .Values.senzing.primeEngine }}"
+            {{- end }}
             {{- if .Values.senzing.queueMax }}
             - name: SENZING_QUEUE_MAX
               value: "{{ .Values.senzing.queueMax }}"
@@ -179,6 +183,10 @@ spec:
             {{- if .Values.senzing.rabbitmqFailureUsername }}
             - name: SENZING_RABBITMQ_FAILURE_USERNAME
               value: "{{ .Values.senzing.rabbitmqFailureUsername }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqHeartbeatInSeconds }}
+            - name: SENZING_RABBITMQ_HEARTBEAT_IN_SECONDS
+              value: "{{ .Values.senzing.rabbitmqHeartbeatInSeconds }}"
             {{- end }}
             {{- if .Values.senzing.rabbitmqHost }}
             - name: SENZING_RABBITMQ_HOST
@@ -228,13 +236,13 @@ spec:
             - name: SENZING_RABBITMQ_QUEUE
               value: "{{ .Values.senzing.rabbitmqQueue }}"
             {{- end }}
-            {{- if .Values.senzing.rabbitmqUseExistingEntities }}
-            - name: SENZING_RABBITMQ_USE_EXISTING_ENTITIES
-              value: "{{ .Values.senzing.rabbitmqUseExistingEntities }}"
-            {{- end }}
             {{- if .Values.senzing.rabbitmqUsername }}
             - name: SENZING_RABBITMQ_USERNAME
               value: "{{ .Values.senzing.rabbitmqUsername }}"
+            {{- end }}
+            {{- if .Values.senzing.rabbitmqUseExistingEntities }}
+            - name: SENZING_RABBITMQ_USE_EXISTING_ENTITIES
+              value: "{{ .Values.senzing.rabbitmqUseExistingEntities }}"
             {{- end }}
             {{- if .Values.senzing.resourcePath }}
             - name: SENZING_RESOURCE_PATH
@@ -272,13 +280,13 @@ spec:
             - name: SENZING_SUPPORT_PATH
               value: "{{ .Values.senzing.supportPath }}"
             {{- end }}
-            {{- if .Values.senzing.threadsPerProcess }}
-            - name: SENZING_THREADS_PER_PROCESS
-              value: "{{ .Values.senzing.threadsPerProcess }}"
-            {{- end }}
             {{- if .Values.senzing.subcommand }}
             - name: SENZING_SUBCOMMAND
               value: "{{ .Values.senzing.subcommand }}"
+            {{- end }}
+            {{- if .Values.senzing.threadsPerProcess }}
+            - name: SENZING_THREADS_PER_PROCESS
+              value: "{{ .Values.senzing.threadsPerProcess }}"
             {{- end }}
           image: {{ template "senzing.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
