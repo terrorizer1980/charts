@@ -7,6 +7,10 @@ metadata:
     chart: {{ template "phpmyadmin.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  {{- with .Values.deployment.metadata.annotations }}
+  annotations:
+  {{ toYaml . | indent 4 }}
+  {{- end }}
 spec:
   replicas: 1
   selector:
@@ -18,6 +22,10 @@ spec:
       labels:
         app: {{ template "phpmyadmin.name" . }}
         chart: {{ template "phpmyadmin.chart" . }}
+      {{- with .Values.deployment.spec.template.metadata.annotations }}
+      annotations:
+      {{ toYaml . | indent 8 }}
+      {{- end }}
         release: {{ .Release.Name }}
 {{- if or .Values.podAnnotations .Values.metrics.enabled }}
       annotations:
