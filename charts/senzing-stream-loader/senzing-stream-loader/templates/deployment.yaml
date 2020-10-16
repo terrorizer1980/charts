@@ -5,10 +5,6 @@ metadata:
   labels:
 {{ include "senzing-stream-loader.labels" . | indent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
-  {{- with .Values.deployment.metadata.annotations }}
-  annotations:
-  {{ toYaml . | indent 4 }}
-  {{- end }}
   annotations:
   {{ toYaml . | indent 4 }}
   {{- end }}
@@ -24,10 +20,6 @@ spec:
         app.kubernetes.io/name: {{ include "senzing-stream-loader.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
       {{- with .Values.deployment.spec.template.metadata.annotations }}
-      {{- with .Values.deployment.spec.template.metadata.annotations }}
-      annotations:
-      {{ toYaml . | indent 8 }}
-      {{- end }}
       annotations:
       {{ toYaml . | indent 8 }}
       {{- end }}
