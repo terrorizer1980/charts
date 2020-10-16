@@ -1,4 +1,13 @@
 affinity: {}
+
+deployment:
+  metadata:
+    annotations:
+  spec:
+    template:
+      metadata:
+        annotations:
+        
 fullnameOverride: ""
 
 db2:
