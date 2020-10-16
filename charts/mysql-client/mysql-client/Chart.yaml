@@ -8,4 +8,4 @@ keywords:
 name: mysql-client
 sources:
  - https://github.com/arey/mysql-client
-version: 1.0.0
+version: 1.0.1
