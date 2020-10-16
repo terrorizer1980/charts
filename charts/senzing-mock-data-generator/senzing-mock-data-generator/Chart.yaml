@@ -9,4 +9,4 @@ keywords:
 name: senzing-mock-data-generator
 sources:
  - https://github.com/Senzing/mock-data-generator
-version: 1.0.2
+version: 1.0.3
