@@ -4,8 +4,17 @@ metadata:
   name: {{ include "senzing-init-container.fullname" . }}
   labels:
 {{ include "senzing-init-container.labels" . | indent 4 }}
+  {{- with .Values.deployment.metadata.annotations }}
+  annotations:
+  {{ toYaml . | indent 4 }}
+  {{- end }}
 spec:
   template:
+    metadata:
+      {{- with .Values.deployment.spec.template.metadata.annotations }}
+      annotations:
+      {{ toYaml . | indent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
