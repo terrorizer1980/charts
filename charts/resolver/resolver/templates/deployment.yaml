@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "resolver.fullname" . }}
   labels:
-    {{ include "resolver.labels" . | indent 4 }}
+    {{ include "resolver.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

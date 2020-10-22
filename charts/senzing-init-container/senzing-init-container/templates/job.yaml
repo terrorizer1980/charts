@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: {{ include "senzing-init-container.fullname" . }}
   labels:
-    {{ include "senzing-init-container.labels" . | indent 4 }}
+    {{ include "senzing-init-container.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

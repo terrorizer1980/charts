@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-stream-loader.fullname" . }}
   labels:
-    {{ include "senzing-stream-loader.labels" . | indent 4 }}
+    {{ include "senzing-stream-loader.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

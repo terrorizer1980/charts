@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-base.fullname" . }}
   labels:
-    {{ include "senzing-base.labels" . | indent 4 }}
+    {{ include "senzing-base.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

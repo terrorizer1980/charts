@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-entity-search-web-app.fullname" . }}
   labels:
-    {{ include "senzing-entity-search-web-app.labels" . | indent 4 }}
+    {{ include "senzing-entity-search-web-app.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

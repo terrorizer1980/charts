@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: {{ include "ibm-db2-driver-installer.fullname" . }}
   labels:
-    {{ include "ibm-db2-driver-installer.labels" . | indent 4 }}
+    {{ include "ibm-db2-driver-installer.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

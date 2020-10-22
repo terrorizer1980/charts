@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-debug.fullname" . }}
   labels:
-    {{ include "senzing-debug.labels" . | indent 4 }}
+    {{ include "senzing-debug.labels" . }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}
