@@ -11,7 +11,7 @@ deployment:
     template:
       metadata:
         annotations:
-        
+
 fullnameOverride: ""
 
 ingress:
@@ -26,12 +26,12 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-  
+
 image:
   repository: nginx
   tag: stable
   pullPolicy: IfNotPresent
-  
+
 nameOverride: ""
 
 nodeSelector: {}
@@ -54,5 +54,5 @@ resources: {}
 service:
   type: ClusterIP
   port: 80
-  
+
 tolerations: []

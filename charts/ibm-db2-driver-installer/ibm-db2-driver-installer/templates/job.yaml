@@ -3,17 +3,17 @@ kind: Job
 metadata:
   name: {{ include "ibm-db2-driver-installer.fullname" . }}
   labels:
-{{ include "ibm-db2-driver-installer.labels" . | indent 4 }}
+    {{ include "ibm-db2-driver-installer.labels" . | indent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+    {{ toYaml . | indent 4 }}
   {{- end }}
 spec:
   template:
     metadata:
       {{- with .Values.deployment.spec.template.metadata.annotations }}
       annotations:
-      {{ toYaml . | indent 8 }}
+        {{ toYaml . | indent 8 }}
       {{- end }}
     spec:
       containers:

@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+    {{ toYaml . | indent 4 }}
   {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -20,7 +20,7 @@ spec:
         release: {{ .Release.Name }}
       {{- with .Values.deployment.spec.template.metadata.annotations }}
       annotations:
-      {{ toYaml . | indent 8 }}
+        {{ toYaml . | indent 8 }}
       {{- end }}
     spec:
       containers:

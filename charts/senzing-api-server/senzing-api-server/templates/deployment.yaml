@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-api-server.fullname" . }}
   labels:
-{{ include "senzing-api-server.labels" . | indent 4 }}
+    {{ include "senzing-api-server.labels" . | indent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+    {{ toYaml . | indent 4 }}
   {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
@@ -21,7 +21,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
       {{- with .Values.deployment.spec.template.metadata.annotations }}
       annotations:
-      {{ toYaml . | indent 8 }}
+        {{ toYaml . | indent 8 }}
       {{- end }}
     spec:
       containers:

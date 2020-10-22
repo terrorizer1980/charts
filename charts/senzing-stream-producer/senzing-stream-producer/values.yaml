@@ -7,7 +7,7 @@ deployment:
     template:
       metadata:
         annotations:
-        
+
 fullnameOverride: ""
 
 image:

@@ -9,7 +9,7 @@ metadata:
     heritage: {{ .Release.Service }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+    {{ toYaml . | indent 4 }}
   {{- end }}
 spec:
   replicas: 1
@@ -24,7 +24,7 @@ spec:
         chart: {{ template "phpmyadmin.chart" . }}
       {{- with .Values.deployment.spec.template.metadata.annotations }}
       annotations:
-      {{ toYaml . | indent 8 }}
+        {{ toYaml . | indent 8 }}
       {{- end }}
         release: {{ .Release.Name }}
 {{- if or .Values.podAnnotations .Values.metrics.enabled }}
@@ -57,10 +57,10 @@ spec:
             {{- if .Values.db.chartName }}
             - name: DATABASE_HOST
               value: "{{ template "phpmyadmin.dbfullname" . }}"
-            {{- else if .Values.db.bundleTestDB }} 
+            {{- else if .Values.db.bundleTestDB }}
             - name: DATABASE_HOST
               value: "{{ template "mariadb.fullname" . }}"
-            {{- else }} 
+            {{- else }}
             - name: DATABASE_HOST
               value: "{{ .Values.db.host }}"
             {{- end }}
