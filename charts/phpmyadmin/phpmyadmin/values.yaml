@@ -4,6 +4,14 @@ db:
   bundleTestDB: false
   port: 3306
 
+deployment:
+  metadata:
+    annotations:
+  spec:
+    template:
+      metadata:
+        annotations:
+
 image:
   pullPolicy: IfNotPresent
   registry: docker.io

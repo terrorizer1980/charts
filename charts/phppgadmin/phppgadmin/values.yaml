@@ -1,3 +1,11 @@
+deployment:
+  metadata:
+    annotations:
+  spec:
+    template:
+      metadata:
+        annotations:
+
 image:
   pullPolicy: Always
   registry: docker.io

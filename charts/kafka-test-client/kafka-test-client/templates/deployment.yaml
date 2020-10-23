@@ -7,6 +7,10 @@ metadata:
     helm.sh/chart: {{ include "kafka-test-client.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
+  {{- with .Values.deployment.metadata.annotations }}
+  annotations:
+    {{ toYaml . | indent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -18,6 +22,10 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "kafka-test-client.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- with .Values.deployment.spec.template.metadata.annotations }}
+      annotations:
+        {{ toYaml . | indent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

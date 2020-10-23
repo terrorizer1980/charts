@@ -2,8 +2,17 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ include "senzing-stream-producer.fullname" . }}
+  {{- with .Values.deployment.metadata.annotations }}
+  annotations:
+    {{ toYaml . | indent 4 }}
+  {{- end }}
 spec:
   template:
+    metadata:
+      {{- with .Values.deployment.spec.template.metadata.annotations }}
+      annotations:
+        {{ toYaml . | indent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

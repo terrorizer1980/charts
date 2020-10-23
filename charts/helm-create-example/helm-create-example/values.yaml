@@ -2,19 +2,17 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+affinity: {}
 
-image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+deployment:
+  metadata:
+    annotations:
+  spec:
+    template:
+      metadata:
+        annotations:
 
-nameOverride: ""
 fullnameOverride: ""
-
-service:
-  type: ClusterIP
-  port: 80
 
 ingress:
   enabled: false
@@ -29,6 +27,17 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+image:
+  repository: nginx
+  tag: stable
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+
+nodeSelector: {}
+
+replicaCount: 1
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
@@ -41,8 +50,9 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
-nodeSelector: {}
+
+service:
+  type: ClusterIP
+  port: 80
 
 tolerations: []
-
-affinity: {}

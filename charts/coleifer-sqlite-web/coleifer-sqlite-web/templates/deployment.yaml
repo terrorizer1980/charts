@@ -3,7 +3,11 @@ kind: Deployment
 metadata:
   name: {{ include "coleifer-sqlite-web.fullname" . }}
   labels:
-{{ include "coleifer-sqlite-web.labels" . | indent 4 }}
+    {{ include "coleifer-sqlite-web.labels" . }}
+  {{- with .Values.deployment.metadata.annotations }}
+  annotations:
+    {{ toYaml . | indent 4 }}
+  {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -15,6 +19,10 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "coleifer-sqlite-web.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      {{- with .Values.deployment.metadata.annotations }}
+      annotations:
+        {{ toYaml . | indent 8 }}
+      {{- end }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
