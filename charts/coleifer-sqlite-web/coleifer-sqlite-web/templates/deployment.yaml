@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "coleifer-sqlite-web.fullname" . }}
   labels:
-    {{ include "coleifer-sqlite-web.labels" . }}
+    {{- include "coleifer-sqlite-web.labels" . | nindent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

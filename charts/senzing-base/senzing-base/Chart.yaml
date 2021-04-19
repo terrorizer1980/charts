@@ -8,4 +8,4 @@ keywords:
 name: senzing-base
 sources:
  - https://github.com/Senzing/docker-senzing-base
-version: 1.1.2
+version: 1.1.3
