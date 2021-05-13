@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "senzing-ibm-db2.fullname" . }}
   labels:
-    {{ include "senzing-ibm-db2.labels" . }}
+    {{- include "senzing-ibm-db2.labels" . | nindent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

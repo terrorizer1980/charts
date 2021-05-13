@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: {{ include "senzing-yum.fullname" . }}
   labels:
-    {{ include "senzing-yum.labels" . | nindent 4 }}
+    {{- include "senzing-yum.labels" . | nindent 4 }}
   {{- with .Values.deployment.metadata.annotations }}
   annotations:
     {{ toYaml . | indent 4 }}

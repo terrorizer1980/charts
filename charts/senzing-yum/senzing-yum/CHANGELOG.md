@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [markdownlint](https://dlaa.me/markdownlint/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.5] - 2021-04-19
+
+### Added in 1.1.5
+
+1. Fixed label indentation errors
+
 ## [1.1.4] - 2021-03-29
 
 ### Added in 1.1.4

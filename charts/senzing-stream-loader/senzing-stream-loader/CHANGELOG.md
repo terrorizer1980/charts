@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 1. Support for senzingdata v2.0.0
 
+## [1.0.10] - 2021-04-19
+
+### Added in 1.0.10
+
+1. Fixed label indentation errors
+
 ## [1.0.9] - 2020-10-16
 
 ### Added in 1.0.9
