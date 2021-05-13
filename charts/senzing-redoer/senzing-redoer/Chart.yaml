@@ -9,4 +9,4 @@ keywords:
 name: senzing-redoer
 sources:
  - https://github.com/Senzing/redoer
-version: 1.0.4
+version: 1.2.0

@@ -33,7 +33,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.789347-04:00"
+    created: "2021-05-05T15:05:49.551306229-04:00"
     description: A Helm chart for github.com/coleifer/sqlite-web
     digest: 23e72345198aa6c6eee41cfc32dc3eeefc084a7553fa5477a1cf9fce604bea8d
     home: http://senzing.com
@@ -48,7 +48,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.788189-04:00"
+    created: "2021-05-05T15:05:49.550646715-04:00"
     description: A Helm chart for github.com/coleifer/sqlite-web
     digest: d0caa3b9aba4e04000b936175af25d15ccf909a2fa8f5aba53d4407e0b4ceadf
     home: http://senzing.com
@@ -63,7 +63,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.787033-04:00"
+    created: "2021-05-05T15:05:49.550028009-04:00"
     description: A Helm chart for github.com/coleifer/sqlite-web
     digest: f4d90c59debfb2273fa63ee1f31b067f8fbd66a8370e532989c26d7025046862
     home: http://senzing.com
@@ -79,7 +79,7 @@ entries:
   db2-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.793466-04:00"
+    created: "2021-05-05T15:05:49.553276253-04:00"
     description: Support for DB2 command line interface (CLI)
     digest: 77b8db5f304ae7a7b25c019b0b67b8baafc91c416b2c33e5884d5c73d556f69c
     home: http://senzing.com
@@ -92,7 +92,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.792473-04:00"
+    created: "2021-05-05T15:05:49.552614333-04:00"
     description: Support for DB2 command line interface (CLI)
     digest: d497eaf378f2c48c82581147f55ac51b655e3b6dbfe0f2f48a7a0c7545bea69e
     home: http://senzing.com
@@ -106,7 +106,7 @@ entries:
   helm-create-example:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.794913-04:00"
+    created: "2021-05-05T15:05:49.55410587-04:00"
     description: A Helm chart for Kubernetes
     digest: b3cc6c2a66f6dace4b980dba03171e70ae5567d7507182b972756752beeb0f58
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
@@ -116,7 +116,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.794126-04:00"
+    created: "2021-05-05T15:05:49.553741411-04:00"
     description: A Helm chart for Kubernetes
     digest: 9ea620d20b366187f25d267d8e81321602cf1c16b9446b5437f88de7bbd072d9
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
@@ -163,7 +163,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.799971-04:00"
+    created: "2021-05-05T15:05:49.558188656-04:00"
     description: Install IBM Db2 client drivers
     digest: 92376e0d022e5e1e2034042b6cf7aea1ec32afdca6042c0c84e1aa50596ba08a
     home: http://senzing.com
@@ -181,7 +181,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.79837-04:00"
+    created: "2021-05-05T15:05:49.557040426-04:00"
     description: Install IBM Db2 client drivers
     digest: e1bcea6264205d6ce44ad30125237b7ae3a07f0d35bf3989971d64fc924f850a
     home: http://senzing.com
@@ -199,7 +199,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.797003-04:00"
+    created: "2021-05-05T15:05:49.555335667-04:00"
     description: Install IBM Db2 client drivers
     digest: 20142233bb94093741f024834c46ec3593b41042f5a3f1fa163c3dad54057059
     home: http://senzing.com
@@ -217,7 +217,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.795925-04:00"
+    created: "2021-05-05T15:05:49.554688254-04:00"
     description: Install IBM Db2 client drivers
     digest: cd16a74e9127946ac9eb89cb56e05811f0e5033ecfaeb53e23c1d0ea58c82440
     home: http://senzing.com
@@ -236,7 +236,7 @@ entries:
   kafka-test-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.80459-04:00"
+    created: "2021-05-05T15:05:49.561783829-04:00"
     description: Kafka test client
     digest: 3de85a7b58d47970e2d6f9b247d57611f110897a79a8a98acc5e9cd256fd945b
     home: http://senzing.com
@@ -249,7 +249,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.803707-04:00"
+    created: "2021-05-05T15:05:49.560846263-04:00"
     description: Kafka test client
     digest: d1bc83b2d28045e2bd0eea7ac8c5ae0fb444be79e9a4de4b099a8b7752396f3a
     home: http://senzing.com
@@ -262,7 +262,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.802718-04:00"
+    created: "2021-05-05T15:05:49.559948592-04:00"
     description: Kafka test client
     digest: 33a331cfa984e78f823b2a3621d55ccd83b45972f5a922b86e8103c81001f910
     home: http://senzing.com
@@ -276,7 +276,7 @@ entries:
   mysql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.807072-04:00"
+    created: "2021-05-05T15:05:49.564253977-04:00"
     description: MySQL client
     digest: bb496e95ee447f5b25f05253a8758e3ae2af902f03f43135d5588d59e1fb31ca
     home: http://senzing.com
@@ -291,7 +291,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.806235-04:00"
+    created: "2021-05-05T15:05:49.563389283-04:00"
     description: MySQL client
     digest: 3afac12c6fe94d9cb41579e12359538e5ed1433a167232fc32851bc97aa3a682
     home: http://senzing.com
@@ -306,7 +306,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.805421-04:00"
+    created: "2021-05-05T15:05:49.562554402-04:00"
     description: MySQL client
     digest: 7d7344265ab19b5ceab7b65f23d88a9a8b54c2772fd1b854a27a8db1646e0ae6
     home: http://senzing.com
@@ -322,7 +322,7 @@ entries:
   phpmyadmin:
   - apiVersion: v1
     appVersion: 4.8.5
-    created: "2021-04-19T11:43:47.810838-04:00"
+    created: "2021-05-05T15:05:49.567731511-04:00"
     description: phpMyAdmin, an mysql administration frontend
     digest: b639307ae2794ebf46a1e93ed8df0fda033752414eb71a3a30d64c8c50c16e89
     home: https://www.phpmyadmin.net/
@@ -341,7 +341,7 @@ entries:
     version: 2.0.6
   - apiVersion: v1
     appVersion: 4.8.5
-    created: "2021-04-19T11:43:47.80976-04:00"
+    created: "2021-05-05T15:05:49.566552301-04:00"
     description: phpMyAdmin, an mysql administration frontend
     digest: 87b5370230d77febeed287c3e7cca523a36546d721149ca47a94b23eac3d3c27
     home: https://www.phpmyadmin.net/
@@ -394,6 +394,7 @@ entries:
     - phppgadmin-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
+
     created: "2021-04-19T11:43:47.817477-04:00"
     description: phpPgAdmin is a web-based administration tool for PostgreSQL. It is perfect for PostgreSQL DBAs, newbies, and hosting services.
     digest: 4294f4538c1862b97a486292161d2f15832f21ac6a1111444121aaec8888b7e4
@@ -426,7 +427,7 @@ entries:
   postgresql-client:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.82346-04:00"
+    created: "2021-05-05T15:05:49.580141978-04:00"
     description: Postgresql client
     digest: c99bbef600a847a989d5265f30d03e2828c6f4fcfd58cc653bc7be19a9a427c8
     home: http://senzing.com
@@ -439,7 +440,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.822681-04:00"
+    created: "2021-05-05T15:05:49.579133377-04:00"
     description: Postgresql client
     digest: c5f1ef026c6b787ff9556d2fb2f420680975d9ea78277f0ab249e54872fd38d4
     home: http://senzing.com
@@ -452,7 +453,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.821927-04:00"
+    created: "2021-05-05T15:05:49.578152903-04:00"
     description: Postgresql client
     digest: d0b68f50ebb40b88560341d733ddc3e610442813c0e48998826581a7e197a93f
     home: http://senzing.com
@@ -465,7 +466,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.821299-04:00"
+    created: "2021-05-05T15:05:49.577387146-04:00"
     description: Postgresql client
     digest: b50060dafdf41943b741c2077f03f1f700c31be40825445d0c567830e3a88f00
     home: http://senzing.com
@@ -479,9 +480,9 @@ entries:
   resolver:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.83008-04:00"
+    created: "2021-05-05T15:05:49.588234208-04:00"
     description: A Senzing environment for ephemeral entity resolution.
-    digest: 53f07c8b549bfa6f142635a26573ec7cf8e7624f8b6927dca8ec399718704029
+    digest: fe697601948ee79ca22b58a3f5faf0645c4ade34145c8b70c43e8207bce0559d
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -490,11 +491,11 @@ entries:
     sources:
     - https://github.com/Senzing/resolver
     urls:
-    - resolver-1.1.3.tgz
-    version: 1.1.3
+    - resolver-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.829135-04:00"
+    created: "2021-05-05T15:05:49.586995433-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: 1e3af7997c65c6f4940e673d137c7ab3c83b0340cb2d1bc6fcfd460a9f4b7230
     home: http://senzing.com
@@ -509,7 +510,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.828156-04:00"
+    created: "2021-05-05T15:05:49.585895396-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: 2e7f40ec6525d9cab1e3eab1ca3a8e6bb495db3a80ddbe04706249bb65f388a9
     home: http://senzing.com
@@ -524,7 +525,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.82704-04:00"
+    created: "2021-05-05T15:05:49.58492468-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: 4a545e534f10a9609b8585bd2292e336d0c743f0c4186daafc0cbc7c7013523a
     home: http://senzing.com
@@ -539,7 +540,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.826037-04:00"
+    created: "2021-05-05T15:05:49.583659337-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: 4c9397ca087e86659c1f9c3a3656bc3a4654a1bbbdf079b74620611be5e34076
     home: http://senzing.com
@@ -554,7 +555,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.825153-04:00"
+    created: "2021-05-05T15:05:49.582482852-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: c86ba66bd1d2fdb118e871369d2133433faf5c5ffcaf4f14de566c61b9e248ad
     home: http://senzing.com
@@ -569,7 +570,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.824262-04:00"
+    created: "2021-05-05T15:05:49.581255878-04:00"
     description: A Senzing environment for ephemeral entity resolution.
     digest: bf243f6a6b80fb59e9ac448b73d42e70872cd3cff4b31b95f13083e1718c8fae
     home: http://senzing.com
@@ -585,9 +586,9 @@ entries:
   senzing-api-server:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.838527-04:00"
+    created: "2021-05-05T15:05:49.596356704-04:00"
     description: Senzing API server
-    digest: 3644892a75570ab77c046c4ad97cc69ed0f22894f1c6bdbb19c322ff01c5d0f0
+    digest: fd2470db30f0b89a4ee1f97154109ee23a8977131e6868b63c1270904e273717
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -597,11 +598,11 @@ entries:
     sources:
     - https://github.com/Senzing/senzing-api-server
     urls:
-    - senzing-api-server-1.0.6.tgz
-    version: 1.0.6
+    - senzing-api-server-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.83758-04:00"
+    created: "2021-05-05T15:05:49.595663973-04:00"
     description: Senzing API server
     digest: b67f05cec5840fd942b6a76b0795dafde940921f9e54ac4c169b5579d6614bd6
     home: http://senzing.com
@@ -617,7 +618,7 @@ entries:
     version: 1.0.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.836592-04:00"
+    created: "2021-05-05T15:05:49.594967487-04:00"
     description: Senzing API server
     digest: 91e78359d3f0b0243db94acebc9ee6c368812c710a9ab2859a116f836cd9e77c
     home: http://senzing.com
@@ -633,7 +634,7 @@ entries:
     version: 1.0.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.835561-04:00"
+    created: "2021-05-05T15:05:49.594049505-04:00"
     description: Senzing API server
     digest: 20bed6219fbacebc2ebad6271f7f853c64b82ed03b8cc6d3ff517a805f91bb29
     home: http://senzing.com
@@ -649,7 +650,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.83356-04:00"
+    created: "2021-05-05T15:05:49.592318813-04:00"
     description: Senzing API server
     digest: 7b58b9601c62d7a0d406e50db377cfeb777c50958aafc7ee48593c0fd816305b
     home: http://senzing.com
@@ -665,7 +666,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.832638-04:00"
+    created: "2021-05-05T15:05:49.591332455-04:00"
     description: Senzing API server
     digest: 76145c659a4badde87b0e25e8a2813056710f885f0ff91be1fdfa0292516f0a7
     home: http://senzing.com
@@ -681,7 +682,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.831792-04:00"
+    created: "2021-05-05T15:05:49.590422302-04:00"
     description: Senzing API server
     digest: df27a8b5b42740f2e741f5b4e8cbfcc7a31aeae2aad0607bca1570ac66c7a315
     home: http://senzing.com
@@ -697,7 +698,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.830876-04:00"
+    created: "2021-05-05T15:05:49.589342829-04:00"
     description: Senzing API server
     digest: 524b075808a6c29903697dec3bc5fc00e5ec8127b7d99531a6af4aa04d8b228f
     home: http://senzing.com
@@ -714,9 +715,9 @@ entries:
   senzing-base:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.845081-04:00"
+    created: "2021-05-05T15:05:49.601732921-04:00"
     description: A Senzing environment
-    digest: 32faff2889551feefec9889ab3b561477e2adf88debf64382b11f94e8889160f
+    digest: cf7bd5da28e1b4a5a903a5dbfaa017f83c7ce2f7f5422eeaa5cdbe115898dca6
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -725,11 +726,11 @@ entries:
     sources:
     - https://github.com/Senzing/docker-senzing-base
     urls:
-    - senzing-base-1.1.3.tgz
-    version: 1.1.3
+    - senzing-base-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.844149-04:00"
+    created: "2021-05-05T15:05:49.600822028-04:00"
     description: A Senzing environment
     digest: ee388897aaf030f850d922aa45dc5b41eebdc5c449aba204d424fd55d7fa21f8
     home: http://senzing.com
@@ -744,7 +745,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.843085-04:00"
+    created: "2021-05-05T15:05:49.599999829-04:00"
     description: A Senzing environment
     digest: 7b6924e88b60c6d6e89685c56aba63e3cdd26cddcbf9a6e621a0bb4599e247db
     home: http://senzing.com
@@ -759,7 +760,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.842038-04:00"
+    created: "2021-05-05T15:05:49.59920175-04:00"
     description: A Senzing environment
     digest: c44f541fff15533fd3c989d3c0fd57f7f53e5e1a64e0aab72ead899b4c52e4f7
     home: http://senzing.com
@@ -774,7 +775,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.84103-04:00"
+    created: "2021-05-05T15:05:49.598405131-04:00"
     description: A Senzing environment
     digest: 58514326c1cfc983012514c92ccccad71685b858a98ccefe4636b077351b01c6
     home: http://senzing.com
@@ -789,7 +790,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.840201-04:00"
+    created: "2021-05-05T15:05:49.597660653-04:00"
     description: A Senzing environment
     digest: 9fbdb5331c60ff7fc3c2006164ef0012558308fbae4aaa7892a599541b64a850
     home: http://senzing.com
@@ -804,7 +805,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.839351-04:00"
+    created: "2021-05-05T15:05:49.596959292-04:00"
     description: A Senzing environment
     digest: 8b7c46f2be3de60516e74e29ffba9c530edcd8d0a9c4f427ee687ba0b0896a70
     home: http://senzing.com
@@ -820,9 +821,9 @@ entries:
   senzing-configurator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.853681-04:00"
+    created: "2021-05-05T15:05:49.609363675-04:00"
     description: A Senzing configuration micro service.
-    digest: 7a63b94bf8bd34dd04d194e379d6db4ab59e13efc7fbbb2a41e149d45a31020a
+    digest: 490d3087d5c07cd9ff6b4893fead693281fbc6172b6171d9daf2a964689f07a0
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -832,11 +833,11 @@ entries:
     sources:
     - https://github.com/Senzing/configurator
     urls:
-    - senzing-configurator-1.0.6.tgz
-    version: 1.0.6
+    - senzing-configurator-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.852644-04:00"
+    created: "2021-05-05T15:05:49.608533656-04:00"
     description: A Senzing configuration micro service.
     digest: df164bccaeea95e54b4760c819f7501f1c04abb5ea79ac1c14eea5a37b2cab8c
     home: http://senzing.com
@@ -852,7 +853,7 @@ entries:
     version: 1.0.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.850823-04:00"
+    created: "2021-05-05T15:05:49.606751592-04:00"
     description: A Senzing configuration micro service.
     digest: 04f4fa7616233ddf67c3f80500cfc3fa0ea8c8d849e1e91cce12a2f08f73b513
     home: http://senzing.com
@@ -868,7 +869,7 @@ entries:
     version: 1.0.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.849862-04:00"
+    created: "2021-05-05T15:05:49.605903105-04:00"
     description: A Senzing configuration micro service.
     digest: 59086e3f123c27d55413b4b70a9b28551d2273c49a128fad61c7775960aa8e5f
     home: http://senzing.com
@@ -884,7 +885,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.848898-04:00"
+    created: "2021-05-05T15:05:49.604991807-04:00"
     description: A Senzing configuration micro service.
     digest: 92d896cdd2096b5233c44a5831216df942b4347ec44345110abc3085fe5e745f
     home: http://senzing.com
@@ -900,7 +901,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.84795-04:00"
+    created: "2021-05-05T15:05:49.604136749-04:00"
     description: A Senzing configuration micro service.
     digest: 84c63573a28cd0aaad9a9a6c7e980fdebaeb4d08c116e767057cd6c0eed55687
     home: http://senzing.com
@@ -916,7 +917,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.846992-04:00"
+    created: "2021-05-05T15:05:49.603321831-04:00"
     description: A Senzing configuration micro service.
     digest: dc8be6e539dc2f460a28c3e149b64fec56bafa8ac9ad69535f8dedda5c20c36a
     home: http://senzing.com
@@ -932,7 +933,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.845921-04:00"
+    created: "2021-05-05T15:05:49.60253587-04:00"
     description: A Senzing configuration micro service.
     digest: ee4ecb32ab3b7462c326542cd2cdf880def77412a96126b2f5274ac2a4938c7b
     home: http://senzing.com
@@ -949,9 +950,9 @@ entries:
   senzing-debug:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.861006-04:00"
+    created: "2021-05-05T15:05:49.614087733-04:00"
     description: A Senzing environment for debugging
-    digest: 482f5ff6325a49f6db4b5a9790d5005e2819144372ab9143a374a0c3a6892e5a
+    digest: 4b385b2104e2b1332cd4cfbbb431e4c465e37190a95fcbb542d197c73ca11e2d
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -961,11 +962,11 @@ entries:
     sources:
     - https://github.com/Senzing/docker-senzing-debug
     urls:
-    - senzing-debug-1.1.3.tgz
-    version: 1.1.3
+    - senzing-debug-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.860074-04:00"
+    created: "2021-05-05T15:05:49.613482415-04:00"
     description: A Senzing environment for debugging
     digest: 2832f5055bc83daa695e9022785dbb14536aca9e220e1115b2ae065d85bc935a
     home: http://senzing.com
@@ -981,7 +982,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.859056-04:00"
+    created: "2021-05-05T15:05:49.612901146-04:00"
     description: A Senzing environment for debugging
     digest: 2e13be2345ec5c883e9aba381035f62576d1ea7615f6274772fde8d68c01c256
     home: http://senzing.com
@@ -997,7 +998,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.858064-04:00"
+    created: "2021-05-05T15:05:49.612333809-04:00"
     description: A Senzing environment for debugging
     digest: cea3b45817b5a5aaa17193a9619a95b07b059dcbabd5e91e055721d02079909d
     home: http://senzing.com
@@ -1013,7 +1014,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.857046-04:00"
+    created: "2021-05-05T15:05:49.611693462-04:00"
     description: A Senzing environment for debugging
     digest: 7ff3452644699b68fb8327a4c90bbc1f9a784fbaff53d333a174a7df022c930f
     home: http://senzing.com
@@ -1029,7 +1030,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.856183-04:00"
+    created: "2021-05-05T15:05:49.611052148-04:00"
     description: A Senzing environment for debugging
     digest: a346e059161414b18e6632d8521e0e7b49399174b1c56f2532aa9c8810c35a73
     home: http://senzing.com
@@ -1045,7 +1046,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.855324-04:00"
+    created: "2021-05-05T15:05:49.610517598-04:00"
     description: A Senzing environment for debugging
     digest: 4e77cba4cbfbaaaae2f7b9f9011672d47deff9ad3aaf1f235b243f03faeabd79
     home: http://senzing.com
@@ -1061,7 +1062,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.854501-04:00"
+    created: "2021-05-05T15:05:49.609999455-04:00"
     description: A Senzing environment for debugging
     digest: 9336e4df3b0129f0553fb463b2e5494d83c5c04182bab31dfd08b78d120f3a91
     home: http://senzing.com
@@ -1078,9 +1079,9 @@ entries:
   senzing-entity-search-web-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.86844-04:00"
+    created: "2021-05-05T15:05:49.618061651-04:00"
     description: The Senzing Entity Search WebApp
-    digest: 5a758d11977fceca0b16ef35cb56f2a8c8bbd85015078a87dab4ba18a53714ba
+    digest: db8df1163d740f8032b1cac9f93e201ed9501a4cf70437dea95014f9e80945ad
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -1089,11 +1090,11 @@ entries:
     sources:
     - https://github.com/Senzing/entity-search-web-app
     urls:
-    - senzing-entity-search-web-app-1.0.5.tgz
-    version: 1.0.5
+    - senzing-entity-search-web-app-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.866495-04:00"
+    created: "2021-05-05T15:05:49.61733619-04:00"
     description: The Senzing Entity Search WebApp
     digest: b798fa816e7893c7d90da197dc7718a7fb5900935047b08db0011cd33a27b0ae
     home: http://senzing.com
@@ -1108,7 +1109,7 @@ entries:
     version: 1.0.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.865524-04:00"
+    created: "2021-05-05T15:05:49.616757485-04:00"
     description: The Senzing Entity Search WebApp
     digest: 4f21b05dcd0382e759f59af616e33442a4534017557ebf88233828defae52ae0
     home: http://senzing.com
@@ -1123,7 +1124,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.864574-04:00"
+    created: "2021-05-05T15:05:49.616181294-04:00"
     description: The Senzing Entity Search WebApp
     digest: b051c396310086ed7cd335ff7ece229bef63e431e9b51225e04c2ced426f51d3
     home: http://senzing.com
@@ -1138,7 +1139,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.863707-04:00"
+    created: "2021-05-05T15:05:49.615629775-04:00"
     description: The Senzing Entity Search WebApp
     digest: 6e7a159cad3103870529ad78a1cddc7bd5b20ac71e57e4de3d4780242da68a61
     home: http://senzing.com
@@ -1153,7 +1154,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.862811-04:00"
+    created: "2021-05-05T15:05:49.615085011-04:00"
     description: The Senzing Entity Search WebApp
     digest: 99de4357c02649677d3b6f0aea93c3942ced50e2e8457042a20a45bec1ed41ba
     home: http://senzing.com
@@ -1168,7 +1169,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.861963-04:00"
+    created: "2021-05-05T15:05:49.614578423-04:00"
     description: The Senzing Entity Search WebApp
     digest: f7d0000397937a8874eaf5b9e11335fefb325ce206de5d4d4181daba9ff0dcac
     home: http://senzing.com
@@ -1184,7 +1185,7 @@ entries:
   senzing-hello-world:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.870706-04:00"
+    created: "2021-05-05T15:05:49.620576775-04:00"
     description: Prints timestamped hello-world messages
     digest: d911fa444ae3427e2ac2742b0a5670eef5be14ae012821fe644a1ecdc797e7a5
     home: http://senzing.com
@@ -1199,7 +1200,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.86992-04:00"
+    created: "2021-05-05T15:05:49.619475684-04:00"
     description: Prints timestamped hello-world messages
     digest: b2a036e61969c677f7491146f6cde1a2e9d76c37274b2f20ac447b0d52edd4b9
     home: http://senzing.com
@@ -1214,7 +1215,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.869141-04:00"
+    created: "2021-05-05T15:05:49.618520756-04:00"
     description: Prints timestamped hello-world messages
     digest: be59cec267907ffabfe53b20308de3443a5c0d09392edea0b64145c0c1247274
     home: http://senzing.com
@@ -1230,7 +1231,7 @@ entries:
   senzing-hello-world-on-hub-docker-com:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.872915-04:00"
+    created: "2021-05-05T15:05:49.623127765-04:00"
     description: Prints timestamped hello-world messages
     digest: 65c5dd797477346e314b9cbdbb28c799191588c28dc05f01481087b4603015fa
     home: http://senzing.com
@@ -1245,7 +1246,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.872083-04:00"
+    created: "2021-05-05T15:05:49.622263008-04:00"
     description: Prints timestamped hello-world messages
     digest: 36a765414d09f9afeb144cf106b528fcb31c1adf444ea1aa344e2a0519c4ec29
     home: http://senzing.com
@@ -1260,7 +1261,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.871345-04:00"
+    created: "2021-05-05T15:05:49.621384843-04:00"
     description: Prints timestamped hello-world messages
     digest: 12e2076d252b19dbbe162c535d95a2777be3b47f18dd788fc14153c7803456df
     home: http://senzing.com
@@ -1308,7 +1309,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.87634-04:00"
+    created: "2021-05-05T15:05:49.626857141-04:00"
     description: IBM Db2 with Senzing customization.
     digest: facc259554358d4578009d0097b9216ecb182f723e0129f6325752fa23d1eb5e
     home: http://senzing.com
@@ -1324,7 +1325,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.875419-04:00"
+    created: "2021-05-05T15:05:49.625964842-04:00"
     description: IBM Db2 with Senzing customization.
     digest: 07a0c0e7d38d8e3ff40a94f6a91aa792a90452346dd7805c43b26257a4fb37d8
     home: http://senzing.com
@@ -1340,7 +1341,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.874527-04:00"
+    created: "2021-05-05T15:05:49.624966716-04:00"
     description: IBM Db2 with Senzing customization.
     digest: 5583a2427aab74b1e09414acd0794ca5bc29a8a4add210ede35a8bdde4fe21a6
     home: http://senzing.com
@@ -1356,7 +1357,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.873715-04:00"
+    created: "2021-05-05T15:05:49.624052052-04:00"
     description: IBM Db2 with Senzing customization.
     digest: 10715ac6a1da0abdbe8e57602c85b12f86c5e4a0100505daf768f409a6a72509
     home: http://senzing.com
@@ -1373,9 +1374,9 @@ entries:
   senzing-init-container:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.884316-04:00"
+    created: "2021-05-05T15:05:49.63377429-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
-    digest: 15d2cc9c1a377b8ff70d9e17a333d4d94be1547be916b3200400c95346e96102
+    digest: 0af6b094ff7995d6cf7adfb42af9a6d30c1a9b91a62f146009657da93fe54f8b
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -1384,11 +1385,11 @@ entries:
     sources:
     - https://github.com/Senzing/docker-init-container
     urls:
-    - senzing-init-container-1.1.3.tgz
-    version: 1.1.3
+    - senzing-init-container-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.883026-04:00"
+    created: "2021-05-05T15:05:49.63253818-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
     digest: f2169d7d1c7b8a3fcebb24ac16dff731b66ae8c7ee999debe596683e40a7ac0e
     home: http://senzing.com
@@ -1403,7 +1404,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.881604-04:00"
+    created: "2021-05-05T15:05:49.631478289-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
     digest: 1358bf2ef18adaba94fe4865ee8e88bcfb7518d88e02d6cee42378b91e8a8df7
     home: http://senzing.com
@@ -1418,7 +1419,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.880721-04:00"
+    created: "2021-05-05T15:05:49.63054433-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
     digest: 7b3d30d22a49414986eb638321189f1a3fcf792e51d0a8d16187847dea3ff8b5
     home: http://senzing.com
@@ -1433,7 +1434,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.879869-04:00"
+    created: "2021-05-05T15:05:49.629627868-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
     digest: fc5b8f73fb62254379faa2286123db01a1f5dfea21c7e753e9493999cb9d0db9
     home: http://senzing.com
@@ -1448,7 +1449,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.879051-04:00"
+    created: "2021-05-05T15:05:49.628743784-04:00"
     description: Performs all of the Senzing initialization requiring "root" authority.
     digest: 5327f4895ef80866677b9cf32a70eabd9f434e27bc0e9999ec4c8ac5379c592e
     home: http://senzing.com
@@ -1464,7 +1465,7 @@ entries:
   senzing-mock-data-generator:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.888976-04:00"
+    created: "2021-05-05T15:05:49.637894041-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: 41d0d335dc99826aeff32e90252961ee9d5caa09e8d7aece9c03a051d4f12df6
     home: http://senzing.com
@@ -1480,7 +1481,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.88777-04:00"
+    created: "2021-05-05T15:05:49.636687545-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: b4958a754a9e9fabba3c0933dd499169f6a6021eadd819ed239b262842b636d5
     home: http://senzing.com
@@ -1496,7 +1497,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.886873-04:00"
+    created: "2021-05-05T15:05:49.635527323-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: 078e4a4681a4285464e584b28383a3f0def7790e29954dc3f4ec6485c4013bc1
     home: http://senzing.com
@@ -1512,7 +1513,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.885989-04:00"
+    created: "2021-05-05T15:05:49.634945735-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: a00cb8d0c6280c93cf2026818c5c5bf8637d9708c8d6f7617b0dedad4a95ef74
     home: http://senzing.com
@@ -1528,7 +1529,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.885125-04:00"
+    created: "2021-05-05T15:05:49.634388653-04:00"
     description: A generator of Senzing data to feed Kafka
     digest: ab50feb920e0e8da63d0dd42d51ccfa138c657b2fcd5fca2d482b2a31236bf16
     home: http://senzing.com
@@ -1545,7 +1546,7 @@ entries:
   senzing-package:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.891477-04:00"
+    created: "2021-05-05T15:05:49.640443272-04:00"
     description: A package manager for Senzing_API.tgz
     digest: 711e4dbaf4296fad87040fa123e52027a4bd1f0372ba99b19fe079f40e312296
     home: http://senzing.com
@@ -1560,7 +1561,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.890642-04:00"
+    created: "2021-05-05T15:05:49.639586131-04:00"
     description: A package manager for Senzing_API.tgz
     digest: 846e7c34c0d9307bd001b187feafedddf6b14ae7e2f87e02f5a8b5fa4050820c
     home: http://senzing.com
@@ -1575,7 +1576,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.889824-04:00"
+    created: "2021-05-05T15:05:49.638717777-04:00"
     description: A package manager for Senzing_API.tgz
     digest: ed015f3e51a3239f2455b338790add4463d5220dfa6f04ac91f442b5fbb38e9c
     home: http://senzing.com
@@ -1591,9 +1592,9 @@ entries:
   senzing-redoer:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.896628-04:00"
+    created: "2021-05-05T15:05:49.644804826-04:00"
     description: Processes Senzing redo records
-    digest: d8fabddff7286be8a4e7c6921bf522154d2463943a94efa555d37f6e74c667ca
+    digest: 17b39d506c1a273ee58cd928d947e17e3af6a2173118a0723b68e7ee9ad39115
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -1603,11 +1604,11 @@ entries:
     sources:
     - https://github.com/Senzing/redoer
     urls:
-    - senzing-redoer-1.0.4.tgz
-    version: 1.0.4
+    - senzing-redoer-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.89565-04:00"
+    created: "2021-05-05T15:05:49.643964383-04:00"
     description: Processes Senzing redo records
     digest: daa38fcdfcabbba9284b38dcabeb6840eb48ff4eba72c6aa789664e63415d9b5
     home: http://senzing.com
@@ -1623,7 +1624,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.894582-04:00"
+    created: "2021-05-05T15:05:49.64318389-04:00"
     description: Processes Senzing redo records
     digest: da409accd555454fc38c4b7b8386ab2e6d239efdff4c13673e448051c5c63912
     home: http://senzing.com
@@ -1639,7 +1640,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.893526-04:00"
+    created: "2021-05-05T15:05:49.642394863-04:00"
     description: Processes Senzing redo records
     digest: 66f1e86d4c33479f287cea0185795a99ccde458d134d57c3e24f99a164f8d6e5
     home: http://senzing.com
@@ -1655,7 +1656,6 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.892564-04:00"
     description: Processes Senzing redo records
     digest: ccf216aa8d61cc056b15c5337dfe68ca961a0c5e227f1ad1242bc3b484507acb
     home: http://senzing.com
@@ -1672,9 +1672,9 @@ entries:
   senzing-stream-loader:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.90236-04:00"
+    created: "2021-05-05T15:05:49.658545264-04:00"
     description: A stream-based loader for Senzing
-    digest: ecda46de932de9220fe16533eb2f330e529edff2c3f21387cbe45ce362ec58ae
+    digest: beb0593bc8988739f01fccf6887f7570caff58e0a07147dcc7c352b7b22c259e
     home: http://senzing.com
     icon: https://avatars2.githubusercontent.com/u/43552726?s=200&v=4
     keywords:
@@ -1684,11 +1684,11 @@ entries:
     sources:
     - https://github.com/Senzing/stream-loader
     urls:
-    - senzing-stream-loader-1.0.10.tgz
-    version: 1.0.10
+    - senzing-stream-loader-1.2.0.tgz
+    version: 1.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.910681-04:00"
+    created: "2021-05-05T15:05:49.657265063-04:00"
     description: A stream-based loader for Senzing
     digest: 2db2d93520091275da8170b18174f014a4cfbdd51255018ccd7629c4befab494
     home: http://senzing.com
@@ -1704,7 +1704,7 @@ entries:
     version: 1.0.9
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.9096-04:00"
+    created: "2021-05-05T15:05:49.655942746-04:00"
     description: A stream-based loader for Senzing
     digest: c72108f9fa278bcd80730a7be0c6bda0880c1004362c96f2c1820fb24c61dc5d
     home: http://senzing.com
@@ -1720,7 +1720,7 @@ entries:
     version: 1.0.8
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.908516-04:00"
+    created: "2021-05-05T15:05:49.654677769-04:00"
     description: A stream-based loader for Senzing
     digest: baf94f74a383005267cbf0beed889bfb73d48c29000576c5983fc5ea5e90968c
     home: http://senzing.com
@@ -1736,7 +1736,7 @@ entries:
     version: 1.0.7
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.907436-04:00"
+    created: "2021-05-05T15:05:49.65312597-04:00"
     description: A stream-based loader for Senzing
     digest: 7c0c99cc52a14245ffcafa82aff526d16559bc68cd46aa80eaa7e7cf164c529f
     home: http://senzing.com
@@ -1752,7 +1752,7 @@ entries:
     version: 1.0.6
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.906315-04:00"
+    created: "2021-05-05T15:05:49.651685467-04:00"
     description: A stream-based loader for Senzing
     digest: f64b74b5968d360848b5f201ae73ac29019ec6fbeffbebba05ceaa0cd550680f
     home: http://senzing.com
@@ -1768,7 +1768,7 @@ entries:
     version: 1.0.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.905321-04:00"
+    created: "2021-05-05T15:05:49.650249273-04:00"
     description: A stream-based loader for Senzing
     digest: a0b3c656f0c8a55825e9d6e241c60340dafea15f56a4520936afbf7a2ef02205
     home: http://senzing.com
@@ -1784,7 +1784,7 @@ entries:
     version: 1.0.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.904279-04:00"
+    created: "2021-05-05T15:05:49.649310956-04:00"
     description: A stream-based loader for Senzing
     digest: c7626cd8ec403a4c043c3f892ec3e7abc3c6905dc6c0da23b059a3e8d9318bf1
     home: http://senzing.com
@@ -1800,7 +1800,7 @@ entries:
     version: 1.0.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.903332-04:00"
+    created: "2021-05-05T15:05:49.648559555-04:00"
     description: A stream-based loader for Senzing
     digest: a339d612f311f8d865ce843e26071615417bcb0de19dabcdf330db4aa6c93724
     home: http://senzing.com
@@ -1816,7 +1816,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.901315-04:00"
+    created: "2021-05-05T15:05:49.647800611-04:00"
     description: A stream-based loader for Senzing
     digest: e0ef1a5e636272e8e8cdddc692c00b255acf5f45654702c7969a3de54cb4ff89
     home: http://senzing.com
@@ -1832,7 +1832,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.900294-04:00"
+    created: "2021-05-05T15:05:49.647043126-04:00"
     description: A stream-based loader for Senzing
     digest: 2536061d872b511387c7282e0a51d03892de9c0330be9320f7fa147485bf0e71
     home: http://senzing.com
@@ -1848,7 +1848,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.898313-04:00"
+    created: "2021-05-05T15:05:49.646338973-04:00"
     description: A stream-based loader for Senzing
     digest: 64eb7e36ce3d2fff51f1f1556da8c2d06c66b8a2a533a60e9dd7514a0afef64b
     home: http://senzing.com
@@ -1864,7 +1864,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.897448-04:00"
+    created: "2021-05-05T15:05:49.64561098-04:00"
     description: A stream-based loader for Senzing
     digest: dc05ad77631ca46b7456641246f50d4d5ab4f78f6cf10f6f47319b4ad85cab4a
     home: http://senzing.com
@@ -1881,7 +1881,7 @@ entries:
   senzing-stream-producer:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.913797-04:00"
+    created: "2021-05-05T15:05:49.660844191-04:00"
     description: A generator of Senzing data to feed a queue
     digest: dad0ed7c16ab72629b66c605211989a0c116bd53258229522fe3f79601839137
     home: http://senzing.com
@@ -1897,7 +1897,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.912813-04:00"
+    created: "2021-05-05T15:05:49.660125775-04:00"
     description: A generator of Senzing data to feed a queue
     digest: 004afae88925e1cbd79e53a94cccef300aedebe912005672946c3aa4ec9a4089
     home: http://senzing.com
@@ -1913,7 +1913,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.911769-04:00"
+    created: "2021-05-05T15:05:49.65934397-04:00"
     description: A generator of Senzing data to feed a queue
     digest: 7548bc13c6cd99697b3320b3ce7d9e62ef517a2b5b04941f8fbfb790b628d672
     home: http://senzing.com
@@ -1962,7 +1962,7 @@ entries:
     version: 1.1.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.919211-04:00"
+    created: "2021-05-05T15:05:49.664570278-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: 52405dfd09a6ed3c0b24236a045c2b501721734fb7d34ffdd43eaaece9134fc5
     home: http://senzing.com
@@ -1978,7 +1978,7 @@ entries:
     version: 1.1.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.918419-04:00"
+    created: "2021-05-05T15:05:49.663869632-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: dc25302c29b3a1da1d514b857bb79f32b18e434da7a4432e1004b485501cd9f2
     home: http://senzing.com
@@ -1994,7 +1994,7 @@ entries:
     version: 1.1.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.917653-04:00"
+    created: "2021-05-05T15:05:49.663180432-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: 0ce3eca8542a470367f25c3aaa1bb2f44711fe73e50fa1e975c9df2010ee900a
     home: http://senzing.com
@@ -2010,7 +2010,7 @@ entries:
     version: 1.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.916892-04:00"
+    created: "2021-05-05T15:05:49.662489414-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: db47fe204cf775ee7603884d6fd9a680786359691b51cfccf31eaafc3696c2ce
     home: http://senzing.com
@@ -2026,7 +2026,7 @@ entries:
     version: 1.1.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.915579-04:00"
+    created: "2021-05-05T15:05:49.661924314-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: 4d39315d7ce81a6131ed53f184e2c0408899f91f3972d628734a1b5a3ae0137a
     home: http://senzing.com
@@ -2042,7 +2042,7 @@ entries:
     version: 1.0.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-04-19T11:43:47.914485-04:00"
+    created: "2021-05-05T15:05:49.661402541-04:00"
     description: A wrapper over yum package installer prepared for Senzing installs
     digest: 2648a58df8ce7e2149bff327b8b826693ddd3bce1f2fe25dec4fc5388cdfd4d0
     home: http://senzing.com
@@ -2056,4 +2056,4 @@ entries:
     urls:
     - senzing-yum-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-19T11:43:47.785797-04:00"
+generated: "2021-05-05T15:05:49.549104839-04:00"
