@@ -13,7 +13,7 @@ fullnameOverride: ""
 image:
   pullPolicy: Always
   registry: docker.io
-  repository: jbergknoff/postgresql-client
+  repository: senzing/postgresql-client
   tag: latest
 
 imagePullSecrets: []
