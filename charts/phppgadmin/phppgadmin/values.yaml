@@ -9,7 +9,7 @@ deployment:
 image:
   pullPolicy: Always
   registry: docker.io
-  repository: dockage/phppgadmin
+  repository: senzing/phppgadmin
   tag: latest
 
 ingress:
