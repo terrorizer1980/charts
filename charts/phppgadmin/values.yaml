@@ -17,6 +17,11 @@ ingress:
   enabled: false
   tls:
 
+metrics:
+  enabled: false
+  serviceMonitor:
+    enabled: false
+
 phppgadmin:
   ajaxRefresh: 3
   autoComplete: default on
@@ -49,4 +54,8 @@ service:
   externalPort: 8080
   internalPort: 80
   name: phppgadmin
+  nodePorts:
+    http: ""
+    https: ""
   type: LoadBalancer
+
