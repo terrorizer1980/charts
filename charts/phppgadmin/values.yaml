@@ -1,3 +1,11 @@
+containerPorts:
+  http: 8080
+  https: 8443
+
+containerSecurityContext:
+  enabled: true
+  runAsUser: 1001
+
 deployment:
   metadata:
     annotations:
@@ -8,6 +16,8 @@ deployment:
 
 image:
   pullPolicy: Always
+  pullSecrets:
+    - myRegistryKeySecretName
   registry: docker.io
   repository: senzing/phppgadmin
   tag: latest
@@ -17,10 +27,30 @@ ingress:
   enabled: false
   tls:
 
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  timeoutSeconds: 30
+  periodSeconds: 10
+  successThreshold: 1
+  failureThreshold: 6
+  httpGet:
+    path: /
+    port: http
+
+nodeAffinityPreset:
+  type: ""
+  key: ""
+  values: []
+replicaCount: 1
+resources: {}
+
 metrics:
   enabled: false
   serviceMonitor:
     enabled: false
+  pullSecrets:
+    - myRegistryKeySecretName
 
 phppgadmin:
   ajaxRefresh: 3
@@ -47,8 +77,22 @@ phppgadmin:
   theme: default
   userXhtlmStrict: false
 
-replicaCount: 1
-resources: {}
+podAffinityPreset: ""
+podAntiAffinityPreset: soft
+podSecurityContext:
+  enabled: true
+  fsGroup: 1001
+
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  timeoutSeconds: 30
+  periodSeconds: 10
+  successThreshold: 1
+  failureThreshold: 6
+  httpGet:
+    path: /
+    port: http
 
 service:
   externalPort: 8080
@@ -58,4 +102,3 @@ service:
     http: ""
     https: ""
   type: LoadBalancer
-

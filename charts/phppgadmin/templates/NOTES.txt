@@ -32,33 +32,9 @@
 {{- end }}
 
 2. How to log in
-{{- if or (.Values.db.chartName) (.Values.db.host) }}
+{{- if .Values.phppgadmin.serverHost }}
 
-phppgadmin has been configured to connect to a database in {{ if .Values.db.chartName}}{{template "phppgadmin.dbfullname" .}}{{ else }}{{.Values.db.host}}{{end}}
-{{- if .Values.db.port}}with port {{.Values.db.port}} {{end }}
+phppgadmin has been configured to connect to a database in {{.Values.phppgadmin.serverHost}}
+with port {{.Values.phppgadmin.serverPort}}
 Please login using a database username and password.
-{{- else if .Values.db.bundleTestDB }}
-For testing purposes, phppgadmin has been configured to point to a test MariaDB
-instance. Please login using the following credentials:
-
-  Username: root
-  Password : $(kubectl get secret --namespace {{ .Release.Namespace }} {{ template "phppgadmin.mariadb.fullname" . }} -o jsonpath="{.data.mariadb-root-password}" | base64 --decode)
-
-{{- else }}
-phppgadmin has not been configure to point to a specific database. Please provide the db host,
-username and password at log in or upgrade the release with a specific database:
-
-$ helm upgrade {{.Release.Name}} bitnami/phppgadmin --set db.host=mydb
-
 {{- end }}
-
-{{- include "phppgadmin.validateValues" . -}}
-{{- include "phppgadmin.checkRollingTags" . -}}
-
-{{- $passwordValidationErrors := list -}}
-{{- if .Values.mariadb.enabled }}
-    {{- $mariadbSecretName := include "magento.databaseSecretName" . -}}
-    {{- $mariadbPasswordValidationErrors := include "common.validations.values.mariadb.passwords" (dict "secret" $mariadbSecretName "subchart" true "context" $) -}}
-    {{- $passwordValidationErrors = append $passwordValidationErrors $mariadbPasswordValidationErrors -}}
-{{- end }}
-{{- include "common.errors.upgrade.passwords.empty" (dict "validationErrors" $passwordValidationErrors "context" $) -}}

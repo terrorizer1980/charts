@@ -15,5 +15,5 @@ keywords:
   - sql
 name: phppgadmin
 source:
-  - https://github.com/Senzing/charts/tree/master/charts/phpmyadmin
+  - https://github.com/Senzing/charts/tree/master/charts/phppgadmin
 version: "2.0.0"

@@ -1,3 +1,5 @@
+# https://kubernetes.io/docs/concepts/services-networking/ingress/
+
 {{- if .Values.ingress.enabled -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
